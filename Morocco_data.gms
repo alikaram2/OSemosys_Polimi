@@ -53,7 +53,3 @@ Set     TECHNOLOGY      /
         COM049  'Additional Fuel'
         COM050  'Additional Fuel'
     /;
-
-
-sdsaddasdsa
-dddddd
