@@ -1,0 +1,890 @@
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/01/24 14:41:40 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model equations
+
+
+   2  *
+   3  * OSeMOSYS 2011.07.07 conversion to GAMS by Ken Noble, Noble-Soft Systems - August 2012
+   4  * OSeMOSYS 2017.11.08 update by Thorsten Burandt, Konstantin Löffler and Karlo Hainsch, TU Berlin (Workgroup for Infrastructure Policy) - October 2017
+   5  *
+   6  * OSeMOSYS 2017.11.08
+   7  * Main changes to previous version OSeMOSYS_2016_08_01
+   8  * Bug fixed in:
+   9  * - Equation E1
+  10  * Open Source energy Modeling SYStem
+  11  *
+  12  * 2022.03.28 Fix EBa10_EnergyBalanceEachTS4, fix SI7_SalvageValueStorageAtEndOfPeriod2, fix SV2_SalvageValueAtEndOfPeriod2, add parentheses in conditional expressions where ambiguous, replace = with eq where appropriate, use card of set not already in used, improve storage constraints names, import comments from docs,  y Giacomo Marangoni
+  13   
+  14  * ============================================================================
+  15  *
+  16   
+  17   
+  18  *------------------------------------------------------------------------
+  19  * Objective function
+  20  *------------------------------------------------------------------------
+  21   
+  22  * This equation represents the overall objective of the model. The default
+  23  * in OSeMOSYS is to minimise the total system cost, over the entire model
+  24  * period.
+  25  free variable z;
+  26  equation Objective;
+  27  Objective..
+  28      z =e= sum((r,y), TotalDiscountedCost(r,y));
+****                 $120,120                $140
+**** 120  Unknown identifier entered as set
+**** 140  Unknown symbol
+  29   
+  30   
+  31   
+  32  *------------------------------------------------------------------------
+  33  * Rate of demand
+  34  *------------------------------------------------------------------------
+  35   
+  36   
+  37  * The equation below is used to generate the term RateOfDemand, from the
+  38  * user-provided data for SpecifiedAnnualDemand and
+  39  * SpecifiedDemandProfile. The RateOfDemand is defined for each combination
+  40  * of commodity, TimeSlice and Year.
+  41  equation EQ_SpecifiedDemand1(REGION,TIMESLICE,FUEL,YEAR);
+****                                    $120      $120 $120 $120
+**** 120  Unknown identifier entered as set
+  42  EQ_SpecifiedDemand1(r,l,f,y)$(SpecifiedAnnualDemand(r,f,y) gt 0)..
+****                        $120,120                    $140
+**** 120  Unknown identifier entered as set
+**** 140  Unknown symbol
+  43      SpecifiedAnnualDemand(r,f,y)*SpecifiedDemandProfile(r,f,l,y) / YearSplit(l,y) =e= RateOfDemand(r,l,f,y);
+****                                                        $140                 $140                  $140
+**** 140  Unknown symbol
+  44   
+  45   
+  46  *------------------------------------------------------------------------
+  47  * Capacity Adequacy A
+  48  *------------------------------------------------------------------------
+  49   
+  50  * Used to first calculate total capacity of each technology for each year
+  51  * based on existing capacity from before the model period
+  52  * (ResidualCapacity), AccumulatedNewCapacity during the modelling period,
+  53  * and NewCapacity installed in each year. It is then ensured that this
+  54  * Capacity is sufficient to meet the RateOfTotalActivity in each TimeSlice
+  55  * and Year. An additional constraint based on the size, or capacity, of
+  56  * each unit of a Technology is included
+  57  * (CapacityOfOneTechnologyUnit). This stipulates that the capacity of
+  58  * certain Technology can only be a multiple of the user-defined
+  59  * CapacityOfOneTechnologyUnit.
+  60   
+  61  * Calculates cumulative new capacity installed over the time horizon
+  62  equation CAa1_TotalNewCapacity(REGION,TECHNOLOGY,YEAR);
+****                                                 $120
+**** 120  Unknown identifier entered as set
+  63  CAa1_TotalNewCapacity(r,t,y)..
+****                          $120
+**** 120  Unknown identifier entered as set
+  64      AccumulatedNewCapacity(r,t,y) =e=
+****                           $140
+**** 140  Unknown symbol
+  65   
+  66      AccumulatedNewCapacity(r,t,y-1) * (1 - ContinousDepreciation(r,t)) + NewCapacity(r,t,y)
+****                                                                 $140                $140
+**** LINE     68 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+  68      ;
+  69   
+  70  equation CAa2_TotalAnnualCapacity(REGION,TECHNOLOGY,YEAR);
+  71  CAa2_TotalAnnualCapacity(r,t,y)..
+****                            $171,171,171
+**** LINE     73 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+  72      AccumulatedNewCapacity(r,t,y) + ResidualCapacity(r,t,y) =e= TotalCapacityAnnual(r,t,y);
+****                                                     $140                           $140
+**** LINE     74 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+  73   
+  74  equation CAa3_TotalActivityOfEachTechnology(YEAR,TECHNOLOGY,TIMESLICE,REGION);
+  75  CAa3_TotalActivityOfEachTechnology(y,t,l,r)..
+****                                      $171,171,171,171
+**** LINE     77 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+  76      sum(m, RateOfActivity(r,l,t,m,y)) =e= RateOfTotalActivity(r,l,t,y);
+****          $120            $140                                $140
+**** LINE     78 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+**** 140  Unknown symbol
+  77   
+  78  equation CAa4_Constraint_Capacity(REGION,TIMESLICE,TECHNOLOGY,YEAR);
+  79  CAa4_Constraint_Capacity(r,l,t,y)..
+****                            $171,171,171,171
+**** LINE     81 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+  80      RateOfTotalActivity(r,l,t,y) =l= TotalCapacityAnnual(r,t,y) * CapacityFactor(r,t,l,y) * CapacityToActivityUnit(r,t);
+****                                                                                 $140                              $140
+**** LINE     82 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+  81   
+  82   
+  83  * NOTE: OSeMOSYS uses Mixed Integer Programming to solve models that
+  84  * define CapacityOfTechnologyUnit. Using this parameter is likely to
+  85  * increase the model computation time.
+  87   
+  88   
+  89   
+  90  *------------------------------------------------------------------------
+  91  * Capacity Adequacy B
+  92  *------------------------------------------------------------------------
+  93   
+  94  * Ensures that adequate capacity of technologies is present to at least
+  95  * meet the average annual demand.
+  96   
+  97  equation CAb1_PlannedMaintenance(REGION,TECHNOLOGY,YEAR);
+  98  CAb1_PlannedMaintenance(r,t,y)..
+****                           $171,171,171
+**** LINE    104 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+  99      sum(l, RateOfTotalActivity(r,l,t,y)*YearSplit(l,y)) =l= sum(l,TotalCapacityAnnual(r,t,y)*CapacityFactor(r,t,l,y)*YearSplit(l,y))*AvailabilityFactor(r,t,y)*CapacityToActivityUnit(r,t);
+****                                                                                                                                                        $140
+**** LINE    105 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 100   
+ 101   
+ 102   
+ 103  *------------------------------------------------------------------------
+ 104  * Energy Balance A
+ 105  *------------------------------------------------------------------------
+ 106   
+ 107  * Ensures that demand for each commodity is met in each TimeSlice.
+ 108   
+ 109  equation EBa1_RateOfFuelProduction1(REGION,TIMESLICE,FUEL,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+****                                                                                       $120
+**** LINE    115 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+ 110  EBa1_RateOfFuelProduction1(r,l,f,t,m,y)$(OutputActivityRatio(r,t,f,m,y) <> 0)..
+****                                                             $140
+**** LINE    116 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 111      RateOfActivity(r,l,t,m,y)*OutputActivityRatio(r,t,f,m,y) =e= RateOfProductionByTechnologyByMode(r,l,t,m,f,y);
+****                                                                                                    $140
+**** LINE    117 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 112   
+ 113  equation EBa2_RateOfFuelProduction2(REGION,TIMESLICE,FUEL,TECHNOLOGY,YEAR);
+ 114  EBa2_RateOfFuelProduction2(r,l,f,t,y)..
+****                              $171,171,171,171,171
+**** LINE    120 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 115      sum(m$(OutputActivityRatio(r,t,f,m,y) <> 0), RateOfProductionByTechnologyByMode(r,l,t,m,f,y)) =e=
+ 116          RateOfProductionByTechnology(r,l,t,f,y);
+****                                     $140
+**** LINE    122 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 117   
+ 118  equation EBa3_RateOfFuelProduction3(REGION,TIMESLICE,FUEL,YEAR);
+ 119  EBa3_RateOfFuelProduction3(r,l,f,y)..
+****                              $171,171,171,171
+**** LINE    125 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 120      sum(t, RateOfProductionByTechnology(r,l,t,f,y)) =e=
+ 121          RateOfProduction(r,l,f,y);
+****                         $140
+**** LINE    127 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 122   
+ 123  equation EBa4_RateOfFuelUse1(REGION,TIMESLICE,FUEL,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+ 124  EBa4_RateOfFuelUse1(r,l,f,t,m,y)$(InputActivityRatio(r,t,f,m,y) <> 0)..
+****                       $171,171,171,171,171,171      $140
+**** LINE    130 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 125      RateOfActivity(r,l,t,m,y)*InputActivityRatio(r,t,f,m,y) =e= RateOfUseByTechnologyByMode(r,l,t,m,f,y);
+****                                                                                            $140
+**** LINE    131 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 126   
+ 127  equation EBa5_RateOfFuelUse2(REGION,TIMESLICE,FUEL,TECHNOLOGY,YEAR);
+ 128  EBa5_RateOfFuelUse2(r,l,f,t,y)..
+****                       $171,171,171,171,171
+**** LINE    134 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 129      sum(m$(InputActivityRatio(r,t,f,m,y) <> 0), RateOfUseByTechnologyByMode(r,l,t,m,f,y)) =e=
+ 130          RateOfUseByTechnology(r,l,t,f,y);
+****                              $140
+**** LINE    136 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 131   
+ 132  equation EBa6_RateOfFuelUse3(REGION,TIMESLICE,FUEL,YEAR);
+ 133  EBa6_RateOfFuelUse3(r,l,f,y)..
+****                       $171,171,171,171
+**** LINE    139 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 134      sum(t, RateOfUseByTechnology(r,l,t,f,y)) =e= RateOfUse(r,l,f,y);
+****                                                           $140
+**** LINE    140 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 135   
+ 136  equation EBa7_EnergyBalanceEachTS1(REGION,TIMESLICE,FUEL,YEAR);
+ 137  EBa7_EnergyBalanceEachTS1(r,l,f,y)..
+****                             $171,171,171,171
+**** LINE    143 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 138      RateOfProduction(r,l,f,y)*YearSplit(l,y) =e= Production(r,l,f,y);
+****                                                            $140
+**** LINE    144 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 139   
+ 140  equation EBa8_EnergyBalanceEachTS2(REGION,TIMESLICE,FUEL,YEAR);
+ 141  EBa8_EnergyBalanceEachTS2(r,l,f,y)..
+****                             $171,171,171,171
+**** LINE    147 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 142      RateOfUse(r,l,f,y)*YearSplit(l,y) =e= Use(r,l,f,y);
+****                                              $140
+**** LINE    148 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 143   
+ 144  equation EBa9_EnergyBalanceEachTS3(REGION,TIMESLICE,FUEL,YEAR);
+ 145  EBa9_EnergyBalanceEachTS3(r,l,f,y)..
+****                             $171,171,171,171
+**** LINE    151 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 146      RateOfDemand(r,l,f,y)*YearSplit(l,y) =e= Demand(r,l,f,y);
+****                                                    $140
+**** LINE    152 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 147   
+ 148  equation EBa10_EnergyBalanceEachTS4(REGION,r,TIMESLICE,FUEL,YEAR);
+ 149  EBa10_EnergyBalanceEachTS4(r,rr,l,f,y)..
+****                              $171,120,171,171,171,171
+**** LINE    155 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+**** 171  Domain violation for set
+ 150      Trade(r,rr,l,f,y) =e= -Trade(rr,r,l,f,y);
+****          $140
+**** LINE    156 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 151   
+ 152  equation EBa11_EnergyBalanceEachTS5(REGION,TIMESLICE,FUEL,YEAR);
+ 153  EBa11_EnergyBalanceEachTS5(r,l,f,y)..
+****                              $171,171,171,171
+**** LINE    159 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 154      Production(r,l,f,y) =g= Demand(r,l,f,y) + Use(r,l,f,y) + sum(rr, (Trade(r,rr,l,f,y)*TradeRoute(r,rr,f,y)));
+****                                                                                                   $140
+**** LINE    160 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 155   
+ 156   
+ 157  *------------------------------------------------------------------------
+ 158  * Energy Balance B
+ 159  *------------------------------------------------------------------------
+ 160   
+ 161  * Ensures that demand for each commodity is met in each Year.
+ 162   
+ 163  equation EBb1_EnergyBalanceEachYear1(REGION,FUEL,YEAR);
+ 164  EBb1_EnergyBalanceEachYear1(r,f,y)..
+****                               $171,171,171
+**** LINE    170 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 165      sum(l, Production(r,l,f,y)) =e= ProductionAnnual(r,f,y);
+****                                                     $140
+**** LINE    171 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 166   
+ 167  equation EBb2_EnergyBalanceEachYear2(REGION,FUEL,YEAR);
+ 168  EBb2_EnergyBalanceEachYear2(r,f,y)..
+****                               $171,171,171
+**** LINE    174 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 169      sum(l, Use(r,l,f,y)) =e= UseAnnual(r,f,y);
+****                                       $140
+**** LINE    175 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 170   
+ 171  equation EBb3_EnergyBalanceEachYear3(REGION,r,FUEL,YEAR);
+ 172  EBb3_EnergyBalanceEachYear3(r,rr,f,y)..
+****                               $171,171,171,171
+**** LINE    178 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 173      sum(l, Trade(r,rr,l,f,y)) =e= TradeAnnual(r,rr,f,y);
+****                                              $140
+**** LINE    179 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 174   
+ 175  equation EBb4_EnergyBalanceEachYear4(REGION,FUEL,YEAR);
+ 176  EBb4_EnergyBalanceEachYear4(r,f,y)..
+****                               $171,171,171
+**** LINE    182 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 177      ProductionAnnual(r,f,y) =g= UseAnnual(r,f,y) + sum(rr, (TradeAnnual(r,rr,f,y) * TradeRoute(r,rr,f,y))) + AccumulatedAnnualDemand(r,f,y);
+****                                                                                                                                     $140
+**** LINE    183 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 178   
+ 179   
+ 180   
+ 181  *------------------------------------------------------------------------
+ 182  * Accounting Technology Production/Use
+ 183  *------------------------------------------------------------------------
+ 184   
+ 185  * Accounting equations used to generate specific intermediate variables:
+ 186  * ProductionByTechnology, UseBytechnology,
+ 187  * TotalAnnualTechnologyActivityByMode, and ModelPeriodCostByRegion.
+ 188   
+ 189  equation Acc1_FuelProductionByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+ 190  Acc1_FuelProductionByTechnology(r,l,t,f,y)..
+****                                   $171,171,171,171,171
+**** LINE    196 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 191      RateOfProductionByTechnology(r,l,t,f,y) * YearSplit(l,y) =e= ProductionByTechnology(r,l,t,f,y);
+****                                                                                        $140
+**** LINE    197 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 192   
+ 193  equation Acc2_FuelUseByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+ 194  Acc2_FuelUseByTechnology(r,l,t,f,y)..
+****                            $171,171,171,171,171
+**** LINE    200 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 195      RateOfUseByTechnology(r,l,t,f,y) * YearSplit(l,y) =e= UseByTechnology(r,l,t,f,y);
+****                                                                          $140
+**** LINE    201 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 196   
+ 197  equation Acc3_AverageAnnualRateOfActivity(REGION,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+ 198  Acc3_AverageAnnualRateOfActivity(r,t,m,y)..
+****                                    $171,171,171,171
+**** LINE    204 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 199      sum(l, RateOfActivity(r,l,t,m,y)*YearSplit(l,y)) =e= TotalAnnualTechnologyActivityByMode(r,t,m,y);
+****                                                                                             $140
+**** LINE    205 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 200   
+ 201  equation Acc4_ModelPeriodCostByRegion(REGION);
+ 202  Acc4_ModelPeriodCostByRegion(r)..
+****                                $171
+**** LINE    208 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 203      sum((y), TotalDiscountedCost(r,y)) =e= ModelPeriodCostByRegion(r);
+****                                                                   $140
+**** LINE    209 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 204   
+ 205   
+ 206   
+ 207   
+ 208  *------------------------------------------------------------------------
+ 209  * Storage Equations
+ 210  *------------------------------------------------------------------------
+ 211   
+ 213   
+ 214   
+ 215  *------------------------------------------------------------------------
+ 216  * Capital costs
+ 217  *------------------------------------------------------------------------
+ 218   
+ 219  * Calculates the total discounted capital cost expenditure for each
+ 220  * technology in each year.
+ 221   
+ 222  equation CC1_UndiscountedCapitalInvestment(REGION,TECHNOLOGY,YEAR);
+ 223  CC1_UndiscountedCapitalInvestment(r,t,y)..
+****                                     $171,171,171
+**** LINE    396 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 224      CapitalCost(r,t,y) * NewCapacity(r,t,y) =e= CapitalInvestment(r,t,y);
+****                $140                                              $140
+**** LINE    397 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 225   
+ 226  equation CC2_DiscountingCapitalInvestmenta(REGION,TECHNOLOGY,YEAR);
+ 227  CC2_DiscountingCapitalInvestmenta(r,t,y)..
+****                                     $171,171,171
+**** LINE    400 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 228      CapitalInvestment(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val))) =e= DiscountedCapitalInvestment(r,t,y);
+****                                              $140                $120                                       $140
+**** LINE    401 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+**** 140  Unknown symbol
+ 229   
+ 230   
+ 231   
+ 232  *------------------------------------------------------------------------
+ 233  * Salvage value
+ 234  *------------------------------------------------------------------------
+ 235   
+ 236  * Calculates the fraction of the initial capital cost that can be recouped
+ 237  * at the end of a technologies operational life. The salvage value can be
+ 238  * calculated using one of two depreciation methods: straight line and
+ 239  * sinking fund.
+ 240   
+ 241  equation SV1_SalvageValueAtEndOfPeriod1(REGION,TECHNOLOGY,YEAR);
+ 242  SV1_SalvageValueAtEndOfPeriod1(r,t,y)$((DepreciationMethod(r) eq 1) and (((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val)) and (DiscountRate(r) > 0)))..
+****                                  $171,171,171             $140                                    $140
+**** LINE    415 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 243      SalvageValue(r,t,y) =e= CapitalCost(r,t,y)*NewCapacity(r,t,y)*(1-(((1+DiscountRate(r))**(smax(yy, yy.val) - y.val+1) -1) /((1+DiscountRate(r))**OperationalLife(r,t)-1)));
+****                 $140
+**** LINE    416 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 244   
+ 245  equation SV2_SalvageValueAtEndOfPeriod2(REGION,TECHNOLOGY,YEAR);
+ 246  SV2_SalvageValueAtEndOfPeriod2(r,t,y)$((((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val)) and (DiscountRate(r) eq 0)) or ((DepreciationMethod(r) eq 2) and ((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val))))..
+****                                  $171,171,171
+**** LINE    419 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 247      SalvageValue(r,t,y) =e= CapitalCost(r,t,y)*NewCapacity(r,t,y)*(1-(smax(yy, yy.val)- y.val+1)/OperationalLife(r,t));
+ 248   
+ 249  equation SV3_SalvageValueAtEndOfPeriod3(REGION,TECHNOLOGY,YEAR);
+ 250  SV3_SalvageValueAtEndOfPeriod3(r,t,y)$(y.val + OperationalLife(r,t)-1 <= smax(yy, yy.val))..
+****                                  $171,171,171
+**** LINE    423 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 251      SalvageValue(r,t,y) =e= 0;
+ 252   
+ 253  equation SV4_SalvageValueDiscToStartYr(REGION,TECHNOLOGY,YEAR);
+ 254  SV4_SalvageValueDiscToStartYr(r,t,y)..
+****                                 $171,171,171
+**** LINE    427 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 255      DiscountedSalvageValue(r,t,y) =e= SalvageValue(r,t,y)/((1+DiscountRate(r))**(1+smax(yy, yy.val) - smin(yy, yy.val)));
+****                           $140
+**** LINE    428 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 256   
+ 257   
+ 258  *------------------------------------------------------------------------
+ 259  * Operating costs
+ 260  *------------------------------------------------------------------------
+ 261   
+ 262  * Calculates the total variable and fixed operating costs for each
+ 263  * technology, in each year.
+ 264   
+ 265  equation OC1_OperatingCostsVariable(REGION,TIMESLICE,TECHNOLOGY,YEAR);
+ 266  OC1_OperatingCostsVariable(r,l,t,y)..
+****                              $171,171,171,171
+**** LINE    439 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 267      sum(m, (TotalAnnualTechnologyActivityByMode(r,t,m,y)*VariableCost(r,t,m,y))) =e=
+****                                                                      $140
+**** LINE    440 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 268          AnnualVariableOperatingCost(r,t,y);
+****                                    $140
+**** LINE    441 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 269   
+ 270  equation OC2_OperatingCostsFixedAnnual(REGION,TECHNOLOGY,YEAR);
+ 271  OC2_OperatingCostsFixedAnnual(r,t,y)..
+****                                 $171,171,171
+**** LINE    444 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 272      TotalCapacityAnnual(r,t,y)*FixedCost(r,t,y) =e= AnnualFixedOperatingCost(r,t,y);
+****                                         $140                                $140
+**** LINE    445 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 273   
+ 274  equation OC3_OperatingCostsTotalAnnual(REGION,TECHNOLOGY,YEAR);
+ 275  OC3_OperatingCostsTotalAnnual(r,t,y)..
+****                                 $171,171,171
+**** LINE    448 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 276      AnnualFixedOperatingCost(r,t,y)+AnnualVariableOperatingCost(r,t,y) =e= OperatingCost(r,t,y);
+****                                                                                         $140
+**** LINE    449 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 277   
+ 278  equation OC4_DiscountedOperatingCostsTotalAnnual(REGION,TECHNOLOGY,YEAR);
+ 279  OC4_DiscountedOperatingCostsTotalAnnual(r,t,y)..
+****                                           $171,171,171
+**** LINE    452 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 280      OperatingCost(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val)+0.5)) =e= DiscountedOperatingCost(r,t,y);
+****                                                                                                         $140
+**** LINE    453 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 281   
+ 282  *
+ 283  * ############### Total Discounted Costs #############
+ 284  *
+ 285   
+ 286   
+ 287  *------------------------------------------------------------------------
+ 288  * Total discounted costs
+ 289  *------------------------------------------------------------------------
+ 290   
+ 291  * Calculates the total discounted system cost over the entire model period
+ 292  * to give the TotalDiscountedCost. This is the variable that is minimized
+ 293  * in the model’s objective function.
+ 294   
+ 295  equation TDC1_TotalDiscountedCostByTechnology(REGION,TECHNOLOGY,YEAR);
+ 296  TDC1_TotalDiscountedCostByTechnology(r,t,y)..
+****                                        $171,171,171
+**** LINE    469 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 297      DiscountedOperatingCost(r,t,y)+DiscountedCapitalInvestment(r,t,y)+DiscountedTechnologyEmissionsPenalty(r,t,y)-DiscountedSalvageValue(r,t,y) =e= TotalDiscountedCostByTechnology(r,t,y);
+****                                                                                                           $140                                                                     $140
+**** LINE    470 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 298   
+ 299  equation TDC2_TotalDiscountedCostByTechnology(REGION,YEAR);
+ 300  TDC2_TotalDiscountedCostByTechnology(r,y)..
+****                                        $171,171
+**** LINE    473 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 301      sum(t, TotalDiscountedCostByTechnology(r,t,y)) + sum(s,TotalDiscountedStorageCost(r,s,y)) =e= TotalDiscountedCost(r,y);
+****                                                           $120                       $140
+**** LINE    474 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+**** 140  Unknown symbol
+ 302   
+ 303   
+ 304   
+ 305  *------------------------------------------------------------------------
+ 306  * Total capacity constraints
+ 307  *------------------------------------------------------------------------
+ 308   
+ 309  * Ensures that the total capacity of each technology in each year is
+ 310  * greater than and less than the user-defined parameters
+ 311  * TotalAnnualMinCapacityInvestment and TotalAnnualMaxCapacityInvestment
+ 312  * respectively.
+ 313   
+ 314  equation TCC1_TotalAnnualMaxCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+ 315  TCC1_TotalAnnualMaxCapacityConstraint(r,t,y)..
+****                                         $171,171,171
+**** LINE    488 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 316      TotalCapacityAnnual(r,t,y) =l= TotalAnnualMaxCapacity(r,t,y);
+****                                                          $140
+**** LINE    489 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 317   
+ 318  equation TCC2_TotalAnnualMinCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+ 319  TCC2_TotalAnnualMinCapacityConstraint(r,t,y)$(TotalAnnualMinCapacity(r,t,y)>0)..
+****                                         $171,171,171                $140
+**** LINE    492 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 320      TotalCapacityAnnual(r,t,y) =g= TotalAnnualMinCapacity(r,t,y);
+ 321   
+ 322   
+ 323   
+ 324  *------------------------------------------------------------------------
+ 325  * New capacity constraints
+ 326  *------------------------------------------------------------------------
+ 327   
+ 328  * Ensures that the new capacity of each technology installed in each year
+ 329  * is greater than and less than the user-defined parameters
+ 330  * TotalAnnualMinCapacityInvestment and TotalAnnualMaxCapacityInvestment
+ 331  * respectively.
+ 332   
+ 333  equation NCC1_TotalAnnualMaxNewCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+ 334  NCC1_TotalAnnualMaxNewCapacityConstraint(r,t,y)..
+****                                            $171,171,171
+**** LINE    507 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 335      NewCapacity(r,t,y) =l= TotalAnnualMaxCapacityInvestment(r,t,y);
+****                                                            $140
+**** LINE    508 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 336   
+ 337  equation NCC2_TotalAnnualMinNewCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+ 338  NCC2_TotalAnnualMinNewCapacityConstraint(r,t,y)$(TotalAnnualMinCapacityInvestment(r,t,y) > 0)..
+****                                            $171,171,171                          $140
+**** LINE    511 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 339      NewCapacity(r,t,y) =g= TotalAnnualMinCapacityInvestment(r,t,y);
+ 340   
+ 341   
+ 342   
+ 343  *------------------------------------------------------------------------
+ 344  * Annual activity constraints
+ 345  *------------------------------------------------------------------------
+ 346   
+ 347  * Ensures that the total activity of each technology over each year is
+ 348  * greater than and less than the user-defined parameters
+ 349  * TotalTechnologyAnnualActivityLowerLimit and
+ 350  * TotalTechnologyAnnualActivityUpperLimit respectively.
+ 351   
+ 352  equation AAC1_TotalAnnualTechnologyActivity(REGION,TECHNOLOGY,YEAR);
+ 353  AAC1_TotalAnnualTechnologyActivity(r,t,y)..
+****                                      $171,171,171
+**** LINE    526 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 354      sum(l, (RateOfTotalActivity(r,l,t,y)*YearSplit(l,y))) =e= TotalTechnologyAnnualActivity(r,t,y);
+****                                                                                            $140
+**** LINE    527 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 355   
+ 356  equation AAC2_TotalAnnualTechnologyActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
+ 357  AAC2_TotalAnnualTechnologyActivityUpperLimit(r,t,y)..
+****                                                $171,171,171
+**** LINE    530 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 358      TotalTechnologyAnnualActivity(r,t,y) =l= TotalTechnologyAnnualActivityUpperLimit(r,t,y);
+****                                                                                     $140
+**** LINE    531 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 359   
+ 360  equation AAC3_TotalAnnualTechnologyActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
+ 361  AAC3_TotalAnnualTechnologyActivityLowerLimit(r,t,y)$(TotalTechnologyAnnualActivityLowerLimit(r,t,y) > 0)..
+****                                                $171,171,171                                 $140
+**** LINE    534 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 362      TotalTechnologyAnnualActivity(r,t,y) =g= TotalTechnologyAnnualActivityLowerLimit(r,t,y);
+ 363   
+ 364   
+ 365   
+ 366  *------------------------------------------------------------------------
+ 367  * Total activity constraints
+ 368  *------------------------------------------------------------------------
+ 369   
+ 370  * Ensures that the total activity of each technology over the entire model
+ 371  * period is greater than and less than the user-defined parameters
+ 372  * TotalTechnologyModelPeriodActivityLowerLimit and
+ 373  * TotalTechnologyModelPeriodActivityUpperLimit respectively.
+ 374   
+ 375  equation TAC1_TotalModelHorizenTechnologyActivity(REGION,TECHNOLOGY);
+ 376  TAC1_TotalModelHorizenTechnologyActivity(r,t)..
+****                                            $171,171
+**** LINE    549 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 377      sum(y, TotalTechnologyAnnualActivity(r,t,y)) =e= TotalTechnologyModelPeriodActivity(r,t);
+****                                                                                        $140
+**** LINE    550 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 378   
+ 379  equation TAC2_TotalModelHorizenTechnologyActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
+ 380  TAC2_TotalModelHorizenTechnologyActivityUpperLimit(r,t,y)$(TotalTechnologyModelPeriodActivityUpperLimit(r,t) > 0)..
+****                                                      $171,171,171                                      $140
+**** LINE    553 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 381      TotalTechnologyModelPeriodActivity(r,t) =l= TotalTechnologyModelPeriodActivityUpperLimit(r,t);
+ 382   
+ 383  equation TAC3_TotalModelHorizenTechnologyActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
+ 384  TAC3_TotalModelHorizenTechnologyActivityLowerLimit(r,t,y)$(TotalTechnologyModelPeriodActivityLowerLimit(r,t) > 0)..
+****                                                      $171,171,171                                      $140
+**** LINE    557 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+**** 171  Domain violation for set
+ 385      TotalTechnologyModelPeriodActivity(r,t) =g= TotalTechnologyModelPeriodActivityLowerLimit(r,t);
+ 386   
+ 387   
+ 388   
+ 389  *------------------------------------------------------------------------
+ 390  * Reserve margin constraints
+ 391  *------------------------------------------------------------------------
+ 392   
+ 393  * Ensures that sufficient reserve capacity of specific technologies
+ 394  * (ReserveMarginTagTechnology = 1) is installed such that the user-defined
+ 395  * ReserveMargin is maintained.
+ 396   
+ 397  equation RM1_ReserveMargin_TechologiesIncluded_In_Activity_Units(REGION,TIMESLICE,YEAR);
+ 398  RM1_ReserveMargin_TechologiesIncluded_In_Activity_Units(r,l,y)..
+****                                                           $171,171,171
+**** LINE    571 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 399      sum (t,TotalCapacityAnnual(r,t,y) * ReserveMarginTagTechnology(r,t,y) * CapacityToActivityUnit(r,t)) =e= TotalCapacityInReserveMargin(r,y);
+****                                                                   $140                                                                   $140
+**** LINE    572 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 400   
+ 401  equation RM2_ReserveMargin_FuelsIncluded(REGION,TIMESLICE,YEAR);
+ 402  RM2_ReserveMargin_FuelsIncluded(r,l,y)..
+****                                   $171,171,171
+**** LINE    575 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 403      sum (f, RateOfProduction(r,l,f,y) * ReserveMarginTagFuel(r,f,y)) =e= DemandNeedingReserveMargin(r,l,y);
+****                                                             $140                                   $140
+**** LINE    576 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 404   
+ 405  equation RM3_ReserveMargin_Constraint(REGION,TIMESLICE,YEAR);
+ 406  RM3_ReserveMargin_Constraint(r,l,y)..
+****                                $171,171,171
+**** LINE    579 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 407      DemandNeedingReserveMargin(r,l,y) * ReserveMargin(r,y) =l= TotalCapacityInReserveMargin(r,y);
+****                                                      $140
+**** LINE    580 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 408   
+ 409   
+ 410  *------------------------------------------------------------------------
+ 411  * RE production target
+ 412  *------------------------------------------------------------------------
+ 413   
+ 414  * Ensures that production from technologies tagged as renewable energy
+ 415  * technologies (RETagTechnology = 1) is at least equal to the user-defined
+ 416  * renewable energy (RE) target.
+ 417   
+ 418  equation RE1_FuelProductionByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
+ 419  RE1_FuelProductionByTechnologyAnnual(r,t,f,y)..
+****                                        $171,171,171,171
+**** LINE    592 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 420      sum(l, ProductionByTechnology(r,l,t,f,y)) =e= ProductionByTechnologyAnnual(r,t,f,y);
+****                                                                               $140
+**** LINE    593 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 421   
+ 422  equation RE2_TechIncluded(REGION,YEAR);
+ 423  RE2_TechIncluded(r,y)..
+****                    $171,171
+**** LINE    596 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 424      sum((t,f), (ProductionByTechnologyAnnual(r,t,f,y)*RETagTechnology(r,t,y))) =e= TotalREProductionAnnual(r,y);
+****                                                                      $140                                 $140
+**** LINE    597 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 425   
+ 426  equation RE3_FuelIncluded(REGION,YEAR);
+ 427  RE3_FuelIncluded(r,y)..
+****                    $171,171
+**** LINE    600 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 428      sum((l,f), (RateOfProduction(r,l,f,y)*YearSplit(l,y)*RETagFuel(r,f,y))) =e= RETotalProductionOfTargetFuelAnnual(r,y);
+****                                                                   $140                                             $140
+**** LINE    601 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 429   
+ 430  equation RE4_EnergyConstraint(REGION,YEAR);
+ 431  RE4_EnergyConstraint(r,y)..
+****                        $171,171
+**** LINE    604 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 432      REMinProductionTarget(r,y)*RETotalProductionOfTargetFuelAnnual(r,y) =l= TotalREProductionAnnual(r,y);
+****                          $140
+**** LINE    605 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 433   
+ 434  equation RE5_FuelUseByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
+ 435  RE5_FuelUseByTechnologyAnnual(r,t,f,y)..
+****                                 $171,171,171,171
+**** LINE    608 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 436      sum(l, (RateOfUseByTechnology(r,l,t,f,y)*YearSplit(l,y))) =e= UseByTechnologyAnnual(r,t,f,y);
+****                                                                                        $140
+**** LINE    609 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 437   
+ 438   
+ 439   
+ 440  *------------------------------------------------------------------------
+ 441  * Emissions accounting
+ 442  *------------------------------------------------------------------------
+ 443   
+ 444  * Calculates the annual and model period emissions from each technology,
+ 445  * for each type of emission. It also calculates the total associated
+ 446  * emission penalties, if any. Finally, it ensures that emissions are
+ 447  * maintained before stipulated limits that may be defined for each year
+ 448  * and/or the entire model period.
+ 449   
+ 450  equation E1_AnnualEmissionProductionByMode(REGION,TECHNOLOGY,EMISSION,MODE_OF_OPERATION,YEAR);
+****                                                                      $120
+**** LINE    623 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+ 451  E1_AnnualEmissionProductionByMode(r,t,e,m,y)..
+****                                        $120
+**** LINE    624 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 120  Unknown identifier entered as set
+ 452      EmissionActivityRatio(r,t,e,m,y)*TotalAnnualTechnologyActivityByMode(r,t,m,y) =e= AnnualTechnologyEmissionByMode(r,t,e,m,y);
+****                          $140                                                                                       $140
+**** LINE    625 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 453   
+ 454  equation E2_AnnualEmissionProduction(REGION,TECHNOLOGY,EMISSION,YEAR);
+ 455  E2_AnnualEmissionProduction(r,t,e,y)..
+****                               $171,171,171,171
+**** LINE    628 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 456      sum(m, AnnualTechnologyEmissionByMode(r,t,e,m,y)) =e= AnnualTechnologyEmission(r,t,e,y);
+****                                                                                   $140
+**** LINE    629 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 457   
+ 458  equation E3_EmissionsPenaltyByTechAndEmission(REGION,TECHNOLOGY,EMISSION,YEAR);
+ 459  E3_EmissionsPenaltyByTechAndEmission(r,t,e,y)..
+****                                        $171,171,171,171
+**** LINE    632 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 460      AnnualTechnologyEmission(r,t,e,y)*EmissionsPenalty(r,e,y) =e= AnnualTechnologyEmissionPenaltyByEmission(r,t,e,y);
+****                                                       $140                                                 $140
+**** LINE    633 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 461   
+ 462  equation E4_EmissionsPenaltyByTechnology(REGION,TECHNOLOGY,YEAR);
+ 463  E4_EmissionsPenaltyByTechnology(r,t,y)..
+****                                   $171,171,171
+**** LINE    636 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 464      sum(e, AnnualTechnologyEmissionPenaltyByEmission(r,t,e,y)) =e= AnnualTechnologyEmissionsPenalty(r,t,y);
+****                                                                                                    $140
+**** LINE    637 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 465   
+ 466  equation E5_DiscountedEmissionsPenaltyByTechnology(REGION,TECHNOLOGY,YEAR);
+ 467  E5_DiscountedEmissionsPenaltyByTechnology(r,t,y)..
+****                                             $171,171,171
+**** LINE    640 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 468      AnnualTechnologyEmissionsPenalty(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val)+0.5)) =e= DiscountedTechnologyEmissionsPenalty(r,t,y);
+ 469   
+ 470  equation E6_EmissionsAccounting1(REGION,EMISSION,YEAR);
+ 471  E6_EmissionsAccounting1(r,e,y)..
+****                           $171,171,171
+**** LINE    644 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 472      sum(t, AnnualTechnologyEmission(r,t,e,y)) =e= AnnualEmissions(r,e,y);
+****                                                                  $140
+**** LINE    645 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 473   
+ 474  equation E7_EmissionsAccounting2(EMISSION,REGION);
+ 475  E7_EmissionsAccounting2(e,r)..
+****                           $171,171
+**** LINE    648 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 476      sum(y, AnnualEmissions(r,e,y)) =e= ModelPeriodEmissions(e,r)- ModelPeriodExogenousEmission(r,e);
+****                                                            $140                               $140
+**** LINE    649 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 477   
+ 478  equation E8_AnnualEmissionsLimit(REGION,EMISSION,YEAR);
+ 479  E8_AnnualEmissionsLimit(r,e,y)..
+****                           $171,171,171
+**** LINE    652 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 480      AnnualEmissions(r,e,y)+AnnualExogenousEmission(r,e,y) =l= AnnualEmissionLimit(r,e,y);
+****                                                   $140                           $140
+**** LINE    653 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+ 481   
+ 482  equation E9_ModelPeriodEmissionsLimit(EMISSION,REGION);
+ 483  E9_ModelPeriodEmissionsLimit(e,r)..
+****                                $171,171
+**** LINE    656 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 171  Domain violation for set
+ 484      ModelPeriodEmissions(e,r) =l= ModelPeriodEmissionLimit(r,e);
+****                                                           $140
+**** LINE    657 INPUT       C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+**** 140  Unknown symbol
+
+**** 303 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.016 SECONDS      3 MB  46.2.0 ac4adda6 WEX-WEI
+
+
+USER: Course License                                 S240213|0002AO-GEN
+      Fondazione CMCC, Complesso Ecotekne                       DCE3258
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.gms
+Output     C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_equ.lst
+
+**** USER ERROR(S) ENCOUNTERED
