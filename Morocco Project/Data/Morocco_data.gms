@@ -282,7 +282,6 @@ Set SEASON              /1, 2, 3/;
 Set DAILYTIMEBRACKET    /1, 2/;
 Set DAYTYPE             /1/;
 Set STORAGE             /GH, BATT/
-<<<<<<< HEAD
 
 ##fjisdjflkafja
 
@@ -290,6 +289,4 @@ Set STORAGE             /GH, BATT/
 
 
 ##ALI
-
-=======
->>>>>>> 5765a5d64b1175443a875fd2c119fd9c8f19a03a
+parameter 
