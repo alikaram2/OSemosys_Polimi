@@ -281,15 +281,118 @@ Set REGION              /'MOROCCO'/;
 Set SEASON              /1, 2, 3/;
 Set DAILYTIMEBRACKET    /1, 2/;
 Set DAYTYPE             /1/;
-Set STORAGE             /GH, BATT/
-<<<<<<< HEAD
+Set STORAGE             /GH, BATT/;
 
-##fjisdjflkafja
+# characterize technologies 
+#set power_plants(TECHNOLOGY) / COAL, NUCLEAR, HYDRO, DIESEL_GEN /;
+#set storage_plants(TECHNOLOGY) / STOR_HYDRO /;
+#set fuel_transformation(TECHNOLOGY) / SRE /;
+#set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
+#set unmet_demand(TECHNOLOGY) / /;
+#set transport(TECHNOLOGY) / TXD, TXE, TXG /;
+#set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
+#set secondary_imports(TECHNOLOGY) / IMPDSL1, IMPGSL1 /;
 
+#set renewable_tech(TECHNOLOGY) /HYDRO/; 
+#set renewable_fuel(FUEL) /HYD/; 
+
+#set fuel_production(TECHNOLOGY);
+#set fuel_production_fict(TECHNOLOGY) /RIV/;
+#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
+
+#Characterize fuels 
+#set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
+#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
+#set final_demand(FUEL) / RH, RL, TX /;
+
+##Parameters
 ##JUAN DIEGO
+
+parameter YearSplit(l,y)/
+  SP.(2015*2050)  .125
+  SN.(2015*2050)  .125
+  SD.(2015*2050)  .125
+  SN.(2015*2050)  .125
+  AD.(2015*2050)  .125
+  AN.(2015*2050)  .125
+  WD.(2015*2050)  .125
+  WN.(2015*2050)  .125
+/;
+
+DiscountRate(r)=0.1;
+
+DaySplit(y,lh)=12/(24*365);
+
+parameter Conversionls(l,ls) /
+
+/;
+
+parameter Conversionld (l,ld) /
+
+/;
+
+parameter Conversionlh(l,lh) /
+
+/;
+
+DaysInDayType(y,ls,ld) = 0;
+
+TradeRoute(r,rr,f,y)=0;
+
+DepreciationMethod(r)=1;
+
+#PARAMETERS -Demand
+
+parameter SpecifiedAnnualDemand(r,f,y) /
+
+/;
+
+parameter SpecifiedDemandProfile(r,f,l,y) /
+
+/;
+
+parameter AccumulatedAnnualDemand(r,f,y) /
+
+/;
+
+#Parameters - Performance
+
+CapacityToActivityUnit(r,t)$power_plants(t) =0;
+
+CapacityToActivityUnit(r,t)$(CapacityToActivityUnit(r,t) = 0) = 1;
+
+CapacityFactor(r,'COAL',l,y) = 0;
+CapacityFactor(r,'NUCLEAR',l,y) = 0;
+CapacityFactor(r,'HYDRO',l,y) = 0;
+CapacityFactor(r,'STOR_HYDRO',l,y) = 0;
+CapacityFactor(r,'DIESEL_GEN',l,y) = 0;
+CapacityFactor(r,t,l,y)$(CapacityFactor(r,t,l,y) = 0) = 0;
+
+AvailabilityFactor(r,t,y) = 0;
+
+parameter OperationalLife(r,t) /
+
+/;
+
+OperationalLife(r,t)$(OperationalLife(r,t) = 0) = 1;
+
+parameter ResidualCapacity(r,t,y) /
+
+/;
+$if set no_initial_capacity ResidualCapacity(r,t,y) = 0;
+
+parameter InputActivityRatio(r,t,f,m,y) /
+
+/;
+
+parameter OutputActivityRatio(r,t,f,m,y) /
+
+/;
+
+# By default, assume for imported secondary fuels the same efficiency of the internal refineries
+InputActivityRatio(r,'IMPDSL1','OIL',m,y)$(not OutputActivityRatio(r,'SRE','DSL',m,y) eq 0) = 1/OutputActivityRatio(r,'SRE','DSL',m,y); 
+InputActivityRatio(r,'IMPGSL1','OIL',m,y)$(not OutputActivityRatio(r,'SRE','GSL',m,y) eq 0) = 1/OutputActivityRatio(r,'SRE','GSL',m,y); 
 
 
 ##ALI
 
-=======
->>>>>>> 5765a5d64b1175443a875fd2c119fd9c8f19a03a
