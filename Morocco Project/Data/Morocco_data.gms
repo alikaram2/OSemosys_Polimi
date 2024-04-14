@@ -282,6 +282,3 @@ Set SEASON              /1, 2, 3/;
 Set DAILYTIMEBRACKET    /1, 2/;
 Set DAYTYPE             /1/;
 Set STORAGE             /GH, BATT/
-
-##fjisdjflkafja
-
