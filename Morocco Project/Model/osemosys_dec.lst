@@ -1,0 +1,826 @@
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/01/24 14:41:35 Page 1
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model declarations except equations
+
+
+   2   
+   3  * ============================================================================
+   4  * OSEMOSYS_DEC.GMS - declarations for sets, parameters, variables (but not equations)
+   5  * ============================================================================
+   6  * 2011.07.07 conversion to GAMS by Ken Noble, Noble-Soft Systems - August 2012
+   7  * 2017.11.08 update by Thorsten Burandt, Konstantin Löffler and Karlo Hainsch, TU Berlin (Workgroup for Infrastructure Policy) - October 2017
+   8  * 2022.03.28 add explanatory comments from documentation, improve formatting, by Giacomo Marangoni
+   9  * ============================================================================
+  10   
+  11   
+  12   
+  13  *------------------------------------------------------------------------
+  14  * SETS
+  15  *------------------------------------------------------------------------
+  16   
+  17  * YEAR / y: It represents the time frame of the model, it contains all the
+  18  * years to be considered in the study.
+  19  set YEAR;
+  20  alias (y,yy,yyy,YEAR);
+  21   
+  22  * TECHNOLOGY / t: It includes any element of the energy system that
+  23  * changes a commodity from one form to another, uses it or supplies
+  24  * it. All system components are set up as a ‘technology’ in OSeMOSYS. As
+  25  * the model is an abstraction, the modeller is free to interpret the role
+  26  * of a technology at will, where relevant. It may for example represent a
+  27  * single real technology (such as a power plant) or can represent a
+  28  * heavily aggregated collection of technologies (such as the stock of
+  29  * several million light bulbs), or may even simply be a ‘dummy
+  30  * technology’, perhaps used for accounting purposes.
+  31  set TECHNOLOGY;
+  32  alias (t,TECHNOLOGY)
+  33   
+  34  * TIMESLICE / l: It represents the time split of each modelled year,
+  35  * therefore the time resolution of the model. Common to several energy
+  36  * systems modelling tools (incl. MESSAGE / MARKAL / TIMES), the annual
+  37  * demand is ‘sliced’ into representative fractions of the year. It is
+  38  * necessary to assess times of the year when demand is high separately
+  39  * from times when demand is low, for fuels that are expensive to store. In
+  40  * order to reduce the computation time, these ‘slices’ are often
+  41  * grouped. Thus, the annual demand may be split into aggregate seasons
+  42  * where demand levels are similar (such as ‘summer, winter and
+  43  * intermediate’). Those seasons may be subdivided into aggregate ‘day
+  44  * types’ (such as workdays and weekends), and the day further sub divided
+  45  * (such as into day and night) depending on the level of demand.
+  46  set TIMESLICE;
+  47  alias (l,TIMESLICE);
+  48   
+  49  * FUEL / f: It includes any energy vector, energy service or proxies
+  50  * entering or exiting technologies. These can be aggregate groups,
+  51  * individual flows or artificially separated, depending on the
+  52  * requirements of the analysis.
+  53  set FUEL;
+  54  alias (f,FUEL);
+  55   
+  56  * EMISSION / e: It includes any kind of emission potentially deriving from
+  57  * the operation of the defined technologies. Typical examples would
+  58  * include atmospheric emissions of greenhouse gasses, such as CO2.
+  59  set EMISSION;
+  60  alias (e,EMISSION);
+  61   
+  62  * MODE_OF_OPERATION / m: It defines the number of modes of operation that
+  63  * the technologies can have. If a technology can have various input or
+  64  * output fuels and it can choose the mix (i.e.  any linear combination) of
+  65  * these input or output fuels, each mix can be accounted as a separate
+  66  * mode of operation. For example, a CHP plant may produce heat in one mode
+  67  * of operation and electricity in another.
+  68  set MODE_OF_OPERATION;
+  69  alias (m,MODE_OF_OPERATION);
+  70   
+  71  * REGION / r: It sets the regions to be modelled, e.g. different
+  72  * countries. For each of them, the supply-demand balances for all the
+  73  * energy vectors are ensured, including trades with other regions. In some
+  74  * occasions it might be computationally more convenient to model different
+  75  * countries within the same region and differentiate them simply by
+  76  * creating ad hoc fuels and technologies for each of them.
+  77  set REGION;
+  78  alias (r,REGION,rr);
+  79   
+  80  * SEASON / ls: It gives indication (by successive numerical values) of how
+  81  * many seasons (e.g. winter, intermediate, summer) are accounted for and
+  82  * in which order.  This set is needed if storage facilities are included
+  83  * in the model.
+  84  set SEASON;
+  85  alias (ls,SEASON,lsls);
+  86   
+  87  * DAYTYPE / ld: It gives indication (by successive numerical values) of
+  88  * how many day types (e.g. workday, weekend) are accounted for and in
+  89  * which order.  This set is needed if storage facilities are included in
+  90  * the model.
+  91  set DAYTYPE;
+  92  alias (ld,DAYTYPE,ldld);
+  93   
+  94  * DAILYTIMEBRACKET / lh: It gives indication (by successive numerical
+  95  * values) of how many parts the day is split into (e.g. night, morning,
+  96  * afternoon, evening) and in which order these parts are sorted.  This set
+  97  * is needed if storage facilities are included in the model.
+  98  set DAILYTIMEBRACKET;
+  99  alias (lh,DAILYTIMEBRACKET,lhlh);
+ 100   
+ 101  * STORAGE / s: It includes storage facilities in the model.
+ 102  set STORAGE;
+ 103  alias (s,STORAGE);
+ 104   
+ 105  * SUBSETS TO CHARACTERIZE TECHNOLOGIES AND FUEL (FOR REPORTING)
+ 106  set power_plants(TECHNOLOGY);
+ 107  set storage_plants(TECHNOLOGY);
+ 108  set fuel_transformation(TECHNOLOGY);
+ 109  set appliances(TECHNOLOGY);
+ 110  set unmet_demand(TECHNOLOGY);
+ 111  set transport(TECHNOLOGY);
+ 112  set primary_imports(TECHNOLOGY);
+ 113  set secondary_imports(TECHNOLOGY);
+ 114  set fuel_production(TECHNOLOGY);
+ 115  set fuel_production_fict(TECHNOLOGY); #fictional technologies (e.g. IMPORT nodes)
+****                                        $409
+**** 409  Unrecognizable item - skip to find a new statement
+****        looking for a ';' or a key word to get started again
+ 116  set secondary_production(TECHNOLOGY);
+ 117  set renewable_tech(TECHNOLOGY);
+ 118   
+ 119  #Characterize fuels
+****  $409
+**** 409  Unrecognizable item - skip to find a new statement
+****        looking for a ';' or a key word to get started again
+ 120  set primary_fuel(FUEL);
+ 121  set secondary_carrier(FUEL);
+ 122  set final_demand(FUEL);
+ 123  set renewable_fuel(FUEL);
+ 124   
+ 125   
+ 126  *------------------------------------------------------------------------
+ 127  * PARAMETERS
+ 128  *------------------------------------------------------------------------
+ 129   
+ 130   
+ 131  *------------------------------------------------------------------------
+ 132  * * Global
+ 133  *------------------------------------------------------------------------
+ 134   
+ 135  * YearSplit[l,y]: Duration of a modelled time slice, expressed as a
+ 136  * fraction of the year. The sum of each entry over one modelled year
+ 137  * should equal 1.
+ 138  parameter YearSplit(TIMESLICE,YEAR);
+ 139   
+ 140  * DiscountRate[r]: Region specific value for the discount rate, expressed
+ 141  * in decimals (e.g. 0.05)
+ 142  parameter DiscountRate(REGION);
+ 143   
+ 144  * DaySplit[lh,y]: Length of one DailyTimeBracket in one specific day as a
+ 145  * fraction of the year (e.g., when distinguishing between days and night:
+ 146  * 12h/(24h*365d)).
+ 147  parameter DaySplit(YEAR,DAILYTIMEBRACKET);
+ 148   
+ 149  * Conversionls[l,ls]: Binary parameter linking one TimeSlice to a certain
+ 150  * Season. It has value 0 if the TimeSlice does not pertain to the specific
+ 151  * season, 1 if it does.
+ 152  parameter Conversionls(TIMESLICE,SEASON);
+ 153   
+ 154  * Conversionld[ld,l]: Binary parameter linking one TimeSlice to a certain
+ 155  * DayType. It has value 0 if the TimeSlice does not pertain to the
+ 156  * specific DayType, 1 if it does.
+ 157  parameter Conversionld(TIMESLICE,DAYTYPE);
+ 158   
+ 159  * Conversionlh[lh,l]: Binary parameter linking one TimeSlice to a certain
+ 160  * DaylyTimeBracket. It has value 0 if the TimeSlice does not pertain to
+ 161  * the specific DaylyTimeBracket, 1 if it does.
+ 162  parameter Conversionlh(TIMESLICE,DAILYTIMEBRACKET);
+ 163   
+ 164  * DaysInDayType[ls,ld,y]: Number of days for each day type, within one
+ 165  * week (natural number, ranging from 1 to 7)
+ 166  parameter DaysInDayType(YEAR,SEASON,DAYTYPE);
+ 167   
+ 168  * TradeRoute[r,rr,f,y]: Binary parameter defining the links between region
+ 169  * r and region rr, to enable or disable trading of a specific
+ 170  * commodity. It has value 1 when two regions are linked, 0 otherwise
+ 171  parameter TradeRoute(REGION,rr,FUEL,YEAR);
+ 172   
+ 173  * DepreciationMethod[r]: Binary parameter defining the type of
+ 174  * depreciation to be applied. It has value 1 for sinking fund
+ 175  * depreciation, value 2 for straight-line depreciation.
+ 176  parameter DepreciationMethod(REGION);
+ 177   
+ 178   
+ 179   
+ 180  *------------------------------------------------------------------------
+ 181  * * Demand
+ 182  *------------------------------------------------------------------------
+ 183   
+ 184  * SpecifiedAnnualDemand[r,f,y]: Total specified demand for the year,
+ 185  * linked to a specific 'time of use' during the year.
+ 186  parameter SpecifiedAnnualDemand(REGION,FUEL,YEAR);
+ 187   
+ 188  * SpecifiedDemandProfile[r,f,l,y]: Annual fraction of energy-service or
+ 189  * commodity demand that is required in each time slice. For each year, all
+ 190  * the defined SpecifiedDemandProfile input values should sum up to 1.
+ 191  parameter SpecifiedDemandProfile(REGION,FUEL,TIMESLICE,YEAR);
+ 192   
+ 193  * AccumulatedAnnualDemand[r,f,y]: Accumulated Demand for a certain
+ 194  * commodity in one specific year. It cannot be defined for a commodity if
+ 195  * its SpecifiedAnnualDemand for the same year is already defined and vice
+ 196  * versa.
+ 197  parameter AccumulatedAnnualDemand(REGION,FUEL,YEAR);
+ 198   
+ 199   
+ 200   
+ 201  *------------------------------------------------------------------------
+ 202  * * Performance
+ 203  *------------------------------------------------------------------------
+ 204   
+ 205  * CapacityToActivityUnit[r,t]: Conversion factor relating the energy that
+ 206  * would be produced when one unit of capacity is fully used in one year.
+ 207  parameter CapacityToActivityUnit(REGION,TECHNOLOGY);
+ 208   
+ 209  * CapacityFactor[r,t,l,y]: Capacity available per each TimeSlice expressed
+ 210  * as a fraction of the total installed capacity, with values ranging from
+ 211  * 0 to 1. It gives the possibility to account for forced outages.
+ 212  parameter CapacityFactor(REGION,TECHNOLOGY,TIMESLICE,YEAR);
+ 213   
+ 214  * AvailabilityFactor[r,t,y]: Maximum time a technology can run in the
+ 215  * whole year, as a fraction of the year ranging from 0 to 1. It gives the
+ 216  * possibility to account for planned outages.
+ 217  parameter AvailabilityFactor(REGION,TECHNOLOGY,YEAR);
+ 218   
+ 219  * OperationalLife[r,t]: Useful lifetime of a technology, expressed in
+ 220  * years.
+ 221  parameter OperationalLife(REGION,TECHNOLOGY);
+ 222   
+ 223  parameter ContinousDepreciation(REGION,TECHNOLOGY);
+ 224   
+ 225  * ResidualCapacity[r,t,y]: Remained capacity available from before the
+ 226  * modelling period.
+ 227  parameter ResidualCapacity(REGION,TECHNOLOGY,YEAR);
+ 228   
+ 229  * InputActivityRatio[r,t,f,m,y]: Rate of use of a commodity by a
+ 230  * technology, as a ratio of the rate of activity.
+ 231  parameter InputActivityRatio(REGION,TECHNOLOGY,FUEL,MODE_OF_OPERATION,YEAR);
+ 232   
+ 233  * OutputActivityRatio[r,t,f,m,y]: Rate of commodity output from a
+ 234  * technology, as a ratio of the rate of activity.
+ 235  parameter OutputActivityRatio(REGION,TECHNOLOGY,FUEL,MODE_OF_OPERATION,YEAR);
+ 236   
+ 237   
+ 238  *------------------------------------------------------------------------
+ 239  * * Technology costs
+ 240  *------------------------------------------------------------------------
+ 241   
+ 242  * CapitalCost[r,t,y]: Capital investment cost of a technology, per unit of
+ 243  * capacity.
+ 244  parameter CapitalCost(REGION,TECHNOLOGY,YEAR);
+ 245   
+ 246  * VariableCost[r,t,m,y]: Cost of a technology for a given mode of
+ 247  * operation (Variable O&M cost), per unit of activity.
+ 248  parameter VariableCost(REGION,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+ 249   
+ 250  * FixedCost[r,t,y]: Fixed O&M cost of a technology, per unit of capacity.
+ 251  parameter FixedCost(REGION,TECHNOLOGY,YEAR);
+ 252   
+ 253   
+ 254   
+ 255  *------------------------------------------------------------------------
+ 256  * * Storage parameters
+ 257  *------------------------------------------------------------------------
+ 258   
+ 259  * TechnologyToStorage[r,t,s,m]: Binary parameter linking a technology to
+ 260  * the storage facility it charges. It has value 1 if the technology and
+ 261  * the storage facility are linked, 0 otherwise.
+ 262  parameter TechnologyToStorage(REGION,MODE_OF_OPERATION,TECHNOLOGY,STORAGE);
+ 263   
+ 264  * TechnologyFromStorage[r,t,s,m]: Binary parameter linking a storage
+ 265  * facility to the technology it feeds. It has value 1 if the technology
+ 266  * and the storage facility are linked, 0 otherwise.
+ 267  parameter TechnologyFromStorage(REGION,MODE_OF_OPERATION,TECHNOLOGY,STORAGE);
+ 268   
+ 269  * StorageLevelStart[r,s]: Level of storage at the beginning of first
+ 270  * modelled year, in units of activity.
+ 271  parameter StorageLevelStart(REGION,STORAGE);
+ 272   
+ 273  * StorageMaxChargeRate[r,s]: Maximum charging rate for the storage, in
+ 274  * units of activity per year.
+ 275  parameter StorageMaxChargeRate(REGION,STORAGE);
+ 276   
+ 277  * StorageMaxDischargeRate[r,s]: Maximum discharging rate for the storage,
+ 278  * in units of activity per year.
+ 279  parameter StorageMaxDischargeRate(REGION,STORAGE);
+ 280   
+ 281  * MinStorageCharge[r,s,y]: It sets a lower bound to the amount of energy
+ 282  * stored, as a fraction of the maximum, with a number reanging between 0
+ 283  * and 1. The storage facility cannot be emptied below this level.
+ 284  parameter MinStorageCharge(REGION,STORAGE,YEAR);
+ 285   
+ 286  * OperationalLifeStorage[r,s]: Useful lifetime of the storage facility.
+ 287  parameter OperationalLifeStorage(REGION,STORAGE);
+ 288   
+ 289  * CapitalCostStorage[r,s,y]: Investment costs of storage additions,
+ 290  * defined per unit of storage capacity.
+ 291  parameter CapitalCostStorage(REGION,STORAGE,YEAR);
+ 292   
+ 293  * ResidualStorageCapacity[r,s,y]: Exogenously defined storage capacities.
+ 294  parameter ResidualStorageCapacity(REGION,STORAGE,YEAR);
+ 295   
+ 296   
+ 297   
+ 298  *------------------------------------------------------------------------
+ 299  * * Capacity constraints
+ 300  *------------------------------------------------------------------------
+ 301   
+ 302  * CapacityOfOneTechnologyUnit[r,t,y]: Capacity of one new unit of a
+ 303  * technology. In case the user sets this parameter, the related technology
+ 304  * will be installed only in batches of the specified capacity and the
+ 305  * problem will turn into a Mixed Integer Linear Problem.
+ 306  parameter CapacityOfOneTechnologyUnit(REGION,TECHNOLOGY,YEAR);
+ 307   
+ 308  * TotalAnnualMaxCapacity[r,t,y]: Total maximum existing (residual plus
+ 309  * cumulatively installed) capacity allowed for a technology in a specified
+ 310  * year.
+ 311  parameter TotalAnnualMaxCapacity(REGION,TECHNOLOGY,YEAR);
+ 312   
+ 313  * TotalAnnualMinCapacity[r,t,y]: Total minimum existing (residual plus
+ 314  * cumulatively installed) capacity allowed for a technology in a specified
+ 315  * year.
+ 316  parameter TotalAnnualMinCapacity(REGION,TECHNOLOGY,YEAR);
+ 317   
+ 318   
+ 319   
+ 320  *------------------------------------------------------------------------
+ 321  * * Investment constraints
+ 322  *------------------------------------------------------------------------
+ 323   
+ 324   
+ 325  * TotalAnnualMaxCapacityInvestment[r,t,y]: Maximum capacity of a
+ 326  * technology, expressed in power units.
+ 327  parameter TotalAnnualMaxCapacityInvestment(REGION,TECHNOLOGY,YEAR);
+ 328   
+ 329  * TotalAnnualMinCapacityInvestment[r,t,y]: Minimum capacity of a
+ 330  * technology, expressed in power units.
+ 331  parameter TotalAnnualMinCapacityInvestment(REGION,TECHNOLOGY,YEAR);
+ 332   
+ 333   
+ 334  *------------------------------------------------------------------------
+ 335  * * Activity constraints
+ 336  *------------------------------------------------------------------------
+ 337   
+ 338   
+ 339  * TotalTechnologyAnnualActivityUpperLimit[r,t,y]: Total maximum level of
+ 340  * activity allowed for a technology in one year.
+ 341  parameter TotalTechnologyAnnualActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
+ 342   
+ 343  * TotalTechnologyAnnualActivityLowerLimit[r,t,y]: Total minimum level of
+ 344  * activity allowed for a technology in one year.
+ 345  parameter TotalTechnologyAnnualActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
+ 346   
+ 347  * TotalTechnologyModelPeriodActivityUpperLimit[r,t]: Total maximum level
+ 348  * of activity allowed for a technology in the entire modelled period.
+ 349  parameter TotalTechnologyModelPeriodActivityUpperLimit(REGION,TECHNOLOGY);
+ 350   
+ 351  * TotalTechnologyModelPeriodActivityLowerLimit[r,t]: Total minimum level
+ 352  * of activity allowed for a technology in the entire modelled period.
+ 353  parameter TotalTechnologyModelPeriodActivityLowerLimit(REGION,TECHNOLOGY);
+ 354   
+ 355   
+ 356  *------------------------------------------------------------------------
+ 357  * * Reserve margin
+ 358  *------------------------------------------------------------------------
+ 359   
+ 360  * ReserveMarginTagTechnology[r,t,y]: Binary parameter tagging the
+ 361  * technologies that are allowed to contribute to the reserve margin. It
+ 362  * has value 1 for the technologies allowed, 0 otherwise.
+ 363  parameter ReserveMarginTagTechnology(REGION,TECHNOLOGY,YEAR);
+ 364   
+ 365  * ReserveMarginTagFuel[r,f,y]: Binary parameter tagging the fuels to which
+ 366  * the reserve margin applies. It has value 1 if the reserve margin applies
+ 367  * to the fuel, 0 otherwise.
+ 368  parameter ReserveMarginTagFuel(REGION,FUEL,YEAR);
+ 369   
+ 370  * ReserveMargin[r,y]: Minimum level of the reserve margin required to be
+ 371  * provided for all the tagged commodities, by the tagged technologies. If
+ 372  * no reserve margin is required, the parameter will have value 1; if, for
+ 373  * instance, 20% reserve margin is required, the parameter will have value
+ 374  * 1.2.
+ 375  parameter ReserveMargin(REGION,YEAR);
+ 376   
+ 377   
+ 378   
+ 379  *------------------------------------------------------------------------
+ 380  * * RE generation target
+ 381  *------------------------------------------------------------------------
+ 382   
+ 383  * RETagTechnology[r,t,y]: Binary parameter tagging the renewable
+ 384  * technologies that must contribute to reaching the indicated minimum
+ 385  * renewable production target. It has value 1 for thetechnologies
+ 386  * contributing, 0 otherwise.
+ 387  parameter RETagTechnology(REGION,TECHNOLOGY,YEAR);
+ 388   
+ 389  * RETagFuel[r,f,y]: Binary parameter tagging the fuels to which the
+ 390  * renewable target applies to. It has value 1 if the target applies, 0
+ 391  * otherwise.
+ 392  parameter RETagFuel(REGION,FUEL,YEAR);
+ 393   
+ 394  * REMinProductionTarget[r,y]: Minimum ratio of all renewable commodities
+ 395  * tagged in the RETagCommodity parameter, to be produced by the
+ 396  * technologies tagged with the RETechnology parameter.
+ 397  parameter REMinProductionTarget(REGION,YEAR);
+ 398   
+ 399   
+ 400  *------------------------------------------------------------------------
+ 401  * * Emissions & Penalties
+ 402  *------------------------------------------------------------------------
+ 403   
+ 404  * EmissionActivityRatio[r,t,e,m,y]: Emission factor of a technology per
+ 405  * unit of activity, per mode of operation.
+ 406  parameter EmissionActivityRatio(REGION,TECHNOLOGY,EMISSION,MODE_OF_OPERATION,YEAR);
+ 407   
+ 408  * EmissionsPenalty[r,e,y]: Penalty per unit of emission.
+ 409  parameter EmissionsPenalty(REGION,EMISSION,YEAR);
+ 410   
+ 411  * AnnualExogenousEmission[r,e,y]: It allows the user to account for
+ 412  * additional annual emissions, on top of those computed endogenously by
+ 413  * the model (e.g. emissions generated outside the region).
+ 414  parameter AnnualExogenousEmission(REGION,EMISSION,YEAR);
+ 415   
+ 416  * AnnualEmissionLimit[r,e,y]: Annual upper limit for a specific emission
+ 417  * generated in the whole modelled region.
+ 418  parameter AnnualEmissionLimit(REGION,EMISSION,YEAR);
+ 419   
+ 420  * ModelPeriodExogenousEmission[r,e]: It allows the user to account for
+ 421  * additional emissions over the entire modelled period, on top of those
+ 422  * computed endogenously by the model (e.g. generated outside the region).
+ 423  parameter ModelPeriodExogenousEmission(REGION,EMISSION);
+ 424   
+ 425  * ModelPeriodEmissionLimit[r,e]: Annual upper limit for a specific
+ 426  * emission generated in the whole modelled region, over the entire
+ 427  * modelled period.
+ 428  parameter ModelPeriodEmissionLimit(REGION,EMISSION);
+ 429   
+ 430   
+ 431   
+ 432   
+ 433  *------------------------------------------------------------------------
+ 434  * VARIABLES
+ 435  *------------------------------------------------------------------------
+ 436   
+ 437   
+ 438   
+ 439  *------------------------------------------------------------------------
+ 440  * * Demand
+ 441  *------------------------------------------------------------------------
+ 442   
+ 443  * RateOfDemand[r,l,f,y]>=0: Intermediate variable. It represents the
+ 444  * energy that would be demanded in one time slice l if the latter lasted
+ 445  * the whole year. It is a function of the parameters SpecifiedAnnualDemand
+ 446  * and SpecifiedDemandProfile. [Energy (per year)]
+ 447  positive variable RateOfDemand(REGION,TIMESLICE,FUEL,YEAR);
+ 448   
+ 449  * Demand[r,l,f,y]>=0: Demand for one fuel in one time slice. [Energy]
+ 450  positive variable Demand(REGION,TIMESLICE,FUEL,YEAR);
+ 451   
+ 452   
+ 453   
+ 454  *------------------------------------------------------------------------
+ 455  * * Storage
+ 456  *------------------------------------------------------------------------
+ 457   
+ 458  * RateOfStorageCharge[r,s,ls,ld,lh,y]: Intermediate variable. It
+ 459  * represents the commodity that would be charged to the storage facility s
+ 460  * in one time slice if the latter lasted the whole year. It is a function
+ 461  * of the RateOfActivity and the parameter TechnologyToStorage. [Energy
+ 462  * (per year)]
+ 463  free variable  RateOfStorageCharge(REGION,STORAGE,SEASON,DAYTYPE,DAILYTIMEBRACKET,YEAR);
+ 464   
+ 465  * RateOfStorageDischarge[r,s,ls,ld,lh,y]: Intermediate variable. It
+ 466  * represents the commodity that would be discharged from storage facility
+ 467  * s in one time slice if the latter lasted the whole year. It is a
+ 468  * function of the RateOfActivity and the parameter
+ 469  * TechnologyFromStorage. [Energy (per year)]
+ 470  free variable  RateOfStorageDischarge(REGION,STORAGE,SEASON,DAYTYPE,DAILYTIMEBRACKET,YEAR);
+ 471   
+ 472  * NetChargeWithinYear[r,s,ls,ld,lh,y]: Net quantity of commodity charged
+ 473  * to storage facility s in year y. It is a function of the
+ 474  * RateOfStorageCharge and the RateOfStorageDischarge and it can be
+ 475  * negative. [Energy]
+ 476  free variable  NetChargeWithinYear(REGION,STORAGE,SEASON,DAYTYPE,DAILYTIMEBRACKET,YEAR);
+ 477   
+ 478  * NetChargeWithinDay[r,s,ls,ld,lh,y]: Net quantity of commodity charged to
+ 479  * storage facility s in daytype ld. It is a function of the
+ 480  * RateOfStorageCharge and the RateOfStorageDischarge and can be
+ 481  * negative. [Energy]
+ 482  free variable  NetChargeWithinDay(REGION,STORAGE,SEASON,DAYTYPE,DAILYTIMEBRACKET,YEAR);
+ 483   
+ 484  * StorageLevelYearStart[r,s,y]>=0: Level of stored commodity in storage
+ 485  * facility s in the first time step of year y. [Energy]
+ 486  positive variable StorageLevelYearStart(REGION,STORAGE,YEAR);
+ 487   
+ 488  * StorageLevelYearFinish[r,s,y]>=0: Level of stored commodity in storage
+ 489  * facility s in the last time step of year y. [Energy]
+ 490  positive variable StorageLevelYearFinish(REGION,STORAGE,YEAR);
+ 491   
+ 492  * StorageLevelSeasonStart[r,s,ls,y]>=0: Level of stored commodity in
+ 493  * storage facility s in the first time step of season ls. [Energy]
+ 494  positive variable StorageLevelSeasonStart(REGION,STORAGE,SEASON,YEAR);
+ 495   
+ 496  * StorageLevelDayTypeStart[r,s,ls,ld,y]>=0: Level of stored commodity in
+ 497  * storage facility s in the first time step of daytype ld. [Energy]
+ 498  positive variable StorageLevelDayTypeStart(REGION,STORAGE,SEASON,DAYTYPE,YEAR);
+ 499   
+ 500  * StorageLevelDayTypeFinish[r,s,ls,ld,y]>=0: Level of stored commodity in
+ 501  * storage facility s in the last time step of daytype ld. [Energy]
+ 502  positive variable StorageLevelDayTypeFinish(REGION,STORAGE,SEASON,DAYTYPE,YEAR);
+ 503   
+ 504  * StorageLowerLimit[r,s,y]>=0: Minimum allowed level of stored commodity
+ 505  * in storage facility s, as a function of the storage capacity and the
+ 506  * user-defined MinStorageCharge ratio. [Energy]
+ 507  positive variable StorageLowerLimit(REGION,STORAGE,YEAR);
+ 508   
+ 509  * StorageUpperLimit[r,s,y]>=0: Maximum allowed level of stored commodity
+ 510  * in storage facility s. It corresponds to the total existing capacity of
+ 511  * storage facility s (summing newly installed and pre-existing
+ 512  * capacities). [Energy]
+ 513  positive variable StorageUpperLimit(REGION,STORAGE,YEAR);
+ 514   
+ 515  * AccumulatedNewStorageCapacity[r,s,y]>=0: Cumulative capacity of newly
+ 516  * installed storage from the beginning of the time domain to year
+ 517  * y. [Energy]
+ 518  positive variable AccumulatedNewStorageCapacity(REGION,STORAGE,YEAR);
+ 519   
+ 520  * NewStorageCapacity[r,s,y]>=0: Capacity of newly installed storage in
+ 521  * year y. [Energy]
+ 522  positive variable NewStorageCapacity(REGION,STORAGE,YEAR);
+ 523   
+ 524  * CapitalInvestmentStorage[r,s,y]>=0: Undiscounted investment in new
+ 525  * capacity for storage facility s. Derived from the NewStorageCapacity and
+ 526  * the parameter CapitalCostStorage. [Monetary units]
+ 527  positive variable CapitalInvestmentStorage(REGION,STORAGE,YEAR);
+ 528   
+ 529  * DiscountedCapitalInvestmentStorage[r,s,y]>=0: Investment in new capacity
+ 530  * for storage facility s, discounted through the parameter
+ 531  * DiscountRate. [Monetary units]
+ 532  positive variable DiscountedCapitalInvestmentStorage(REGION,STORAGE,YEAR);
+ 533   
+ 534  * SalvageValueStorage[r,s,y]>=0: Salvage value of storage facility s in
+ 535  * year y, as a function of the parameters OperationalLifeStorage and
+ 536  * DepreciationMethod. [Monetary units]
+ 537  positive variable SalvageValueStorage(REGION,STORAGE,YEAR);
+ 538   
+ 539  * DiscountedSalvageValueStorage[r,s,y]>=0: Salvage value of storage
+ 540  * facility s, discounted through the parameter DiscountRate. [Monetary
+ 541  * units]
+ 542  positive variable DiscountedSalvageValueStorage(REGION,STORAGE,YEAR);
+ 543   
+ 544  * TotalDiscountedStorageCost[r,s,y]>=0: Difference between the discounted
+ 545  * capital investment in new storage facilities and the salvage value in
+ 546  * year y. [Monetary units]
+ 547  positive variable TotalDiscountedStorageCost(REGION,STORAGE,YEAR);
+ 548   
+ 549   
+ 550  *------------------------------------------------------------------------
+ 551  * * Capacity variables
+ 552  *------------------------------------------------------------------------
+ 553   
+ 554  * NumberOfNewTechnologyUnits[r,t,y]>=0, integer: Number of newly installed
+ 555  * units of technology t in year y, as a function of the parameter
+ 556  * CapacityOfOneTechnologyUnit. [No unit]
+ 558   
+ 559  * NewCapacity[r,t,y]>=0: Newly installed capacity of technology t in year
+ 560  * y. [Power]
+ 561  positive variable NewCapacity(REGION,TECHNOLOGY,YEAR);
+ 562   
+ 563  * AccumulatedNewCapacity[r,t,y]>=0: Cumulative newly installed capacity of
+ 564  * technology t from the beginning of the time domain to year y. [Power]
+ 565  positive variable AccumulatedNewCapacity(REGION,TECHNOLOGY,YEAR);
+ 566   
+ 567  * TotalCapacityAnnual[r,t,y]>=0: Total existing capacity of technology t
+ 568  * in year y (sum of cumulative newly installed and pre-existing
+ 569  * capacity). [Power]
+ 570  positive variable TotalCapacityAnnual(REGION,TECHNOLOGY,YEAR);
+ 571   
+ 572   
+ 573  *------------------------------------------------------------------------
+ 574  * * Activity
+ 575  *------------------------------------------------------------------------
+ 576   
+ 577  * RateOfActivity[r,l,t,m,y] >=0: Intermediate variable. It represents the
+ 578  * activity of technology t in one mode of operation and in time slice l,
+ 579  * if the latter lasted the whole year. [Energy (per year)]
+ 580  positive variable RateOfActivity(REGION,TIMESLICE,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+ 581  * RateOfTotalActivity[r,t,l,y] >=0: Sum of the RateOfActivity of a
+ 582  * technology over the modes of operation. [Energy (per year)]
+ 583  positive variable RateOfTotalActivity(REGION,TIMESLICE,TECHNOLOGY,YEAR);
+ 584  * TotalTechnologyAnnualActivity[r,t,y] >=0: Total annual activity of
+ 585  * technology t. [Energy]
+ 586   
+ 587  * TotalTechnologyAnnualActivity[r,t,y] >=0: Total annual activity of
+ 588  * technology t. [Energy]
+ 589  positive variable TotalTechnologyAnnualActivity(REGION,TECHNOLOGY,YEAR);
+ 590   
+ 591  * TotalAnnualTechnologyActivityByMode[r,t,m,y] >=0: Annual activity of
+ 592  * technology t in mode of operation m. [Energy]
+ 593  positive variable TotalAnnualTechnologyActivityByMode(REGION,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+ 594   
+ 595  * RateOfProductionByTechnologyByMode[r,l,t,m,f,y] >=0: Intermediate variable. It represents the quantity of fuel f that technology t would produce in one mode of operation and in time slice l, if the latter lasted the whole year. It is a function of the variable RateOfActivity and the parameter OutputActivityRatio. [Energy (per year)]
+ 596  positive variable RateOfProductionByTechnologyByMode(REGION,TIMESLICE,TECHNOLOGY,MODE_OF_OPERATION,FUEL,YEAR);
+ 597   
+ 598  * RateOfProductionByTechnology[r,l,t,f,y] >=0: Sum of the
+ 599  * RateOfProductionByTechnologyByMode over the modes of operation. [Energy
+ 600  * (per year)]
+ 601  positive variable RateOfProductionByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+ 602   
+ 603  * ProductionByTechnology[r,l,t,f,y] >=0: Production of fuel f by
+ 604  * technology t in time slice l. [Energy]
+ 605  positive variable ProductionByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+ 606   
+ 607  * ProductionByTechnologyAnnual[r,t,f,y] >=0: Annual production of fuel f
+ 608  * by technology t. [Energy]
+ 609  positive variable ProductionByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
+ 610   
+ 611  * RateOfProduction[r,l,f,y] >=0: Sum of the RateOfProductionByTechnology
+ 612  * over all the technologies. [Energy (per year)]
+ 613  positive variable RateOfProduction(REGION,TIMESLICE,FUEL,YEAR);
+ 614   
+ 615  * Production[r,l,f,y] >=0: Total production of fuel f in time slice l. It
+ 616  * is the sum of the ProductionByTechnology over all technologies. [Energy]
+ 617  positive variable Production(REGION,TIMESLICE,FUEL,YEAR);
+ 618   
+ 619  * RateOfUseByTechnologyByMode[r,l,t,m,f,y] >=0: Intermediate variable. It
+ 620  * represents the quantity of fuel f that technology t would use in one
+ 621  * mode of operation and in time slice l, if the latter lasted the whole
+ 622  * year. It is the function of the variable RateOfActivity and the
+ 623  * parameter InputActivityRatio. [Energy (per year)]
+ 624  positive variable RateOfUseByTechnologyByMode(REGION,TIMESLICE,TECHNOLOGY,MODE_OF_OPERATION,FUEL,YEAR);
+ 625   
+ 626  * RateOfUseByTechnology[r,l,t,f,y] >=0: Sum of the
+ 627  * RateOfUseByTechnologyByMode over the modes of operation. [Energy (per
+ 628  * year)]
+ 629  positive variable RateOfUseByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+ 630   
+ 631  * UseByTechnologyAnnual[r,t,f,y] >=0: Annual use of fuel f by technology
+ 632  * t. [Energy]
+ 633  positive variable UseByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
+ 634   
+ 635  * RateOfUse[r,l,f,y] >=0: Sum of the RateOfUseByTechnology
+ 636  * over all the technologies. [Energy (per year)]
+ 637  positive variable RateOfUse(REGION,TIMESLICE,FUEL,YEAR);
+ 638   
+ 639  * UseByTechnology[r,l,t,f,y] >=0: Use of fuel f by technology t in time
+ 640  * slice l. [Energy]
+ 641  positive variable UseByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+ 642   
+ 643  * Use[r,l,f,y] >=0: Total use of fuel f in time slice l. It is the sum of
+ 644  * the UseByTechnology over all technologies. [Energy]
+ 645  positive variable Use(REGION,TIMESLICE,FUEL,YEAR);
+ 646   
+ 647  * Trade[r,rr,l,f,y]: Quantity of fuel f traded between region r and rr in
+ 648  * time slice l. [Energy]
+ 649  positive variable Trade(REGION,rr,TIMESLICE,FUEL,YEAR);
+ 650   
+ 651  * TradeAnnual[r,rr,f,y]: Annual quantity of fuel f traded between region r
+ 652  * and rr. It is the sum of the variable Trade over all the time
+ 653  * slices. [Energy]
+ 654  positive variable TradeAnnual(REGION,rr,FUEL,YEAR);
+ 655   
+ 656  * ProductionAnnual[r,f,y] >=0: Total annual production of fuel f. It is
+ 657  * the sum of the variable Production over all technologies. [Energy]
+ 658  positive variable ProductionAnnual(REGION,FUEL,YEAR);
+ 659   
+ 660  * UseAnnual[r,f,y] >=0: Total annual use of fuel f. It is the sum of the
+ 661  * variable Use over all technologies. [Energy]
+ 662  positive variable UseAnnual(REGION,FUEL,YEAR);
+ 663   
+ 664   
+ 665  *------------------------------------------------------------------------
+ 666  * * Costing variables
+ 667  *------------------------------------------------------------------------
+ 668   
+ 669  * CapitalInvestment[r,t,y] >=0: Undiscounted investment in new capacity of
+ 670  * technology t. It is a function of the NewCapacity and the parameter
+ 671  * CapitalCost. [Monetary units]
+ 672  positive variable CapitalInvestment(REGION,TECHNOLOGY,YEAR);
+ 673   
+ 674  * DiscountedCapitalInvestment[r,t,y] >=0: Investment in new capacity of
+ 675  * technology t, discounted through the parameter DiscountRate. [Monetary
+ 676  * units]
+ 677  positive variable DiscountedCapitalInvestment(REGION,TECHNOLOGY,YEAR);
+ 678   
+ 679  * SalvageValue[r,t,y] >=0: Salvage value of technology t in year y, as a
+ 680  * function of the parameters OperationalLife and
+ 681  * DepreciationMethod. [Monetary units]
+ 682  positive variable SalvageValue(REGION,TECHNOLOGY,YEAR);
+ 683   
+ 684  * DiscountedSalvageValue[r,t,y] >=0: Salvage value of technology t,
+ 685  * discounted through the parameter DiscountRate. [Monetary units]
+ 686  positive variable DiscountedSalvageValue(REGION,TECHNOLOGY,YEAR);
+ 687   
+ 688  * OperatingCost[r,t,y] >=0: Undiscounted sum of the annual variable and
+ 689  * fixed operating costs of technology t. [Monetary units]
+ 690  positive variable OperatingCost(REGION,TECHNOLOGY,YEAR);
+ 691   
+ 692  * DiscountedOperatingCost[r,t,y] >=0: Annual OperatingCost of technology
+ 693  * t, discounted through the parameter DiscountRate. [Monetary units]
+ 694  positive variable DiscountedOperatingCost(REGION,TECHNOLOGY,YEAR);
+ 695   
+ 696  * AnnualVariableOperatingCost[r,t,y] >=0: Annual variable operating cost
+ 697  * of technology t. Derived from the TotalAnnualTechnologyActivityByMode
+ 698  * and the parameter VariableCost. [Monetary units]
+ 699  positive variable AnnualVariableOperatingCost(REGION,TECHNOLOGY,YEAR);
+ 700   
+ 701  * AnnualFixedOperatingCost[r,t,y] >=0: Annual fixed operating cost of
+ 702  * technology t. Derived from the TotalCapacityAnnual and the parameter
+ 703  * FixedCost. [Monetary units]
+ 704  positive variable AnnualFixedOperatingCost(REGION,TECHNOLOGY,YEAR);
+ 705   
+ 706  * TotalDiscountedCostByTechnology[r,t,y] >=0: Difference between the sum
+ 707  * of discounted operating cost / capital cost / emission penalties and the
+ 708  * salvage value. [Monetary units]
+ 709  positive variable TotalDiscountedCostByTechnology(REGION,TECHNOLOGY,YEAR);
+ 710   
+ 711  * TotalDiscountedCost[r,y] >=0: Sum of the TotalDiscountedCostByTechnology
+ 712  * over all the technologies. [Monetary units]
+ 713  positive variable TotalDiscountedCost(REGION,YEAR);
+ 714   
+ 715  * ModelPeriodCostByRegion[r] >=0: Sum of the TotalDiscountedCost over all
+ 716  * modelled years. [Monetary units]
+ 717  positive variable ModelPeriodCostByRegion(REGION);
+ 718   
+ 719   
+ 720   
+ 721  *------------------------------------------------------------------------
+ 722  * * Reserve margin
+ 723  *------------------------------------------------------------------------
+ 724   
+ 725  * TotalCapacityInReserveMargin[r,y] >=0: Total available capacity of the
+ 726  * technologies required to provide reserve margin. It is derived from the
+ 727  * TotalCapacityAnnual and the parameter
+ 728  * ReserveMarginTagTechnology. [Energy]
+ 729  positive variable TotalCapacityInReserveMargin(REGION,YEAR);
+ 730   
+ 731  * DemandNeedingReserveMargin[r,l,y] >=0: Quantity of fuel produced that is
+ 732  * assigned to a target of reserve margin. Derived from the
+ 733  * RateOfProduction and the parameter ReserveMarginTagFuel. [Energy (per
+ 734  * year)]
+ 735  positive variable DemandNeedingReserveMargin(REGION,TIMESLICE,YEAR);
+ 736   
+ 737   
+ 738  *------------------------------------------------------------------------
+ 739  * * RE generation target
+ 740  *------------------------------------------------------------------------
+ 741   
+ 742  * TotalREProductionAnnual[r,y]: Annual production by all technologies
+ 743  * tagged as renewable in the model. Derived from the
+ 744  * ProductionByTechnologyAnnual and the parameter RETagTechnology. [Energy]
+ 745  free variable TotalREProductionAnnual(REGION,YEAR);
+ 746   
+ 747  * RETotalProductionOfTargetFuelAnnual[r,y]: Annual production of fuels
+ 748  * tagged as renewable in the model. Derived from the RateOfProduction and
+ 749  * the parameter RETagFuel. [Energy]
+ 750  free variable RETotalProductionOfTargetFuelAnnual(REGION,YEAR);
+ 751   
+ 752  * TotalTechnologyModelPeriodActivity[r,t]: Sum of the
+ 753  * TotalTechnologyAnnualActivity over the years of the modelled
+ 754  * period. [Energy]
+ 755  free variable TotalTechnologyModelPeriodActivity(REGION,TECHNOLOGY);
+ 756   
+ 757   
+ 758  *------------------------------------------------------------------------
+ 759  * Emissions
+ 760  *------------------------------------------------------------------------
+ 761   
+ 762  * AnnualTechnologyEmissionByMode[r,t,e,m,y] >=0: Annual emission of agent
+ 763  * e by technology t in mode of operation m. Derived from the
+ 764  * RateOfActivity and the parameter EmissionActivityRatio. [Quantity of
+ 765  * emission]
+ 766  positive variable AnnualTechnologyEmissionByMode(REGION,TECHNOLOGY,EMISSION,MODE_OF_OPERATION,YEAR);
+ 767   
+ 768  * AnnualTechnologyEmission[r,t,e,y] >=0: Sum of the
+ 769  * AnnualTechnologyEmissionByMode over the modes of operation. [Quantity of
+ 770  * emission]
+ 771  positive variable AnnualTechnologyEmission(REGION,TECHNOLOGY,EMISSION,YEAR);
+ 772   
+ 773  * AnnualTechnologyEmissionPenaltyByEmission[r,t,e,y] >=0: Undiscounted
+ 774  * annual cost of emission e by technology t. It is a function of the
+ 775  * AnnualTechnologyEmission and the parameter EmissionPenalty. [Monetary
+ 776  * units]
+ 777  positive variable AnnualTechnologyEmissionPenaltyByEmission(REGION,TECHNOLOGY,EMISSION,YEAR);
+ 778   
+ 779  * AnnualTechnologyEmissionsPenalty[r,t,y] >=0: Total undiscounted annual
+ 780  * cost of all emissions generated by technology t. Sum of the
+ 781  * AnnualTechnologyEmissionPenaltyByEmission over all the emitted
+ 782  * agents. [Monetary units]
+ 783  positive variable AnnualTechnologyEmissionsPenalty(REGION,TECHNOLOGY,YEAR);
+ 784   
+ 785  * DiscountedTechnologyEmissionsPenalty[r,t,y] >=0: Annual cost of
+ 786  * emissions by technology t, discounted through the
+ 787  * DiscountRate. [Monetary units]
+ 788  positive variable DiscountedTechnologyEmissionsPenalty(REGION,TECHNOLOGY,YEAR);
+ 789   
+ 790  * AnnualEmissions[r,e,y] >=0: Sum of the AnnualTechnologyEmission over all
+ 791  * technologies. [Quantity of emission]
+ 792  positive variable AnnualEmissions(REGION,EMISSION,YEAR);
+ 793   
+ 794  * ModelPeriodEmissions[r,e] >=0: Total system emissions of agent e in the
+ 795  * model period, accounting for both the emissions by technologies and the
+ 796  * user defined ModelPeriodExogenousEmission. [Quantity of emission]
+ 797  positive variable ModelPeriodEmissions(EMISSION,REGION);
+ 798   
+ 799   
+
+**** 2 ERROR(S)   0 WARNING(S)
+
+
+COMPILATION TIME     =        0.016 SECONDS      2 MB  46.2.0 ac4adda6 WEX-WEI
+
+
+USER: Course License                                 S240213|0002AO-GEN
+      Fondazione CMCC, Complesso Ecotekne                       DCE3258
+      License for teaching and research at degree granting institutions
+
+
+**** FILE SUMMARY
+
+Input      C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_dec.gms
+Output     C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_dec.lst
+
+**** USER ERROR(S) ENCOUNTERED

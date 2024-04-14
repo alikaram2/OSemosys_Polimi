@@ -1,0 +1,33 @@
+--- Job osemosys_dec.gms Start 04/01/24 14:41:35 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\46\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input "C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_dec.gms"
+    PageSize 0
+    ScrDir "C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\225a\"
+    SysDir C:\GAMS\46\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+Licensee: Course License                                 S240213|0002AO-GEN
+          Fondazione CMCC, Complesso Ecotekne                       DCE3258
+          C:\Users\Ali Sawah\Documents\GAMS\gamslice.txt
+          License Admin: Massimo Tavoni, massimo.tavoni@polimi.it          
+          Course license for use within the course and related course work
+          The evaluation period of the license will expire on Aug 11, 2024
+Processor information: 1 socket(s), 6 core(s), and 12 thread(s) available
+GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
+--- Starting compilation
+--- osemosys_dec.gms(115) 2 Mb 1 Error
+*** Error 409 in C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_dec.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- osemosys_dec.gms(119) 2 Mb 2 Errors
+*** Error 409 in C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Model\osemosys_dec.gms
+    Unrecognizable item - skip to find a new statement
+      looking for a ';' or a key word to get started again
+--- osemosys_dec.gms(799) 2 Mb 2 Errors
+*** Status: Compilation error(s)
+--- Job osemosys_dec.gms Stop 04/01/24 14:41:35 elapsed 0:00:00.011
