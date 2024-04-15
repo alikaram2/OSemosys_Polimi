@@ -1082,5 +1082,17 @@ parameter   FixedCost   /
         MORROCO.DEMRESHEEL.(2015*2050)	        0
 /;
 
+##Parameters Storage
+
+
+## Parameters - Capacity and investment constraints   
+
+## Parameters - Activity constraints  
+
+##  Parameters - Reserve margin
+
+## Parameters - RE Generation Target    
+
+## Parameters - Emissions 
 
 
