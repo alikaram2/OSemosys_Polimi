@@ -43,6 +43,7 @@ Set     TECHNOLOGY      /
         PWRSOL002	    'Solar PV (Distributed with Storage)'
         PWRTRNEXP	    'Electricity Exports'
         BACKSTOP002	    'Backstop for ELC003'
+        BACKSTOP003         'Backstop for ELC004'
         DEMTRAEVC	    'EV Charger'
         DEMTRAMCYELC    'Electric Motorcycle'
         DEMTRACARELC	'Electric Car'
@@ -77,10 +78,6 @@ Set     TECHNOLOGY      /
         DEMRESHEBIO	    'Residential Biomass Heating'
         DEMRESHEOIL	    'Residential Oil Heating'
         DEMRESHEEL	    'Residential Electric Heating Low'
-        ### added tech - Hydrogen
-        PWPEMELECTRO 'PEM Electrolyzers'
-        LITHIUMBAT 'Lithium Ion Battery'
-        FUELCELL 'Fuel cell'
 
     /;
 
@@ -112,6 +109,7 @@ Set     FUEL    /
         ELC001	'Electricity from power plants'
         ELC002	'Electricity after transmission'
         ELC003	'Electricity after distribution'
+        ELC004  'Electricity from Renewables'
         ELCEV	'Electricity for EVs'
         TRAMCY	'Motorcycle Transport Demand'
         TRACAR	'Car Transport Demand'
@@ -144,9 +142,9 @@ Set STORAGE             /GH, BATT/;
 
 # characterize technologies 
 set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002, PWPEMELECTRO /;
-set storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
+set ##storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
 set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
-#set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
+set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
 #set unmet_demand(TECHNOLOGY) / /;
 #set transport(TECHNOLOGY) / TXD, TXE, TXG /;
 #set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
@@ -164,7 +162,9 @@ set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
 #set secondary_carrier(FUEL) / DSL, GSL, ELC /;
 set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
-##Parameters
+*$include "Model/osemosys_init.gms"
+
+##Parameters - Global
 ##JUAN DIEGO
 
 parameter YearSplit(l,y)/
@@ -672,20 +672,167 @@ parameter AccumulatedAnnualDemand(r,f,y) /
 
 #Parameters - Performance
 
-CapacityToActivityUnit(r,t)$power_plants(t) =0;
+CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
 
 CapacityToActivityUnit(r,t)$(CapacityToActivityUnit(r,t) = 0) = 1;
 
-CapacityFactor(r,'COAL',l,y) = 0;
-CapacityFactor(r,'NUCLEAR',l,y) = 0;
-CapacityFactor(r,'HYDRO',l,y) = 0;
-CapacityFactor(r,'STOR_HYDRO',l,y) = 0;
-CapacityFactor(r,'DIESEL_GEN',l,y) = 0;
-CapacityFactor(r,t,l,y)$(CapacityFactor(r,t,l,y) = 0) = 0;
+CapacityFactor(r,'IMPOIL',l,y) = 1;
+CapacityFactor(r,'MINOIL',l,y) = 1;
+CapacityFactor(r,'IMPBIO',l,y) = 1;
+CapacityFactor(r,'MINBIO',l,y) = 1;
+CapacityFactor(r,'IMPCOA',l,y) = 1;
+CapacityFactor(r,'MINCOA',l,y) = 1;
+CapacityFactor(r,'IMPLFO',l,y) = 1;
+CapacityFactor(r,'IMPHFO',l,y) = 1;
+CapacityFactor(r,'UPSREF001',l,y) = 1;
+CapacityFactor(r,'UPSREF002',l,y) = 1;
+CapacityFactor(r,'IMPNGS',l,y) = 1;
+CapacityFactor(r,'MINNGS',l,y)= 1;
+CapacityFactor(r,'MINSOL',l,y) = 1;
+CapacityFactor(r,'MINWND',l,y) = 1;
+CapacityFactor(r,'IMPURN',l,y) = 1;
+CapacityFactor(r,'MINURN',l,y) = 1;
+CapacityFactor(r,'MINGEO',l,y) = 1;
+CapacityFactor(r,'PWRBIO001',l,y) = 0.5;
+CapacityFactor(r,'PWRCOA001',l,y) = 0.85;
+CapacityFactor(r,'PWRGEO',l,y) = 0.794;
+CapacityFactor(r,'PWROHC001',l,y) = 0.8;
+CapacityFactor(r,'PWROHC002',l,y) = 0.8;
+CapacityFactor(r,'PWRNGS001',l,y) = 0.85;
+CapacityFactor(r,'PWRNGS002',l,y) = 0.85;
+CapacityFactor(r,'PWRSOL001',l,y)=0;
+CapacityFactor(r,'PWRCSP001',l,y)=0;
+CapacityFactor(r,'PWRCSP002',l,y)=0.209879298;
+CapacityFactor(r,'PWRHYD001',l,y)=0.209879298;
+CapacityFactor(r,'PWRHYD002',l,y)=0.209879298;
+CapacityFactor(r,'PWRHYD003',l,y)=0.355455864;
+CapacityFactor(r,'PWRWND001',l,y)=0.335275794;
+CapacityFactor(r,'PWRWND002',l,y)=0.85;
+CapacityFactor(r,'PWRNUC',l,y)=1;
+CapacityFactor(r,'PWRTRNIMP',l,y)=1;
+CapacityFactor(r,'BACKSTOP001',l,y)=1;
+CapacityFactor(r,'PWRTRN',l,y)=	1;
+CapacityFactor(r,'PWRDIST',l,y)=0.3;
+CapacityFactor(r,'PWROHC003',l,y)=0;
+CapacityFactor(r,'PWRSOL002',l,y)=1;
+CapacityFactor(r,'PWRTRNEXP',l,y)=1;
+CapacityFactor(r,'BACKSTOP002',l,y)=1;
+CapacityFactor(r,'BACKSTOP003',l,y)=1
+CapacityFactor(r,'DEMTRAEVC',l,y)=1;
+CapacityFactor(r,'DEMTRAMCYELC',l,y)=1;
+CapacityFactor(r,'DEMTRACARELC',l,y)=1;
+CapacityFactor(r,'DEMTRABUSELC',l,y)=1;
+CapacityFactor(r,'DEMTRAMCYGSL',l,y)=1;
+CapacityFactor(r,'DEMTRACARGSL',l,y)=1;
+CapacityFactor(r,'DEMTRABUSGSL',l,y)=1;
+CapacityFactor(r,'DEMINDELC',l,y)=1;
+CapacityFactor(r,'INDENEFFGD',l,y)=1;
+CapacityFactor(r,'INDENEFFDP',l,y)=1;
+CapacityFactor(r,'DEMINDHEEH',l,y)=1;
+CapacityFactor(r,'DEMINDHEEL',l,y)=1;
+CapacityFactor(r,'DEMINDHECOA',l,y)=1;
+CapacityFactor(r,'DEMINDHEOIL',l,y)=1;
+CapacityFactor(r,'DEMINDHEBIO',l,y)=1;
+CapacityFactor(r,'DEMRESELC',l,y)=1;
+CapacityFactor(r,'RESENEFFGD',l,y)=1;
+CapacityFactor(r,'RESENEFFDP',l,y)=1;
+CapacityFactor(r,'DEMRESCKNELC',l,y)=1;
+CapacityFactor(r,'DEMRESCKNOIL',l,y)=1;
+CapacityFactor(r,'DEMRESCKNBIO',l,y)=1;
+CapacityFactor(r,'DEMCOMELC',l,y)=1;
+CapacityFactor(r,'COMENEFFGD',l,y)=1;
+CapacityFactor(r,'COMENEFFDP',l,y)=1;
+CapacityFactor(r,'DEMCOMHEOIL',l,y)=1;
+CapacityFactor(r,'DEMCOMHEBIO',l,y)=1;
+CapacityFactor(r,'DEMCOMHEEL',l,y)=1;
+CapacityFactor(r,'MINHYD',l,y)	=0.209879298;
+CapacityFactor(r,'PWRHYD004',l,y)=0;
+CapacityFactor(r,'PWRSOL001S',l,y)=0.335275794;
+CapacityFactor(r,'PWRWND001S',l,y)=1;
+CapacityFactor(r,'DEMRESHEBIO',l,y)=1;
+CapacityFactor(r,'DEMRESHEOIL',l,y)=1;
+CapacityFactor(r,'DEMRESHEEL',l,y)=1;
+
 
 AvailabilityFactor(r,t,y) = 0;
 
+
 parameter OperationalLife(r,t) /
+        MOROCCO.IMPOIL	        1
+        MOROCCO.MINOIL	        1
+        MOROCCO.IMPBIO	        1
+        MOROCCO.MINBIO	        1
+        MOROCCO.IMPCOA	        1
+        MOROCCO.MINCOA	        1
+        MOROCCO.IMPLFO	        1
+        MOROCCO.IMPHFO	        1
+        MOROCCO.UPSREF001	35
+        MOROCCO.UPSREF002	35
+        MOROCCO.IMPNGS	        1
+        MOROCCO.MINNGS	        1
+        MOROCCO.MINSOL	        1
+        MOROCCO.MINWND	        1
+        MOROCCO.IMPURN	        1
+        MOROCCO.MINURN	        1
+        MOROCCO.MINGEO	        1
+        MOROCCO.PWRBIO001	30
+        MOROCCO.PWRCOA001	35
+        MOROCCO.PWRGEO	        25
+        MOROCCO.PWROHC001	25
+        MOROCCO.PWROHC002	25
+        MOROCCO.PWRNGS001	30
+        MOROCCO.PWRNGS002	25
+        MOROCCO.PWRSOL001	24
+        MOROCCO.PWRCSP001	30
+        MOROCCO.PWRCSP002	30
+        MOROCCO.PWRHYD001	50
+        MOROCCO.PWRHYD002	50
+        MOROCCO.PWRHYD003	50
+        MOROCCO.PWRWND001	25
+        MOROCCO.PWRWND002	25
+        MOROCCO.PWRNUC	        50
+        MOROCCO.PWRTRNIMP	50
+        MOROCCO.BACKSTOP001	80
+        MOROCCO.PWRTRN	        50
+        MOROCCO.PWRDIST	        70
+        MOROCCO.PWROHC003	10
+        MOROCCO.PWRSOL002	24
+        MOROCCO.PWRTRNEXP	50
+        MOROCCO.BACKSTOP002	80
+        MOROCCO.DEMTRAEVC	50
+        MOROCCO.DEMTRAMCYELC	15
+        MOROCCO.DEMTRACARELC	20
+        MOROCCO.DEMTRABUSELC	20
+        MOROCCO.DEMTRAMCYGSL	15
+        MOROCCO.DEMTRACARGSL	20
+        MOROCCO.DEMTRABUSGSL	20
+        MOROCCO.DEMINDELC	10
+        MOROCCO.INDENEFFGD	10
+        MOROCCO.INDENEFFDP	10
+        MOROCCO.DEMINDHEEH	15
+        MOROCCO.DEMINDHEEL	15
+        MOROCCO.DEMINDHECOA	15
+        MOROCCO.DEMINDHEOIL	15
+        MOROCCO.DEMINDHEBIO	15
+        MOROCCO.DEMRESELC	10
+        MOROCCO.RESENEFFGD	10
+        MOROCCO.RESENEFFDP	10
+        MOROCCO.DEMRESCKNELC	10
+        MOROCCO.DEMRESCKNOIL	10
+        MOROCCO.DEMRESCKNBIO	10
+        MOROCCO.DEMCOMELC	10
+        MOROCCO.COMENEFFGD	10
+        MOROCCO.COMENEFFDP	10
+        MOROCCO.DEMCOMHEOIL	15
+        MOROCCO.DEMCOMHEBIO	15
+        MOROCCO.DEMCOMHEEL	15
+        MOROCCO.MINHYD	        1
+        MOROCCO.PWRHYD004	50
+        MOROCCO.PWRSOL001S	24
+        MOROCCO.PWRWND001S	25
+        MOROCCO.DEMRESHEBIO	15
+        MOROCCO.DEMRESHEOIL	15
+        MOROCCO.DEMRESHEEL	15
 
 /;
 
