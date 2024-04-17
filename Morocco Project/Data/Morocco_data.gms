@@ -1431,8 +1431,6 @@ parameter EmissionActivityRatio(r,t,e,m,y) /
   MOROCCO.IMPHFO.EMICO2.1.(2015*2050)  77.4
   MOROCCO.IMPNGS.EMICO2.1.(2015*2050)  56.1
   MOROCCO.MINNGS.EMICO2.1.(2015*2050)  56.1
-
-
 /;
 
 EmissionsPenalty(r,e,y) = 0;
