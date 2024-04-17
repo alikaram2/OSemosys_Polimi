@@ -384,7 +384,7 @@ CapacityFactor(r,'PWROHC003',l,y)=0;
 CapacityFactor(r,'PWRSOL002',l,y)=1;
 CapacityFactor(r,'PWRTRNEXP',l,y)=1;
 CapacityFactor(r,'BACKSTOP002',l,y)=1;
-CapacityFactor(r,'BACKSTOP003',l,y)=1
+CapacityFactor(r,'BACKSTOP003',l,y)=1;
 CapacityFactor(r,'DEMTRAEVC',l,y)=1;
 CapacityFactor(r,'DEMTRAMCYELC',l,y)=1;
 CapacityFactor(r,'DEMTRACARELC',l,y)=1;
@@ -1008,7 +1008,7 @@ parameter InputActivityRatio(r,t,f,m,y) /
         MOROCCO.PWRHYD002.HYD.1.(2015*2050)  1
         MOROCCO.PWRHYD003.HYD.1.(2015*2050)  1
         MOROCCO.PWRWND001.WND.1.(2015*2050)  1
-        MOROCCO.PWRWND002.WND.1(2015*2015)   1
+        MOROCCO.PWRWND002.WND.1.(2015*2050)   1
         MOROCCO.PWRNUC.URN.1.(2015*2050)     3.03
         MOROCCO.PWRTRN.ELC001.1.(2015*2050)	1
         MOROCCO.PWRDIST.ELC002.1.(2015*2050)	1
@@ -1031,7 +1031,7 @@ parameter InputActivityRatio(r,t,f,m,y) /
         MOROCCO.DEMINDHEOIL.LFO.1.(2015*2050)	1.234567901
         MOROCCO.DEMINDHEBIO.BIO.1.(2015*2050)	1.219512195
         MOROCCO.DEMRESELC.ELC003.1.(2015*2050)	1
-        MOROCCO.RESENEFFGD.LC003.1.(2015*2050)	1
+        MOROCCO.RESENEFFGD.ELC003.1.(2015*2050)	1
         MOROCCO.RESENEFFDP.ELC003.1.(2015*2050)	1
         MOROCCO.DEMRESCKNELC.ELC003.1.(2015*2050) 1.05
         MOROCCO.DEMRESCKNOIL.LFO.1.(2015*2050)	1.818
@@ -1170,10 +1170,6 @@ parameter OutputActivityRatio(r,t,f,m,y) /
 
 /;
 
-# By default, assume for imported secondary fuels the same efficiency of the internal refineries
-InputActivityRatio(r,'IMPDSL1','OIL',m,y)$(not OutputActivityRatio(r,'SRE','DSL',m,y) eq 0) = 1/OutputActivityRatio(r,'SRE','DSL',m,y); 
-InputActivityRatio(r,'IMPGSL1','OIL',m,y)$(not OutputActivityRatio(r,'SRE','GSL',m,y) eq 0) = 1/OutputActivityRatio(r,'SRE','GSL',m,y); 
-
 
 ##Capital cost is $/kw
 parameter CapitalCost   /
@@ -1209,7 +1205,7 @@ parameter CapitalCost   /
         MOROCCO.PWRHYD003.(2015*2050)           3000
         MOROCCO.PWRWND001.(2015*2050)           1985
         MOROCCO.PWRWND002.(2015*2050)           5000
-        MOROCCO.PWRNUC..(2015*2050)              6137
+        MOROCCO.PWRNUC.(2015*2050)              6137
         MOROCCO.PWRTRNIMP.(2015*2050)           0
         MOROCCO.BACKSTOP001.(2015*2050)         1e9
         MOROCCO.PWRTRN.(2015*2050)              365

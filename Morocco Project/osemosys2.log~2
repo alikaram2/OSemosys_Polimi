@@ -1,5 +1,5 @@
 
---- Job osemosys.gms Start 04/17/24 21:13:28 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/17/24 21:27:18 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -48,174 +48,7 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- . Morocco_data.gms(387) 3 Mb 9 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     Domain violation for element
---- . Morocco_data.gms(388) 3 Mb 10 Errors
-*** Error 409 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Unrecognizable item - skip to find a new statement
-      looking for a ';' or a key word to get started again
---- . Morocco_data.gms(999) 3 Mb 14 Errors
-*** Error 610 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    At least one embedded value required
-*** Error 161 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Conflicting dimensions in element
-*** Error 334 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal data following a data element - rest ignored
-*** Error 409 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Unrecognizable item - skip to find a new statement
-      looking for a ';' or a key word to get started again
---- . Morocco_data.gms(1000) 3 Mb 15 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1001) 3 Mb 16 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1002) 3 Mb 17 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1003) 3 Mb 18 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1004) 3 Mb 19 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1005) 3 Mb 20 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1006) 3 Mb 21 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1007) 3 Mb 22 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1008) 3 Mb 23 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1009) 3 Mb 24 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1010) 3 Mb 25 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1011) 3 Mb 26 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1012) 3 Mb 27 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1013) 3 Mb 28 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1014) 3 Mb 29 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1015) 3 Mb 30 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1016) 3 Mb 31 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1017) 3 Mb 32 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1018) 3 Mb 33 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1019) 3 Mb 34 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1020) 3 Mb 35 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1021) 3 Mb 36 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1022) 3 Mb 37 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1023) 3 Mb 38 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1024) 3 Mb 39 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1025) 3 Mb 40 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1026) 3 Mb 41 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1027) 3 Mb 42 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1028) 3 Mb 43 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1029) 3 Mb 44 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1030) 3 Mb 45 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1031) 3 Mb 46 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1032) 3 Mb 47 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1033) 3 Mb 48 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1034) 3 Mb 49 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1035) 3 Mb 50 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1036) 3 Mb 51 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1037) 3 Mb 52 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1038) 3 Mb 53 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1039) 3 Mb 54 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1040) 3 Mb 55 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1041) 3 Mb 56 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1042) 3 Mb 57 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1043) 3 Mb 58 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1044) 3 Mb 59 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1045) 3 Mb 60 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1046) 3 Mb 61 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1047) 3 Mb 62 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1048) 3 Mb 63 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1049) 3 Mb 64 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1050) 3 Mb 65 Errors
-*** Error 342 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Illegal suffix syntax - has to start with a letter
---- . Morocco_data.gms(1174) 3 Mb 72 Errors
+--- . Morocco_data.gms(1174) 3 Mb 16 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     Domain violation for element
 *** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
@@ -230,7 +63,7 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     Domain violation for element
---- . Morocco_data.gms(1175) 3 Mb 78 Errors
+--- . Morocco_data.gms(1175) 3 Mb 22 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
@@ -243,105 +76,7 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     Domain violation for element
---- . Morocco_data.gms(1180) 3 Mb 79 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1181) 3 Mb 80 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1182) 3 Mb 81 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1183) 3 Mb 82 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1184) 3 Mb 83 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1185) 3 Mb 84 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1186) 3 Mb 85 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1187) 3 Mb 86 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1188) 3 Mb 87 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1189) 3 Mb 88 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1190) 3 Mb 89 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1191) 3 Mb 90 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1192) 3 Mb 91 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1193) 3 Mb 92 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1194) 3 Mb 93 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1195) 3 Mb 94 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1196) 3 Mb 95 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1197) 3 Mb 96 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1198) 3 Mb 97 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1199) 3 Mb 98 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1200) 3 Mb 99 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1201) 3 Mb 100 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1202) 3 Mb 101 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1203) 3 Mb 102 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1204) 3 Mb 103 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1205) 3 Mb 104 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1206) 3 Mb 105 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1207) 3 Mb 106 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1208) 3 Mb 107 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1209) 3 Mb 108 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1210) 3 Mb 109 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1211) 3 Mb 110 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1212) 3 Mb 112 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
+--- . Morocco_data.gms(1212) 3 Mb 23 Errors
 *** Error 338 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     Unique element expected - symbol was not an element
        and the following text will be skipped until a proper
@@ -362,1012 +97,28 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
        QUOTED elements can contain any character. Single and
        double quotes can be used (starting and ending quote have
        to match).
---- . Morocco_data.gms(1213) 3 Mb 113 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1214) 3 Mb 114 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1215) 3 Mb 115 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1216) 3 Mb 116 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1217) 3 Mb 117 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1218) 3 Mb 118 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1219) 3 Mb 119 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1220) 3 Mb 120 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1221) 3 Mb 121 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1222) 3 Mb 122 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1223) 3 Mb 123 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1224) 3 Mb 124 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1225) 3 Mb 125 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1226) 3 Mb 126 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1227) 3 Mb 127 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1228) 3 Mb 128 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1229) 3 Mb 129 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1230) 3 Mb 130 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1231) 3 Mb 131 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1232) 3 Mb 132 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1233) 3 Mb 133 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1234) 3 Mb 134 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1235) 3 Mb 135 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1236) 3 Mb 136 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1237) 3 Mb 137 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1238) 3 Mb 138 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1239) 3 Mb 139 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1240) 3 Mb 140 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1241) 3 Mb 141 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1242) 3 Mb 142 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1243) 3 Mb 143 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1244) 3 Mb 144 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1245) 3 Mb 145 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1246) 3 Mb 146 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1247) 3 Mb 147 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1248) 3 Mb 148 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1249) 3 Mb 149 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1250) 3 Mb 150 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1251) 3 Mb 151 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1252) 3 Mb 152 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1253) 3 Mb 153 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1254) 3 Mb 154 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1258) 3 Mb 155 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1259) 3 Mb 156 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1260) 3 Mb 157 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1261) 3 Mb 158 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1262) 3 Mb 159 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1263) 3 Mb 160 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1264) 3 Mb 161 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1265) 3 Mb 162 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1266) 3 Mb 163 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1267) 3 Mb 164 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1268) 3 Mb 165 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1269) 3 Mb 166 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1270) 3 Mb 167 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1271) 3 Mb 168 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1272) 3 Mb 169 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1273) 3 Mb 170 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1274) 3 Mb 171 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1275) 3 Mb 172 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1276) 3 Mb 173 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1277) 3 Mb 174 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1278) 3 Mb 175 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1279) 3 Mb 176 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1280) 3 Mb 177 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1281) 3 Mb 178 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1282) 3 Mb 179 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1283) 3 Mb 180 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1284) 3 Mb 181 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1285) 3 Mb 182 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1286) 3 Mb 183 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1287) 3 Mb 184 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1288) 3 Mb 185 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1289) 3 Mb 186 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1290) 3 Mb 187 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1291) 3 Mb 188 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1292) 3 Mb 189 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1293) 3 Mb 190 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1294) 3 Mb 191 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1295) 3 Mb 192 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1296) 3 Mb 193 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1297) 3 Mb 194 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1298) 3 Mb 195 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1299) 3 Mb 196 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1300) 3 Mb 197 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1301) 3 Mb 198 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1302) 3 Mb 199 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1303) 3 Mb 200 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1304) 3 Mb 201 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1305) 3 Mb 202 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1306) 3 Mb 203 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1307) 3 Mb 204 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1308) 3 Mb 205 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1309) 3 Mb 206 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1310) 3 Mb 207 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1311) 3 Mb 208 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1312) 3 Mb 209 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1313) 3 Mb 210 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1314) 3 Mb 211 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1315) 3 Mb 212 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1316) 3 Mb 213 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1317) 3 Mb 214 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1318) 3 Mb 215 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1319) 3 Mb 216 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1320) 3 Mb 217 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1321) 3 Mb 218 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1322) 3 Mb 219 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1323) 3 Mb 220 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1324) 3 Mb 221 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1325) 3 Mb 222 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1326) 3 Mb 223 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1327) 3 Mb 224 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1328) 3 Mb 225 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1329) 3 Mb 226 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1330) 3 Mb 227 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1331) 3 Mb 228 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1332) 3 Mb 229 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1333) 3 Mb 230 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1334) 3 Mb 231 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1335) 3 Mb 232 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1336) 3 Mb 233 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1337) 3 Mb 234 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1338) 3 Mb 235 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1339) 3 Mb 236 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1340) 3 Mb 237 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1341) 3 Mb 238 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1342) 3 Mb 239 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1343) 3 Mb 240 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1344) 3 Mb 241 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1345) 3 Mb 242 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1346) 3 Mb 243 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1347) 3 Mb 244 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1348) 3 Mb 245 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1349) 3 Mb 246 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1350) 3 Mb 247 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1351) 3 Mb 248 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1352) 3 Mb 249 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1353) 3 Mb 250 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1354) 3 Mb 251 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1355) 3 Mb 252 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1356) 3 Mb 253 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1357) 3 Mb 254 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1358) 3 Mb 255 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1359) 3 Mb 256 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1360) 3 Mb 257 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1361) 3 Mb 258 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1362) 3 Mb 259 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1363) 3 Mb 260 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1364) 3 Mb 261 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1365) 3 Mb 262 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1366) 3 Mb 263 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1367) 3 Mb 264 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1368) 3 Mb 265 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1369) 3 Mb 266 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1370) 3 Mb 267 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1371) 3 Mb 268 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1372) 3 Mb 269 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1373) 3 Mb 270 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1374) 3 Mb 271 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1375) 3 Mb 272 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1376) 3 Mb 273 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1377) 3 Mb 274 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1378) 3 Mb 275 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1379) 3 Mb 276 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1380) 3 Mb 277 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1381) 3 Mb 278 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1382) 3 Mb 279 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1383) 3 Mb 280 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1384) 3 Mb 281 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1385) 3 Mb 282 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1386) 3 Mb 283 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1387) 3 Mb 284 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1388) 3 Mb 285 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1389) 3 Mb 286 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1390) 3 Mb 287 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1391) 3 Mb 288 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1392) 3 Mb 289 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1393) 3 Mb 290 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1394) 3 Mb 291 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1395) 3 Mb 292 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1396) 3 Mb 293 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1397) 3 Mb 294 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1398) 3 Mb 295 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1399) 3 Mb 296 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1400) 3 Mb 297 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1401) 3 Mb 298 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1402) 3 Mb 299 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1403) 3 Mb 300 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1404) 3 Mb 301 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1405) 3 Mb 302 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1406) 3 Mb 303 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1407) 3 Mb 304 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1408) 3 Mb 305 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1409) 3 Mb 306 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1410) 3 Mb 307 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1411) 3 Mb 308 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1412) 3 Mb 309 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1413) 3 Mb 310 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1414) 3 Mb 311 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1415) 3 Mb 312 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1416) 3 Mb 313 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1417) 3 Mb 314 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1418) 3 Mb 315 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1419) 3 Mb 316 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1420) 3 Mb 317 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1421) 3 Mb 318 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1422) 3 Mb 319 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1423) 3 Mb 320 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1424) 3 Mb 321 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1425) 3 Mb 322 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1426) 3 Mb 323 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1427) 3 Mb 324 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1428) 3 Mb 325 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1429) 3 Mb 326 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1430) 3 Mb 327 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1431) 3 Mb 328 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1432) 3 Mb 329 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1433) 3 Mb 330 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1434) 3 Mb 331 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1435) 3 Mb 332 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1436) 3 Mb 333 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1437) 3 Mb 334 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1438) 3 Mb 335 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1439) 3 Mb 336 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1440) 3 Mb 337 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1441) 3 Mb 338 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1442) 3 Mb 339 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1443) 3 Mb 340 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1444) 3 Mb 341 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1445) 3 Mb 342 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1446) 3 Mb 343 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1447) 3 Mb 344 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1448) 3 Mb 345 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1449) 3 Mb 346 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1450) 3 Mb 347 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1451) 3 Mb 348 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1452) 3 Mb 349 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1453) 3 Mb 350 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1454) 3 Mb 351 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1455) 3 Mb 352 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1456) 3 Mb 353 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1457) 3 Mb 354 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1458) 3 Mb 355 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1459) 3 Mb 356 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1460) 3 Mb 357 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1461) 3 Mb 358 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1462) 3 Mb 359 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1463) 3 Mb 360 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1464) 3 Mb 361 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1465) 3 Mb 362 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1466) 3 Mb 363 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1467) 3 Mb 364 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1468) 3 Mb 365 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1474) 3 Mb 366 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1475) 3 Mb 367 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1476) 3 Mb 368 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1477) 3 Mb 369 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1478) 3 Mb 370 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1479) 3 Mb 371 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1480) 3 Mb 372 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1481) 3 Mb 373 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1482) 3 Mb 374 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1483) 3 Mb 375 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1484) 3 Mb 376 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1485) 3 Mb 377 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1486) 3 Mb 378 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1487) 3 Mb 379 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1488) 3 Mb 380 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1489) 3 Mb 381 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1490) 3 Mb 382 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1491) 3 Mb 383 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1492) 3 Mb 384 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1493) 3 Mb 385 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1494) 3 Mb 386 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1495) 3 Mb 387 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1496) 3 Mb 388 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1497) 3 Mb 389 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1498) 3 Mb 390 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1499) 3 Mb 391 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1500) 3 Mb 392 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1501) 3 Mb 393 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1502) 3 Mb 394 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1503) 3 Mb 395 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1504) 3 Mb 396 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1505) 3 Mb 397 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1506) 3 Mb 398 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1507) 3 Mb 399 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1508) 3 Mb 400 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1509) 3 Mb 401 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1510) 3 Mb 402 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1511) 3 Mb 403 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1512) 3 Mb 404 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1513) 3 Mb 405 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1514) 3 Mb 406 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1515) 3 Mb 407 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1516) 3 Mb 408 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1517) 3 Mb 409 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1518) 3 Mb 410 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1519) 3 Mb 411 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1520) 3 Mb 412 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1521) 3 Mb 413 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1522) 3 Mb 414 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1523) 3 Mb 415 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1524) 3 Mb 416 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1525) 3 Mb 417 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1526) 3 Mb 418 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1527) 3 Mb 419 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1528) 3 Mb 420 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1529) 3 Mb 421 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1530) 3 Mb 422 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1531) 3 Mb 423 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1532) 3 Mb 424 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1533) 3 Mb 425 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1534) 3 Mb 426 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1535) 3 Mb 427 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1536) 3 Mb 428 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1537) 3 Mb 429 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1538) 3 Mb 430 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1539) 3 Mb 431 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1540) 3 Mb 432 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1541) 3 Mb 433 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1542) 3 Mb 434 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1543) 3 Mb 435 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1544) 3 Mb 436 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1545) 3 Mb 437 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1546) 3 Mb 438 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1547) 3 Mb 439 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1548) 3 Mb 440 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1588) 3 Mb 441 Errors
+--- . Morocco_data.gms(1588) 3 Mb 24 Errors
 *** Error  36 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     '=' or '..' or ':=' or '$=' operator expected
     rest of statement ignored
---- . Morocco_data.gms(1690) 3 Mb 442 Errors
+--- . Morocco_data.gms(1690) 3 Mb 25 Errors
 *** Error  36 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     '=' or '..' or ':=' or '$=' operator expected
     rest of statement ignored
---- . Morocco_data.gms(1781) 3 Mb 443 Errors
+--- . Morocco_data.gms(1781) 3 Mb 26 Errors
 *** Error  36 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
     '=' or '..' or ':=' or '$=' operator expected
     rest of statement ignored
 --- . Morocco_data.gms(1855) 3 Mb
 --- osemosys.gms(37) 3 Mb
---- . compute_data.gms(7) 3 Mb 444 Errors
+--- . compute_data.gms(7) 3 Mb 27 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . compute_data.gms(8) 3 Mb 445 Errors
+--- . compute_data.gms(8) 3 Mb 28 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
@@ -1376,95 +127,95 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
        text of a declaration. Check symbol reference list.
 --- osemosys.gms(39) 3 Mb
 --- . osemosys_equ.gms(657) 3 Mb
---- osemosys.gms(50) 3 Mb 446 Errors
+--- osemosys.gms(50) 3 Mb 29 Errors
 *** Error 257 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
     Solve statement not checked because of previous errors
 --- osemosys.gms(55) 3 Mb
---- . osemosys_res.gms(10) 3 Mb 447 Errors
+--- . osemosys_res.gms(10) 3 Mb 30 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(15) 3 Mb 448 Errors
+--- . osemosys_res.gms(15) 3 Mb 31 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(19) 3 Mb 449 Errors
+--- . osemosys_res.gms(19) 3 Mb 32 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(28) 3 Mb 450 Errors
+--- . osemosys_res.gms(28) 3 Mb 33 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(35) 3 Mb 451 Errors
+--- . osemosys_res.gms(35) 3 Mb 34 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(41) 3 Mb 452 Errors
+--- . osemosys_res.gms(41) 3 Mb 35 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(47) 3 Mb 453 Errors
+--- . osemosys_res.gms(47) 3 Mb 36 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(53) 3 Mb 454 Errors
+--- . osemosys_res.gms(53) 3 Mb 37 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(59) 3 Mb 455 Errors
+--- . osemosys_res.gms(59) 3 Mb 38 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(66) 3 Mb 456 Errors
+--- . osemosys_res.gms(66) 3 Mb 39 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(74) 3 Mb 457 Errors
+--- . osemosys_res.gms(74) 3 Mb 40 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(81) 3 Mb 458 Errors
+--- . osemosys_res.gms(81) 3 Mb 41 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(87) 3 Mb 459 Errors
+--- . osemosys_res.gms(87) 3 Mb 42 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
@@ -1473,7 +224,7 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
        text of a declaration. Check symbol reference list.
 --- . osemosys_res.gms(90) 3 Mb
 --- osemosys.gms(56) 3 Mb
---- . report.gms(49) 3 Mb 461 Errors
+--- . report.gms(49) 3 Mb 44 Errors
 *** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
@@ -1482,19 +233,19 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . report.gms(55) 3 Mb 462 Errors
+--- . report.gms(55) 3 Mb 45 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . report.gms(65) 3 Mb 464 Errors
+--- . report.gms(65) 3 Mb 47 Errors
 *** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Label is unknown
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(70) 3 Mb 466 Errors
+--- . report.gms(70) 3 Mb 49 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
@@ -1503,29 +254,29 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
        text of a declaration. Check symbol reference list.
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(78) 3 Mb 467 Errors
+--- . report.gms(78) 3 Mb 50 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(99) 3 Mb 468 Errors
+--- . report.gms(99) 3 Mb 51 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . report.gms(115) 3 Mb 471 Errors
+--- . report.gms(115) 3 Mb 54 Errors
 *** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Label is unknown
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(126) 3 Mb 473 Errors
+--- . report.gms(126) 3 Mb 56 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
 --- . report.gms(148) 3 Mb
---- osemosys.gms(88) 3 Mb 473 Errors
+--- osemosys.gms(88) 3 Mb 56 Errors
 *** Status: Compilation error(s)
---- Job osemosys.gms Stop 04/17/24 21:13:29 elapsed 0:00:00.032
+--- Job osemosys.gms Stop 04/17/24 21:27:18 elapsed 0:00:00.024
