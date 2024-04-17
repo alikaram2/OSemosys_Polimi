@@ -143,28 +143,28 @@ Set STORAGE             /GH, BATT/;
 set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002, PWPEMELECTRO /;
 set ##storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
 set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
-set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
-#set unmet_demand(TECHNOLOGY) / /;
-#set transport(TECHNOLOGY) / TXD, TXE, TXG /;
-#set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
-#set secondary_imports(TECHNOLOGY) / IMPDSL1, IMPGSL1 /;
+*set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
+*#set unmet_demand(TECHNOLOGY) / /;
+*#set transport(TECHNOLOGY) / TXD, TXE, TXG /;
+*#set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
+*#set secondary_imports(TECHNOLOGY) / IMPDSL1, IMPGSL1 /;
 
-#set renewable_tech(TECHNOLOGY) /HYDRO/; 
-#set renewable_fuel(FUEL) /HYD/; 
+*#set renewable_tech(TECHNOLOGY) /HYDRO/; 
+*#set renewable_fuel(FUEL) /HYD/; 
 
-#set fuel_production(TECHNOLOGY);
-#set fuel_production_fict(TECHNOLOGY) /RIV/;
-#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
+*#set fuel_production(TECHNOLOGY);
+*#set fuel_production_fict(TECHNOLOGY) /RIV/;
+*#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
 
-#Characterize fuels 
-#set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
-#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
-set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
+*#Characterize fuels 
+*#set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
+*#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
+*set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
 *$include "Model/osemosys_init.gms"
 
-##Parameters - Global
-##JUAN DIEGO
+**Parameters - Global
+*JUAN DIEGO
 
 parameter YearSplit(l,y)/
   SPD.(2015*2050)  .125
@@ -1772,18 +1772,14 @@ MOROCCO.PWRWND002.(2015*2022) 0
 
 /;
 
-TotalTechnologyModelPeriodActivityUpperLimit(r,t) = 99999;
-
-TotalTechnologyModelPeriodActivityUpperLimit(r,t) /
+Parameter TotalTechnologyModelPeriodActivityUpperLimit(r,t) /
 MOROCCO.MINOIL 4.16092
 MOROCCO.MINCOA 410.3931942
 MOROCCO.MINNGS 50.95
 
 /;
 
-TotalTechnologyModelPeriodActivityLowerLimit(r,t) = 0;
 
-##  Parameters - Reserve margin
 
 parameter ReserveMarginTagTechnology(r,t,y) /
   MOROCCO.PWRBIO001.(2015*2050)  1
