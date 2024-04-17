@@ -1,5 +1,4 @@
-
---- Job osemosys.gms Start 04/17/24 21:52:08 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/17/24 22:00:05 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -229,4 +228,4 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- . report.gms(148) 3 Mb
 --- osemosys.gms(88) 3 Mb 40 Errors
 *** Status: Compilation error(s)
---- Job osemosys.gms Stop 04/17/24 21:52:08 elapsed 0:00:00.019
+--- Job osemosys.gms Stop 04/17/24 22:00:05 elapsed 0:00:00.019

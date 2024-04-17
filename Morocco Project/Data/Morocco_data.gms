@@ -133,7 +133,7 @@ Set     EMISSION    /
 /;
 
 Set MODE_OF_OPERATION   /   1,2  /;
-Set REGION              /'MOROCCO'/;
+Set REGION              /   MOROCCO /;
 Set SEASON              /1, 2, 3, 4/;
 Set DAILYTIMEBRACKET    /1, 2/;
 Set DAYTYPE             /1/;
@@ -177,7 +177,7 @@ parameter YearSplit(l,y)/
   WN.(2015*2050)  0.125
 /;
 
-DiscountRate(r)=0.1;
+DiscountRate(r) = 0.1;
 
 DaySplit(y,lh)=12/(24*365);
 
