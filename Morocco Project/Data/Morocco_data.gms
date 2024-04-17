@@ -137,12 +137,12 @@ Set REGION              /'MOROCCO'/;
 Set SEASON              /1, 2, 3, 4/;
 Set DAILYTIMEBRACKET    /1, 2/;
 Set DAYTYPE             /1/;
-Set STORAGE             /GH, BATT/;
+*Set STORAGE             /GH, BATT/;
 
-# characterize technologies 
+*# characterize technologies 
 set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002, PWPEMELECTRO /;
-set ##storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
-set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
+*set ##storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
+*set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
 *set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
 *#set unmet_demand(TECHNOLOGY) / /;
 *#set transport(TECHNOLOGY) / TXD, TXE, TXG /;
@@ -167,14 +167,14 @@ set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
 *JUAN DIEGO
 
 parameter YearSplit(l,y)/
-  SPD.(2015*2050)  .125
-  SPN.(2015*2050)  .125
-  SD.(2015*2050)  .125
-  SN.(2015*2050)  .125
-  AD.(2015*2050)  .125
-  AN.(2015*2050)  .125
-  WD.(2015*2050)  .125
-  WN.(2015*2050)  .125
+  SPD.(2015*2050)  0.125
+  SPN.(2015*2050)  0.125
+  SD.(2015*2050)  0.125
+  SN.(2015*2050)  0.125
+  AD.(2015*2050)  0.125
+  AN.(2015*2050)  0.125
+  WD.(2015*2050)  0.125
+  WN.(2015*2050)  0.125
 /;
 
 DiscountRate(r)=0.1;
@@ -220,7 +220,7 @@ TradeRoute(r,rr,f,y)=0;
 
 DepreciationMethod(r)=1;
 
-#PARAMETERS -Demand
+*#PARAMETERS -Demand
 
 parameter SpecifiedAnnualDemand(r,f,y) /
 MOROCCO.INDELC.2015 34.396
@@ -297,10 +297,10 @@ MOROCCO.RESELC.2048 257.044
 MOROCCO.RESELC.2049 264.632
 MOROCCO.RESELC.2050 272.219
 
-##.
-#COMMERCIAL (TRADE) ELECTRICITY IS ASSUMED TO BE NULL (?)
-#According to the IEA, Morocco is a net importer of electricity https://www.iea.org/countries/morocco/electricity
-MOROCCO.COMELC.(2015*2050) 0
+*##.
+*#COMMERCIAL (TRADE) ELECTRICITY IS ASSUMED TO BE NULL (?)
+*#According to the IEA, Morocco is a net importer of electricity https://www.iea.org/countries/morocco/electricity
+*MOROCCO.COMELC.(2015*2050) 0
 
 
 /;
@@ -333,11 +333,11 @@ parameter SpecifiedDemandProfile(r,f,l,y) /
         MOROCCO.COMELC.WD.(2015*2050) 0.121
         MOROCCO.COMELC.WN.(2015*2050) 0.108
  
-#Reported source: Brinkerink     M,     Deane     P     (2020).    PLEXOS
-/;
-## We cannot use the accumulated annual demand
+*Reported source: Brinkerink     M,     Deane     P     (2020).    PLEXOS
+*/;
+*## We cannot use the accumulated annual demand
 
-#Parameters - Performance
+*#Parameters - Performance
 
 CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
 
