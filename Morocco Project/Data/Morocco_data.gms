@@ -506,6 +506,24 @@ parameter OperationalLife(r,t) /
 OperationalLife(r,t)$(OperationalLife(r,t) = 0) = 1;
 
 parameter ResidualCapacity(r,t,y) /
+        MOROCCO.IMPOIL.(2015*2050)	0
+        MOROCCO.MINOIL.(2015*2050)	0
+        MOROCCO.IMPBIO.(2015*2050)	0
+        MOROCCO.MINBIO.(2015*2050)	0
+        MOROCCO.IMPCOA.(2015*2050)	0
+        MOROCCO.MINCOA.(2015*2050)	0
+        MOROCCO.IMPLFO.(2015*2050)	0
+        MOROCCO.IMPHFO.(2015*2050)	0
+        MOROCCO.UPSREF001.(2015*2050)	0
+        MOROCCO.UPSREF002.(2015*2050)	0
+        MOROCCO.IMPNGS.(2015*2050)	0
+        MOROCCO.MINNGS.(2015*2050)	0
+        MOROCCO.MINSOL.(2015*2050)	0
+        MOROCCO.MINWND.(2015*2050)	0
+        MOROCCO.IMPURN.(2015*2050)	0
+        MOROCCO.MINURN.(2015*2050)	0
+        MOROCCO.MINGEO.(2015*2050)	0
+        MOROCCO.MINHYD.(2015*2050)	0
 
 /;
 $if set no_initial_capacity ResidualCapacity(r,t,y) = 0;
