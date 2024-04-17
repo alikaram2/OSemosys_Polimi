@@ -161,7 +161,6 @@ set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC0
 *#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
 *set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
-$include "osemosys_init.gms"
 
 **Parameters - Global
 *JUAN DIEGO
