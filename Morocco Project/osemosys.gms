@@ -29,7 +29,7 @@ $eolcom #
 $onmulti
 $onrecurse
 $if not set scen $setglobal scen base
-$if not set data $setglobal data baseenergysystem
+$if not set data $setglobal data Morocco
 $include "Model/osemosys_dec.gms"
 * specify Model data
 $include "Data/%data%_data.gms"

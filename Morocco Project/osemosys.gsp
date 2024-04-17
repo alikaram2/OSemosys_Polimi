@@ -4,8 +4,8 @@
     "nodes": [
         {
             "codecMib": 106,
-            "file": "Model/report.gms",
-            "name": "report.gms",
+            "file": "Data/Morocco_data.gms",
+            "name": "Morocco_data.gms",
             "type": "gms"
         },
         {
@@ -22,9 +22,9 @@
         },
         {
             "codecMib": 106,
-            "file": "Results/results_SCENbase_DATAutopia.gdx",
-            "name": "results_SCENbase_DATAutopia.gdx",
-            "type": "gdx"
+            "file": "Model/report.gms",
+            "name": "report.gms",
+            "type": "gms"
         },
         {
             "codecMib": 106,
@@ -41,12 +41,9 @@
     ],
     "options": [
         "",
-        "--mip=1 --data=data",
-        "--mip=1 --data=utopia",
-        "--mip=1 --data=baseenergysystem_data",
-        "--mip=1 --data=baseenergysystem",
-        "--data=baseenergysystem",
-        "--data=utopia"
+        "--mip=1 --data=Morocco_data",
+        "--data=Morocco",
+        "--mip=1 --data=Morocco"
     ],
     "path": ".",
     "pf": "",
