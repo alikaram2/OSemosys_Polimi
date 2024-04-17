@@ -161,20 +161,20 @@ set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC0
 *#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
 *set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
-*$include "Model/osemosys_init.gms"
+$include "osemosys_init.gms"
 
 **Parameters - Global
 *JUAN DIEGO
 
 parameter YearSplit(l,y)/
-  SPD.(2015*2050)  0.125
-  SPN.(2015*2050)  0.125
-  SD.(2015*2050)  0.125
-  SN.(2015*2050)  0.125
-  AD.(2015*2050)  0.125
-  AN.(2015*2050)  0.125
-  WD.(2015*2050)  0.125
-  WN.(2015*2050)  0.125
+  SPD.(2015*2050)  .125
+  SPN.(2015*2050)  .125
+  SD.(2015*2050)  .125
+  SN.(2015*2050)  .125
+  AD.(2015*2050)  .125
+  AN.(2015*2050)  .125
+  WD.(2015*2050)  .125
+  WN.(2015*2050)  .125
 /;
 
 DiscountRate(r) = 0.1;
