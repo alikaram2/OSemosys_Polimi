@@ -1,0 +1,137 @@
+
+--- Job osemosys.gms Start 04/01/24 16:46:48 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Applying:
+    C:\GAMS\46\gmsprmNT.txt
+--- GAMS Parameters defined
+    Input "C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\osemosys.gms"
+    PageSize 0
+    ScrDir "C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\225a\"
+    SysDir C:\GAMS\46\
+    LogOption 3
+    ErrMsg 1
+    ErrorLog 99
+    IDE 1
+    LstTitleLeftAligned 1
+    --data utopia
+Licensee: Course License                                 S240213|0002AO-GEN
+          Fondazione CMCC, Complesso Ecotekne                       DCE3258
+          C:\Users\Ali Sawah\Documents\GAMS\gamslice.txt
+          License Admin: Massimo Tavoni, massimo.tavoni@polimi.it          
+          Course license for use within the course and related course work
+          The evaluation period of the license will expire on Aug 11, 2024
+Processor information: 1 socket(s), 6 core(s), and 12 thread(s) available
+GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
+--- Starting compilation
+--- osemosys.gms(33) 2 Mb
+--- . osemosys_dec.gms(799) 2 Mb
+--- osemosys.gms(35) 2 Mb
+--- . utopia_data.gms(761) 3 Mb
+--- osemosys.gms(37) 3 Mb
+--- . compute_data.gms(8) 3 Mb
+--- osemosys.gms(39) 3 Mb
+--- . osemosys_equ.gms(657) 3 Mb
+--- osemosys.gms(55) 3 Mb
+--- . osemosys_res.gms(90) 3 Mb
+--- osemosys.gms(56) 3 Mb
+--- . report.gms(148) 3 Mb
+--- osemosys.gms(88) 3 Mb
+--- Starting execution: elapsed 0:00:00.014
+--- osemosys.gms(2098) 4 Mb
+--- Generating LP model osemosys
+--- osemosys.gms(2102) 41 Mb
+---   130,339 rows  128,437 columns  316,213 non-zeroes
+--- Range statistics (absolute non-zero finite values)
+--- RHS       [min, max] : [ 1.000E-01, 1.000E+05] - Zero values observed as well
+--- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+--- Matrix    [min, max] : [ 1.000E-05, 5.000E+03]
+--- Executing CONOPT (Solvelink=2): elapsed 0:00:00.249
+
+CONOPT 4         46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+
+ 
+ 
+    C O N O P T   version 4.33
+    Copyright (C) ARKI Consulting and Development A/S
+                  Bagsvaerdvej 246 A
+                  DK-2880 Bagsvaerd, Denmark
+ 
+    Will use up to 12 threads.
+ 
+ 
+    The user model has 130339 constraints and 128437 variables
+    with 316213 Jacobian elements, 0 of which are nonlinear.
+ 
+    Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
+       0   0          7.7183206191E+03 (Input point)
+ 
+    The pre-triangular part of the model has 100423 constraints and 96538 variables.
+    The post-triangular part of the model has 8250 constraints and variables.
+    There are 8149 definitional constraints and defined variables.
+ 
+    Preprocessed model has 13517 constraints and 15500 variables
+    with 40811 Jacobian elements, 0 of which are nonlinear.
+ 
+    Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
+                      1.3572547139E+04 (Full preprocessed model)
+                      8.2548791904E+02 (After scaling)
+                      3.3382480075E+02 (After adjusting individual variables)
+       1   0          3.3382480075E+02                 1.0E+00     1 T  T
+       2   0          3.3382480075E+02                 1.0E+00     4 T  T
+       3   0          3.3381166216E+02                 1.0E+00     4 T  T
+       4   1     241  3.3381166215E+02 6.0E+00      42 1.0E+00    17 T  T
+       5   1     240  3.3221153614E+02 1.6E+01      74 1.0E+00    26 T  T
+       6   1     240  3.3220294896E+02 3.5E+07      43 1.1E-03    32 F  F
+       7   1     236  3.2532829581E+02 2.6E+00      20 1.0E+00    10 T  T
+ 
+    Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
+       8   1     236  3.2532829581E+02 1.0E+00      22 1.0E+00    13 T  T
+       9   1     236  3.2511319633E+02 3.5E+07      19 3.4E-02    19 F  F
+      10   1     233  3.1899974165E+02 4.3E+00      12 1.0E+00    10 T  T
+      11   1     233  3.1842130602E+02 5.0E-01      14 1.0E+00    14 T  T
+      12   1     233  3.1808145082E+02 9.6E-01      19 1.0E+00    19 T  T
+      13   1     233  3.1032993184E+02 1.3E+01      27 1.0E+00    23 T  T
+      14   1     228  3.0581400864E+02 3.0E+00      21 1.0E+00    20 T  T
+      15   1     212  2.8394519765E+02 1.4E+01      43 1.0E+00    37 T  T
+      16   1     207  2.6664312150E+02 1.2E+01      73 1.0E+00    62 T  T
+      17   1     174  2.2341538739E+02 1.2E+01      95 1.0E+00    77 T  T
+ 
+    Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
+      18   1     159  1.8184317506E+02 7.7E+04     113 1.0E+00   122 T  T
+      19   1      84  1.1265398312E+02 1.4E+02     156 1.0E+00   171 T  T
+      20   1      26  1.7817170701E+01 1.6E+00     151 1.0E+00   129 T  T
+      21   1       6  2.4609200468E+00 1.0E+00      60 1.0E+00    37 T  T
+      22   1       1  3.4075331290E-02 1.6E+00       7 1.0E+00     7 T  T
+ 
+ ** Feasible solution. Value of objective =    1304536.22576
+ 
+    Iter Phase   Ninf     Objective     RGmax      NSB   Step  InItr MX OK
+      23   3          2.6123768993E+05 4.2E+05      28 1.0E+00    25 T  T
+      24   3          1.8423767893E+05 2.6E+05      49 1.0E+00    29 T  T
+      25   3          1.1610606233E+05 1.0E+05      52 1.0E+00    41 T  T
+      26   3          1.0511295474E+05 2.2E+04      64 1.0E+00    65 T  T
+      27   3          1.0087877143E+05 7.2E+03     114 1.0E+00    77 T  T
+      28   3          8.4857451656E+04 5.0E+03     151 1.0E+00   108 T  T
+      29   3          7.3782102075E+04 1.2E+04     160 1.0E+00   166 T  T
+      30   3          6.4911833891E+04 8.4E+03     109 1.0E+00   237 T  T
+      31   3          5.8197400827E+04 2.9E+03     148 1.0E+00   327 T  T
+      32   3          5.3036092196E+04 3.5E+03     215 1.0E+00   475 T  T
+ 
+    Iter Phase   Ninf     Objective     RGmax      NSB   Step  InItr MX OK
+      33   3          4.8601618633E+04 3.6E+02     390 1.0E+00   641 T  T
+      34   3          4.8601618633E+04 6.5E-08       1
+ 
+ ** Optimal solution. Reduced gradient less than tolerance.
+ 
+--- Reading solution for model osemosys
+--- osemosys.gms(2102) 41 Mb  3 secs
+--- Executing after solve: elapsed 0:00:03.771
+--- osemosys.gms(2324) 41 Mb
+*** Error at line 2324: division by zero (0)
+--- osemosys.gms(2327) 41 Mb 1 Error
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Results\report_base.gdx
+--- osemosys.gms(2341) 41 Mb
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\Results\results_SCENbase_DATAutopia.gdx
+--- Putfile ANT C:\Users\Ali Sawah\Desktop\GAMS Models\OSEMOSYS\Utopia\SelResults.CSV
+--- osemosys.gms(2341) 41 Mb 1 Error
+*** Status: Execution error(s)
+--- Job osemosys.gms Stop 04/01/24 16:46:51 elapsed 0:00:03.822
