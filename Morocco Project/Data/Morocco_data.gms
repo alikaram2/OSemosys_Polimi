@@ -220,8 +220,6 @@ TradeRoute(r,rr,f,y)=0;
 
 DepreciationMethod(r)=1;
 
-*#PARAMETERS -Demand
-
 parameter SpecifiedAnnualDemand(r,f,y) /
         MOROCCO.INDELC.2015 34.396
         MOROCCO.INDELC.2016 35.551
@@ -297,9 +295,9 @@ parameter SpecifiedAnnualDemand(r,f,y) /
         MOROCCO.RESELC.2050 272.219
 
 /;
-*##.
-*#COMMERCIAL (TRADE) ELECTRICITY IS ASSUMED TO BE NULL (?)
-*#According to the IEA, Morocco is a net importer of electricity https://www.iea.org/countries/morocco/electricity
+
+*COMMERCIAL (TRADE) ELECTRICITY IS ASSUMED TO BE NULL (?)
+*According to the IEA, Morocco is a net importer of electricity https://www.iea.org/countries/morocco/electricity
 *MOROCCO.COMELC.(2015*2050) 0
 
 
@@ -328,12 +326,10 @@ parameter SpecifiedDemandProfile(r,f,l,y) /
         MOROCCO.COMELC.AN.(2015*2050) 0.12
         MOROCCO.COMELC.WD.(2015*2050) 0.121
         MOROCCO.COMELC.WN.(2015*2050) 0.108
- 
-*Reported source: Brinkerink     M,     Deane     P     (2020).    PLEXOS
-*/;
-*## We cannot use the accumulated annual demand
+ /;
+*We cannot use the accumulated annual demand
 
-*#Parameters - Performance
+*Parameters - Performance
 
 CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
 
@@ -1152,7 +1148,7 @@ parameter OutputActivityRatio(r,t,f,m,y) /
 /;
 
 
-##Capital cost is $/kw
+*Capital cost is $/kw
 parameter CapitalCost   /
         MOROCCO.IMPOIL.(2015*2050)              0.0001
         MOROCCO.MINOIL.(2015*2050)              0.0001
@@ -1304,8 +1300,8 @@ parameter  VariableCost(r,t,m,y)  /
         MOROCCO.MINOIL.1.2050	                17.51
         MOROCCO.IMPBIO.1.(2015*2050)            1.76
         MOROCCO.MINBIO.1.(2015*2050)            1.6
-        MOROCCO.IMPCOA.1.(2015*2050)            5.66   ## To go more simple I simplified the variable cost for this by taking the average of all the values between 2015 and 2050
-        MOROCCO.MINCOA.1.(2015*2050)            3.68    ## Same here
+        MOROCCO.IMPCOA.1.(2015*2050)            5.66 
+        MOROCCO.MINCOA.1.(2015*2050)            3.68   
         MOROCCO.IMPLFO.1.2015			15.8935
         MOROCCO.IMPLFO.1.2016			12.4887
         MOROCCO.IMPLFO.1.2017			10.2144
@@ -1525,10 +1521,10 @@ parameter   FixedCost   /
         MOROCCO.DEMRESHEEL.(2015*2050)	        0
 /;
 
-##Parameters Storage
+*##Parameters Storage
 
 
-## Parameters - Capacity and investment constraints   
+*## Parameters - Capacity and investment constraints   
 
 CapacityOfOneTechnologyUnit(r,t,y) = 0;
 
@@ -1552,13 +1548,12 @@ TotalAnnualMaxCapacityInvestment(r,t,y) = 99999;
 
 TotalAnnualMinCapacityInvestment(r,t,y) = 0;
 
-##
 TotalAnnualMaxCapacity(r,t,y)$(TotalAnnualMaxCapacity(r,t,y) = 0) = 99999;
-#TotalAnnualMaxCapacity(r,'TXE','1990') = 0;
-#TotalAnnualMaxCapacity(r,'RHE','1990') = 0;
-##
+*#TotalAnnualMaxCapacity(r,'TXE','1990') = 0;
+*#TotalAnnualMaxCapacity(r,'RHE','1990') = 0;
+*##
 
-## Parameters - Activity constraints  
+*## Parameters - Activity constraints  
 
 TotalTechnologyAnnualActivityUpperLimit(r,t,y) = 99999;
 
@@ -1743,31 +1738,31 @@ parameter ReserveMarginTagTechnology(r,t,y) /
   MOROCCO.BACKSTOP002.(2015*2050)  1
 
 /;
-
+*FOR THE REST OF FUELS THIS VALUE SHOULD BE ZERO, AS IT DOES NOT APPLY
 parameter ReserveMarginTagFuel(r,f,y) /
   MOROCCO.INDELC.(2015*2050)  1
   MOROCCO.RESELC.(2015*2050)  1
   MOROCCO.COMELC.(2015*2050)  1
-  #FOR THE REST OF FUELS THIS VALUE SHOULD BE ZERO, AS IT DOES NOT APPLY
+  
 /;
-
+*##15% RESERVE MARGIN ASSUMED BY DEFAULT
 parameter ReserveMargin(r,y) /
-  MOROCCO.(2015*2050)  1.15 ##15% RESERVE MARGIN ASSUMED BY DEFAULT
+  MOROCCO.(2015*2050)  1.15 
 /;
 
 
-## Parameters - RE Generation Target    
+*## Parameters - RE Generation Target    
 
 RETagTechnology(r,t,y) = 0;
 
 RETagFuel(r,f,y) = 0;
 
-REMinProductionTarget(r,y) = 0;### CAUTION: IT DEPENDS ON THE SCENARIO OF THE GREEN HYDROGEN ROADMAP PROPOSED BY THE MOROCCOAN GOVERNMENT.
+REMinProductionTarget(r,y) = 0;
+*### CAUTION: IT DEPENDS ON THE SCENARIO OF THE GREEN HYDROGEN ROADMAP PROPOSED BY THE MOROCCOAN GOVERNMENT.
 
-## Parameters - Emissions 
-
-parameter EmissionActivityRatio(r,t,e,m,y) /
+*Parameters - Emissions 
 *CAUTION: THESE WERE GIVEN AS PERCENTAGES IN UTOPIA.DATA, AND IN THIS CASE THEY HAVE UNITS kg/GJ
+parameter EmissionActivityRatio(r,t,e,m,y) /
   MOROCCO.IMPOIL.EMICO2.1.(2015*2050)  73.3   
   MOROCCO.MINOIL.EMICO2.1.(2015*2050)  73.3
   MOROCCO.IMPBIO.EMICO2.1.(2015*2050)  100
