@@ -149,16 +149,16 @@ set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
 #set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
 #set secondary_imports(TECHNOLOGY) / IMPDSL1, IMPGSL1 /;
 
-#set renewable_tech(TECHNOLOGY) /HYDRO/; 
-#set renewable_fuel(FUEL) /HYD/; 
+set renewable_tech(TECHNOLOGY) /PWRHYD001/; 
+set renewable_fuel(FUEL) /HYD/; 
 
 #set fuel_production(TECHNOLOGY);
 #set fuel_production_fict(TECHNOLOGY) /RIV/;
 #set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
 
 #Characterize fuels 
-#set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
-#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
+set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
+set secondary_carrier(FUEL) / DSL, GSL, ELC /;
 set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
 *$include "Model/osemosys_init.gms"
