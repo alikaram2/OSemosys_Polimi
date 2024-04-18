@@ -1,5 +1,5 @@
 
---- Job osemosys.gms Start 04/18/24 19:50:20 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/18/24 22:19:55 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -35,10 +35,128 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- . osemosys_res.gms(90) 4 Mb
 --- osemosys.gms(56) 4 Mb
 --- . report.gms(148) 4 Mb
---- osemosys.gms(103) 4 Mb 1 Error
-*** Error 409 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-    Unrecognizable item - skip to find a new statement
-      looking for a ';' or a key word to get started again
---- osemosys.gms(103) 4 Mb 1 Error
-*** Status: Compilation error(s)
---- Job osemosys.gms Stop 04/18/24 19:50:20 elapsed 0:00:00.019
+--- osemosys.gms(89) 4 Mb
+--- Starting execution: elapsed 0:00:00.020
+--- osemosys.gms(3462) 6 Mb
+--- Generating MIP model osemosys
+--- osemosys.gms(3466) 797 Mb
+---   2,653,215 rows  2,645,470 columns  6,504,217 non-zeroes
+--- Range statistics (absolute non-zero finite values)
+--- RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
+--- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+--- Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
+--- Executing COPT (Solvelink=2): elapsed 0:00:06.651
+
+COPT             46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+
+Passing GAMS variable and equation levels and marginals as LP starting point to COPT.
+
+Cardinal Optimizer v7.0.6. Build date Jan 16 2024
+Copyright Cardinal Operations 2023. All Rights Reserved
+
+Modified COPT parameters:
+TimeLimit                 1e+10
+AbsGap                    0
+LogToConsole              0
+ReqFarkasRay              1
+
+Model fingerprint: e94f8cd0
+
+Using Cardinal Optimizer v7.0.6 on Windows
+Hardware has 6 cores and 12 threads. Using instruction set X86_AVX512_E1 (14)
+Minimizing an LP problem
+
+The original problem has:
+    2653214 rows, 2645469 columns and 6504180 non-zero elements
+The folded problem has:
+    316817 rows, 328475 columns and 863707 non-zero elements
+The presolved problem has:
+    35478 rows, 46632 columns and 231542 non-zero elements
+
+Starting the simplex solver using up to 8 threads
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual             0    7.8599457912e+03         3228           0       1.76s
+Dual          2689    8.7191100651e+03         2129           0       1.79s
+Dual          4452    1.3699675647e+04         2769           0       1.83s
+Dual          5436    3.5909126453e+04         3213           0       1.88s
+Dual          6028    4.6218515208e+04         3235           0       1.97s
+Dual          6502    5.5120386896e+04         3190           0       2.09s
+Dual          6963    6.6893721378e+04         3366           0       2.20s
+Dual          7586    8.5406551523e+04         3390           0       2.32s
+Dual          8053    1.0567648528e+05         3824           0       2.40s
+Dual          8592    1.3295797461e+05         3752           0       2.52s
+Dual          9039    1.4859681292e+05         3776           0       2.76s
+Dual          9466    1.6860779193e+05         3680           0       2.99s
+Dual          9822    1.9197326996e+05         3825           0       3.12s
+Dual         10090    2.0206668538e+05         3764           0       3.27s
+Dual         10594    2.4722896021e+05         3759           0       3.49s
+Dual         10997    2.7176049982e+05         3847           0       3.84s
+Dual         11775    3.5309200245e+05         3957           0       4.03s
+Dual         12221    3.6602651480e+05         3686           0       4.38s
+Dual         12666    3.9357272554e+05         3488           0       4.61s
+Dual         13601    4.9121043693e+05         3413           0       4.75s
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual         13855    5.0225151716e+05         3717           0       4.94s
+Dual         14247    5.1400801176e+05         3533           0       5.24s
+Dual         14655    5.3184127417e+05         3681           0       5.51s
+Dual         15097    5.5176906368e+05         3750           0       5.85s
+Dual         15567    5.7926668171e+05         3416           0       6.18s
+Dual         15817    5.8847341945e+05         3226           0       6.38s
+Dual         16376    6.4646869448e+05         3118           0       6.55s
+Dual         16613    6.5261067837e+05         3517           0       6.76s
+Dual         17107    6.9689789341e+05         3145           0       7.00s
+Dual         17545    7.1125635724e+05         3182           0       7.40s
+Dual         17860    7.2136944069e+05         3281           0       7.62s
+Dual         18311    7.6609136132e+05         2798           0       7.87s
+Dual         18736    8.0917442859e+05         2825           0       8.07s
+Dual         19165    8.2303094098e+05         2647           0       8.31s
+Dual         19800    8.3219384827e+05         2696           0       8.45s
+Dual         20331    8.3814369262e+05         2390           0       8.60s
+Dual         20776    8.4055202882e+05         2395           0       8.72s
+Dual         20852    8.3421732149e+05         1728         281       8.75s
+Dual-I       20852   -8.2837967532e+03         4526         281       8.76s
+Dual-I       20899    0.0000000000e+00            0           0       8.77s
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual         20899   -1.2784556487e+08         3614           0       8.78s
+Dual         21340    8.4172954479e+05         1699           0       8.80s
+Computing dual Farkas to infeasible model
+
+Solving finished
+Status: Infeasible  Objective: -  Iterations: 21364  Time: 15.61s
+--- Reading solution for model osemosys
+--- osemosys.gms(3466) 797 Mb  24 secs
+--- Executing after solve: elapsed 0:00:29.447
+--- osemosys.gms(3611) 797 Mb
+*** Error at line 3611: division by zero (0)
+--- osemosys.gms(3633) 797 Mb 1 Error
+*** Error at line 3633: division by zero (0)
+--- osemosys.gms(3648) 797 Mb 2 Errors
+*** Error at line 3648: division by zero (0)
+--- osemosys.gms(3688) 797 Mb 3 Errors
+*** Error at line 3688: division by zero (0)
+--- osemosys.gms(3691) 797 Mb 4 Errors
+*** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\report_base.gdx
+*** Msg: No such file or directory
+*** Fallback name limit reached (20; see option "MaxGenericFiles")
+*** Last filename tried C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams20.gdx
+--- osemosys.gms(3691) 797 Mb 4 Errors
+*** Status: Terminated due to file open error in NEXTNAME
+***         Fallback Limit reached
+***         Inspect listing file for more information
+*** 
+*** GAMS Base Module 46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+*** 
+*** GAMS Development Corporation
+*** 2751 Prosperity Ave, Suite 210
+*** Fairfax, VA 22031, USA
+*** +1 202-342-0180, +1 202-342-0181 fax
+*** support@gams.com, www.gams.com
+*** 
+--- Job osemosys.gms Stop 04/18/24 22:20:25 elapsed 0:00:29.471
+
+***
+*** Gams Exit Msg = NEXTNAME
+***

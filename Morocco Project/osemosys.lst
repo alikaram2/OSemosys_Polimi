@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -2162,6 +2162,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
 2158          MOROCCO.PWRSOL002.2050 0
 2159   
 2160  /;
+2161   
 2162   
 2163  parameter InputActivityRatio(r,t,f,m,y) /
 2164          MOROCCO.UPSREF001.OIL.1.(2015*2050)  1
@@ -2968,7 +2969,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 2965  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
 2966  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
@@ -3710,7 +3711,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3715   
 3717   
 3718  * solve the model with the constraints
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 4
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -3727,7 +3728,7 @@ Include File Summary
 
 
 COMPILATION TIME     =        0.015 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 5
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Range Statistics    SOLVE osemosys Using MIP From line 3466
 
@@ -3738,7 +3739,7 @@ RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
 Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
 
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 6
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE osemosys Using MIP From line 3466
 
@@ -3750,8 +3751,8 @@ BLOCKS OF VARIABLES          51     SINGLE VARIABLES    2,645,470
 NON ZERO ELEMENTS     6,504,217
 
 
-GENERATION TIME      =        7.078 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 7
+GENERATION TIME      =        6.703 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE osemosys Using MIP From line 3466
 
@@ -3766,11 +3767,11 @@ Solution Report     SOLVE osemosys Using MIP From line 3466
 **** MODEL STATUS      19 Infeasible - No Solution
 **** OBJECTIVE VALUE               NA
 
- RESOURCE USAGE, LIMIT         14.830 10000000000.000
+ RESOURCE USAGE, LIMIT         13.685 10000000000.000
  ITERATION COUNT, LIMIT     21364    2147483647
 
 No solution returned
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 8
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:27:29 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
@@ -3799,25 +3800,14 @@ E x e c u t i o n
 **** Exec Error at line 3633: division by zero (0)
 **** Exec Error at line 3648: division by zero (0)
 **** Exec Error at line 3688: division by zero (0)
-**** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams17.gdx
-**** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams18.gdx
-
-**** REPORT FILE SUMMARY
-
-ANT C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\SelResults.CSV
-
-
-EXECUTION TIME       =       30.156 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
-
-
-USER: Course License                                 S240213|0002AO-GEN
-      Fondazione CMCC, Complesso Ecotekne                       DCE3258
-      License for teaching and research at degree granting institutions
-
-
-**** FILE SUMMARY
-
-Input      C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-Output     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.lst
-
-**** USER ERROR(S) ENCOUNTERED
+**** Fallback name limit reached (20; see option "MaxGenericFiles")
+**** Last filename tried C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams20.gdx
+**** TERMINATED DUE TO A FILE OPEN ERROR IN NEXTNAME
+**** Fallback Limit reached
+**** PLEASE REPORT TO THE GAMS ADMINISTRATOR
+**** 
+**** GAMS Base Module 46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+**** 
+**** GAMS Development Corporation
+**** support@gams.com, www.gams.com
+**** 
