@@ -1,5 +1,5 @@
 
---- Job osemosys.gms Start 04/18/24 17:41:53 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/18/24 19:37:07 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -12,7 +12,6 @@
     ErrorLog 99
     IDE 1
     LstTitleLeftAligned 1
-    --mip 1
     --data Morocco
 Licensee: Course License                                 S240213|0002AO-GEN
           Fondazione CMCC, Complesso Ecotekne                       DCE3258
@@ -26,7 +25,7 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- osemosys.gms(33) 2 Mb
 --- . osemosys_dec.gms(799) 2 Mb
 --- osemosys.gms(35) 2 Mb
---- . Morocco_data.gms(1761) 4 Mb
+--- . Morocco_data.gms(2121) 4 Mb
 --- osemosys.gms(37) 4 Mb
 --- . compute_data.gms(8) 4 Mb
 --- osemosys.gms(39) 4 Mb
@@ -36,74 +35,67 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- osemosys.gms(56) 4 Mb
 --- . report.gms(148) 4 Mb
 --- osemosys.gms(89) 4 Mb
---- Starting execution: elapsed 0:00:00.015
---- osemosys.gms(3102) 6 Mb
---- Generating MIP model osemosys
---- osemosys.gms(3106) 796 Mb
----   2,653,215 rows  2,645,506 columns  6,482,122 non-zeroes
+--- Starting execution: elapsed 0:00:00.016
+--- osemosys.gms(3458) 6 Mb
+--- Generating LP model osemosys
+--- osemosys.gms(3462) 796 Mb
+---   2,653,215 rows  2,645,470 columns  6,478,508 non-zeroes
 --- Range statistics (absolute non-zero finite values)
 --- RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
 --- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 --- Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
---- Executing COPT (Solvelink=2): elapsed 0:00:06.312
+--- Executing CONOPT (Solvelink=2): elapsed 0:00:05.534
 
-COPT             46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+CONOPT 4         46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
 
-Passing GAMS variable and equation levels and marginals as LP starting point to COPT.
-
-Cardinal Optimizer v7.0.6. Build date Jan 16 2024
-Copyright Cardinal Operations 2023. All Rights Reserved
-
-Modified COPT parameters:
-TimeLimit                 1e+10
-AbsGap                    0
-LogToConsole              0
-ReqFarkasRay              1
-
-Model fingerprint: 7b3066bd
-
-Using Cardinal Optimizer v7.0.6 on Windows
-Hardware has 6 cores and 12 threads. Using instruction set X86_AVX512_E1 (14)
-Minimizing an LP problem
-
-The original problem has:
-    2653214 rows, 2645505 columns and 6482085 non-zero elements
-The folded problem has:
-    303134 rows, 314288 columns and 821578 non-zero elements
-The presolved problem has:
-    2018 rows, 3178 columns and 30488 non-zero elements
-
-Starting the simplex solver using up to 8 threads
-
-Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
-Dual             0    8.3380801561e+03          435           0       1.32s
-Dual            16    8.3858616329e+03          424           0       1.33s
-Computing dual Farkas to infeasible model
-
-Solving finished
-Status: Infeasible  Objective: -  Iterations: 17  Time: 6.99s
+ 
+ 
+    C O N O P T   version 4.33
+    Copyright (C) ARKI Consulting and Development A/S
+                  Bagsvaerdvej 246 A
+                  DK-2880 Bagsvaerd, Denmark
+ 
+    Will use up to 12 threads.
+ 
+ 
+    The user model has 2653215 constraints and 2645470 variables
+    with 6478508 Jacobian elements, 0 of which are nonlinear.
+ 
+    Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
+       0   0          8.0474898560E+04 (Input point)
+ 
+ ** An equation in the pre-triangular part of the model cannot
+    be solved because the infeasibility is positive after all
+    variables in the constraint have been moved to best bound.
+    Some bounds may have been derived from other constraints.
+ 
+ 
+    The pre-triangular part of the model has 2415810 constraints and 2387978 variables.
+    The post-triangular part of the model has 23149 constraints and variables.
+ 
+ ** Infeasible solution. The Preprocessor has determined that the model
+    is infeasible.
+ 
 --- Reading solution for model osemosys
---- osemosys.gms(3106) 796 Mb  15 secs
---- Executing after solve: elapsed 0:00:20.097
---- osemosys.gms(3251) 796 Mb
-*** Error at line 3251: division by zero (0)
---- osemosys.gms(3273) 796 Mb 1 Error
-*** Error at line 3273: division by zero (0)
---- osemosys.gms(3288) 796 Mb 2 Errors
-*** Error at line 3288: division by zero (0)
---- osemosys.gms(3328) 796 Mb 3 Errors
-*** Error at line 3328: division by zero (0)
---- osemosys.gms(3331) 796 Mb 4 Errors
+--- osemosys.gms(3462) 796 Mb  19 secs
+--- Executing after solve: elapsed 0:00:23.446
+--- osemosys.gms(3607) 796 Mb
+*** Error at line 3607: division by zero (0)
+--- osemosys.gms(3629) 796 Mb 1 Error
+*** Error at line 3629: division by zero (0)
+--- osemosys.gms(3684) 796 Mb 2 Errors
+*** Error at line 3684: division by zero (0)
+--- osemosys.gms(3687) 796 Mb 3 Errors
 *** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\report_base.gdx
 *** Msg: No such file or directory
-*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams3.gdx
---- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams3.gdx
---- osemosys.gms(3345) 796 Mb
+*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams9.gdx
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams9.gdx
+--- osemosys.gms(3701) 796 Mb
 *** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\results_SCENbase_DATAMorocco.gdx
 *** Msg: No such file or directory
-*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams4.gdx
---- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams4.gdx
+*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams10.gdx
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams10.gdx
 --- Putfile ANT C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\SelResults.CSV
---- osemosys.gms(3345) 796 Mb 4 Errors
+--- osemosys.gms(3701) 796 Mb 3 Errors
 *** Status: Execution error(s)
---- Job osemosys.gms Stop 04/18/24 17:42:13 elapsed 0:00:20.136
+--- Job osemosys.gms Stop 04/18/24 19:37:31 elapsed 0:00:24.209

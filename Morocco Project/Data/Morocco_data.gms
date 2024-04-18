@@ -152,7 +152,7 @@ set renewable_tech(TECHNOLOGY) /IMPBIO,MINBIO,MINSOL,MINWND,MINGEO,PWRBIO001,PWR
 set renewable_fuel(FUEL) /BIO, SOL, WND, HYD, GEO /; 
 
 set fuel_production(TECHNOLOGY);
-set fuel_production_fict(TECHNOLOGY) /dummy/;
+set fuel_production_fict(TECHNOLOGY) //;
 *#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
 
 *#Characterize fuels 
@@ -763,7 +763,7 @@ CapacityFactor(r,'PWRSOL001S','SN',y)=0;
 CapacityFactor(r,'PWRSOL001S','SD',y)=0.121;
 CapacityFactor(r,'PWRSOL001S','AN',y)=0;
 CapacityFactor(r,'PWRSOL001S','AD',y)=0.119;
-CapacityFactor(r,'PWRWYD001S',l,y)=0.29;
+CapacityFactor(r,'PWRWND001S',l,y)=0.29;
 CapacityFactor(r,'DEMRESHEBIO',l,y)=1;
 CapacityFactor(r,'DEMRESHEOIL',l,y)=1;
 CapacityFactor(r,'DEMRESHEEL',l,y)=1;

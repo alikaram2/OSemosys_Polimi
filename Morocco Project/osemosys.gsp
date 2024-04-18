@@ -34,6 +34,12 @@
         },
         {
             "codecMib": 106,
+            "file": "gams8.gdx",
+            "name": "gams8.gdx",
+            "type": "gdx"
+        },
+        {
+            "codecMib": 106,
             "file": "osemosys.gms",
             "name": "osemosys.gms",
             "type": "gms"
@@ -47,10 +53,10 @@
     ],
     "options": [
         "--mip=1 --data=Morocco_data",
-        "--data=Morocco",
         "--mip=1 --data=baseenergysystem",
         "",
         "--mip=1 --data=Morocco3",
+        "--data=Morocco",
         "--mip=1 --data=Morocco"
     ],
     "path": ".",
