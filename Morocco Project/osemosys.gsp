@@ -28,6 +28,12 @@
         },
         {
             "codecMib": 106,
+            "file": "gams11.gdx",
+            "name": "gams11.gdx",
+            "type": "gdx"
+        },
+        {
+            "codecMib": 106,
             "file": "gams2.gdx",
             "name": "gams2.gdx",
             "type": "gdx"
@@ -57,6 +63,7 @@
         "",
         "--mip=1 --data=Morocco3",
         "--data=Morocco",
+        "--mip=1 --data=Morocco.",
         "--mip=1 --data=Morocco"
     ],
     "path": ".",

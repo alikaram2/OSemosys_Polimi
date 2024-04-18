@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -2932,16 +2932,16 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
 2929  *Parameters - Emissions
 2930  *CAUTION: THESE WERE GIVEN AS PERCENTAGES IN UTOPIA.DATA, AND IN THIS CASE THEY HAVE UNITS kg/GJ
 2931  parameter EmissionActivityRatio(r,t,e,m,y) /
-2932    MOROCCO.IMPOIL.EMICO2.1.(2015*2050)  73.3
-2933    MOROCCO.MINOIL.EMICO2.1.(2015*2050)  73.3
-2934    MOROCCO.IMPBIO.EMICO2.1.(2015*2050)  100
-2935    MOROCCO.MINBIO.EMICO2.1.(2015*2050)  100
-2936    MOROCCO.IMPCOA.EMICO2.1.(2015*2050)  94.6
-2937    MOROCCO.MINCOA.EMICO2.1.(2015*2050)  94.6
-2938    MOROCCO.IMPLFO.EMICO2.1.(2015*2050)  69.3
-2939    MOROCCO.IMPHFO.EMICO2.1.(2015*2050)  77.4
-2940    MOROCCO.IMPNGS.EMICO2.1.(2015*2050)  56.1
-2941    MOROCCO.MINNGS.EMICO2.1.(2015*2050)  56.1
+2932    MOROCCO.IMPOIL.EMICO2.1.(2015*2050)  0.733
+2933    MOROCCO.MINOIL.EMICO2.1.(2015*2050)  0.733
+2934    MOROCCO.IMPBIO.EMICO2.1.(2015*2050)  1
+2935    MOROCCO.MINBIO.EMICO2.1.(2015*2050)  1
+2936    MOROCCO.IMPCOA.EMICO2.1.(2015*2050)  0.946
+2937    MOROCCO.MINCOA.EMICO2.1.(2015*2050)  0.946
+2938    MOROCCO.IMPLFO.EMICO2.1.(2015*2050)  0.693
+2939    MOROCCO.IMPHFO.EMICO2.1.(2015*2050)  0.774
+2940    MOROCCO.IMPNGS.EMICO2.1.(2015*2050)  0.561
+2941    MOROCCO.MINNGS.EMICO2.1.(2015*2050)  0.561
 2942   
 2943   
 2944  /;
@@ -2968,7 +2968,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 2965  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
 2966  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
@@ -3710,7 +3710,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3715   
 3717   
 3718  * solve the model with the constraints
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 4
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -3726,8 +3726,8 @@ Include File Summary
      7     3560 INCLUDE        1      56  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 
 
-COMPILATION TIME     =        0.032 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 5
+COMPILATION TIME     =        0.015 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Range Statistics    SOLVE osemosys Using MIP From line 3466
 
@@ -3738,7 +3738,7 @@ RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
 Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
 
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 6
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE osemosys Using MIP From line 3466
 
@@ -3750,8 +3750,8 @@ BLOCKS OF VARIABLES          51     SINGLE VARIABLES    2,645,470
 NON ZERO ELEMENTS     6,504,217
 
 
-GENERATION TIME      =        6.172 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 7
+GENERATION TIME      =        7.078 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE osemosys Using MIP From line 3466
 
@@ -3766,11 +3766,11 @@ Solution Report     SOLVE osemosys Using MIP From line 3466
 **** MODEL STATUS      19 Infeasible - No Solution
 **** OBJECTIVE VALUE               NA
 
- RESOURCE USAGE, LIMIT          9.457 10000000000.000
- ITERATION COUNT, LIMIT     19022    2147483647
+ RESOURCE USAGE, LIMIT         14.830 10000000000.000
+ ITERATION COUNT, LIMIT     21364    2147483647
 
 No solution returned
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 19:37:53 Page 8
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 21:59:06 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 
@@ -3799,15 +3799,15 @@ E x e c u t i o n
 **** Exec Error at line 3633: division by zero (0)
 **** Exec Error at line 3648: division by zero (0)
 **** Exec Error at line 3688: division by zero (0)
-**** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams11.gdx
-**** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams12.gdx
+**** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams17.gdx
+**** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams18.gdx
 
 **** REPORT FILE SUMMARY
 
 ANT C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\SelResults.CSV
 
 
-EXECUTION TIME       =       21.750 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
+EXECUTION TIME       =       30.156 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
 
 
 USER: Course License                                 S240213|0002AO-GEN

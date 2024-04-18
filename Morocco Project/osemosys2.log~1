@@ -1,5 +1,5 @@
 
---- Job osemosys.gms Start 04/18/24 19:37:07 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/18/24 19:50:54 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -12,6 +12,7 @@
     ErrorLog 99
     IDE 1
     LstTitleLeftAligned 1
+    --mip 1
     --data Morocco
 Licensee: Course License                                 S240213|0002AO-GEN
           Fondazione CMCC, Complesso Ecotekne                       DCE3258
@@ -35,67 +36,118 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- osemosys.gms(56) 4 Mb
 --- . report.gms(148) 4 Mb
 --- osemosys.gms(89) 4 Mb
---- Starting execution: elapsed 0:00:00.016
---- osemosys.gms(3458) 6 Mb
---- Generating LP model osemosys
---- osemosys.gms(3462) 796 Mb
----   2,653,215 rows  2,645,470 columns  6,478,508 non-zeroes
+--- Starting execution: elapsed 0:00:00.021
+--- osemosys.gms(3462) 6 Mb
+--- Generating MIP model osemosys
+--- osemosys.gms(3466) 797 Mb
+---   2,653,215 rows  2,645,470 columns  6,504,217 non-zeroes
 --- Range statistics (absolute non-zero finite values)
 --- RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
 --- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 --- Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
---- Executing CONOPT (Solvelink=2): elapsed 0:00:05.534
+--- Executing COPT (Solvelink=2): elapsed 0:00:06.105
 
-CONOPT 4         46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+COPT             46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
 
- 
- 
-    C O N O P T   version 4.33
-    Copyright (C) ARKI Consulting and Development A/S
-                  Bagsvaerdvej 246 A
-                  DK-2880 Bagsvaerd, Denmark
- 
-    Will use up to 12 threads.
- 
- 
-    The user model has 2653215 constraints and 2645470 variables
-    with 6478508 Jacobian elements, 0 of which are nonlinear.
- 
-    Iter Phase   Ninf   Infeasibility   RGmax      NSB   Step  InItr MX OK
-       0   0          8.0474898560E+04 (Input point)
- 
- ** An equation in the pre-triangular part of the model cannot
-    be solved because the infeasibility is positive after all
-    variables in the constraint have been moved to best bound.
-    Some bounds may have been derived from other constraints.
- 
- 
-    The pre-triangular part of the model has 2415810 constraints and 2387978 variables.
-    The post-triangular part of the model has 23149 constraints and variables.
- 
- ** Infeasible solution. The Preprocessor has determined that the model
-    is infeasible.
- 
+Passing GAMS variable and equation levels and marginals as LP starting point to COPT.
+
+Cardinal Optimizer v7.0.6. Build date Jan 16 2024
+Copyright Cardinal Operations 2023. All Rights Reserved
+
+Modified COPT parameters:
+TimeLimit                 1e+10
+AbsGap                    0
+LogToConsole              0
+ReqFarkasRay              1
+
+Model fingerprint: e94f8cd0
+
+Using Cardinal Optimizer v7.0.6 on Windows
+Hardware has 6 cores and 12 threads. Using instruction set X86_AVX512_E1 (14)
+Minimizing an LP problem
+
+The original problem has:
+    2653214 rows, 2645469 columns and 6504180 non-zero elements
+The folded problem has:
+    316817 rows, 328475 columns and 863707 non-zero elements
+The presolved problem has:
+    35478 rows, 46632 columns and 231542 non-zero elements
+
+Starting the simplex solver using up to 8 threads
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual             0    7.8599457912e+03         3228           0       1.71s
+Dual          2689    8.7191100651e+03         2129           0       1.74s
+Dual          4452    1.3699675647e+04         2769           0       1.77s
+Dual          5436    3.5909126453e+04         3213           0       1.82s
+Dual          6028    4.6218515208e+04         3235           0       1.91s
+Dual          6502    5.5120386896e+04         3190           0       2.01s
+Dual          6963    6.6893721378e+04         3366           0       2.13s
+Dual          7586    8.5406551523e+04         3390           0       2.23s
+Dual          8053    1.0567648528e+05         3824           0       2.30s
+Dual          8592    1.3295797461e+05         3752           0       2.41s
+Dual          9039    1.4859681292e+05         3776           0       2.62s
+Dual          9466    1.6860779193e+05         3680           0       2.83s
+Dual          9822    1.9197326996e+05         3825           0       2.96s
+Dual         10090    2.0206668538e+05         3764           0       3.09s
+Dual         10594    2.4722896021e+05         3759           0       3.24s
+Dual         10997    2.7176049982e+05         3847           0       3.45s
+Dual         11775    3.5309200245e+05         3957           0       3.57s
+Dual         12221    3.6602651480e+05         3686           0       3.77s
+Dual         12666    3.9357272554e+05         3488           0       3.93s
+Dual         13601    4.9121043693e+05         3413           0       4.01s
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual         13855    5.0225151716e+05         3717           0       4.15s
+Dual         14247    5.1400801176e+05         3533           0       4.36s
+Dual         14655    5.3184127417e+05         3681           0       4.54s
+Dual         15097    5.5176906368e+05         3750           0       4.77s
+Dual         15567    5.7926668171e+05         3416           0       5.00s
+Dual         15817    5.8847341945e+05         3226           0       5.13s
+Dual         16376    6.4646869448e+05         3118           0       5.24s
+Dual         16613    6.5261067837e+05         3517           0       5.36s
+Dual         17107    6.9689789341e+05         3145           0       5.49s
+Dual         17545    7.1125635724e+05         3182           0       5.70s
+Dual         17860    7.2136944069e+05         3281           0       5.82s
+Dual         18311    7.6609136132e+05         2798           0       5.97s
+Dual         18736    8.0917442859e+05         2825           0       6.11s
+Dual         19165    8.2303094098e+05         2647           0       6.27s
+Dual         19800    8.3219384827e+05         2696           0       6.38s
+Dual         20331    8.3814369262e+05         2390           0       6.47s
+Dual         20776    8.4055202882e+05         2395           0       6.56s
+Dual         20852    8.3421732149e+05         1728         281       6.59s
+Dual-I       20852   -8.2837967532e+03         4526         281       6.59s
+Dual-I       20899    0.0000000000e+00            0           0       6.61s
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual         20899   -1.2784556487e+08         3614           0       6.61s
+Dual         21340    8.4172954479e+05         1699           0       6.62s
+Computing dual Farkas to infeasible model
+
+Solving finished
+Status: Infeasible  Objective: -  Iterations: 21364  Time: 11.68s
 --- Reading solution for model osemosys
---- osemosys.gms(3462) 796 Mb  19 secs
---- Executing after solve: elapsed 0:00:23.446
---- osemosys.gms(3607) 796 Mb
-*** Error at line 3607: division by zero (0)
---- osemosys.gms(3629) 796 Mb 1 Error
-*** Error at line 3629: division by zero (0)
---- osemosys.gms(3684) 796 Mb 2 Errors
-*** Error at line 3684: division by zero (0)
---- osemosys.gms(3687) 796 Mb 3 Errors
+--- osemosys.gms(3466) 797 Mb  19 secs
+--- Executing after solve: elapsed 0:00:23.840
+--- osemosys.gms(3611) 797 Mb
+*** Error at line 3611: division by zero (0)
+--- osemosys.gms(3633) 797 Mb 1 Error
+*** Error at line 3633: division by zero (0)
+--- osemosys.gms(3648) 797 Mb 2 Errors
+*** Error at line 3648: division by zero (0)
+--- osemosys.gms(3688) 797 Mb 3 Errors
+*** Error at line 3688: division by zero (0)
+--- osemosys.gms(3691) 797 Mb 4 Errors
 *** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\report_base.gdx
 *** Msg: No such file or directory
-*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams9.gdx
---- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams9.gdx
---- osemosys.gms(3701) 796 Mb
+*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams15.gdx
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams15.gdx
+--- osemosys.gms(3705) 797 Mb
 *** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\results_SCENbase_DATAMorocco.gdx
 *** Msg: No such file or directory
-*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams10.gdx
---- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams10.gdx
+*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams16.gdx
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams16.gdx
 --- Putfile ANT C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\SelResults.CSV
---- osemosys.gms(3701) 796 Mb 3 Errors
+--- osemosys.gms(3705) 797 Mb 4 Errors
 *** Status: Execution error(s)
---- Job osemosys.gms Stop 04/18/24 19:37:31 elapsed 0:00:24.209
+--- Job osemosys.gms Stop 04/18/24 19:51:17 elapsed 0:00:23.867
