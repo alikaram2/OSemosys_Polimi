@@ -40,10 +40,10 @@
         }
     ],
     "options": [
-        "",
         "--mip=1 --data=Morocco_data",
         "--data=Morocco",
         "--mip=1 --data=baseenergysystem",
+        "",
         "--mip=1 --data=Morocco"
     ],
     "path": ".",

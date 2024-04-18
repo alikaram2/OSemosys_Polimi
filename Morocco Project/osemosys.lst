@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:31:53 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:31:53 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -978,7 +978,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
  974  *Set STORAGE             /GH, BATT/;
  975   
  976  *# characterize technologies
- 977  *set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002, PWPEMELECTRO /;
+ 977  set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002 /;
  978  *set ##storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
  979  *set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
  980  *set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
@@ -1168,17 +1168,9 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
 1164   
 1165  *Parameters - Performance
 1166   
-1167  *CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
+1167  CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
 1168   
 1169  CapacityToActivityUnit(r,t)$(CapacityToActivityUnit(r,t) = 0) = 1;
-****                                                    $141
-**** LINE    335 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 1170   
 1171  CapacityFactor(r,'IMPOIL',l,y) = 1;
 1172  CapacityFactor(r,'MINOIL',l,y) = 1;
@@ -2515,226 +2507,106 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
 2504  MOROCCO.PWRNGS001.2020 12.94
 2505  MOROCCO.PWRNGS001.2021 18.06
 2506  MOROCCO.PWRNGS001.2022 99998.5
-2507  MOROCCO.PWRNGS001.2015 21.31
-****                       $172
-**** LINE   1673 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2508  MOROCCO.PWRNGS001.2016 21.76
-****                       $172
-**** LINE   1674 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2509  MOROCCO.PWRNGS001.2017 21.49
-****                       $172
-**** LINE   1675 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2510  MOROCCO.PWRNGS001.2018 19.2
-****                       $172
-**** LINE   1676 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2511  MOROCCO.PWRNGS001.2019 17.4
-****                       $172
-**** LINE   1677 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2512  MOROCCO.PWRNGS001.2020 12.94
-****                       $172
-**** LINE   1678 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2513  MOROCCO.PWRNGS001.2021 18.06
-****                       $172
-**** LINE   1679 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2514  MOROCCO.PWRNGS001.2022 99998.5
-****                       $172
-**** LINE   1680 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2515  MOROCCO.PWRSOL001.(2015*2022) 0
-2516  MOROCCO.PWRCSP001.(2015*2022) 0
-2517  MOROCCO.PWRCSP002.(2015*2022) 0
-2518  MOROCCO.PWRHYD001.2015 8.71
-2519  MOROCCO.PWRHYD001.2016 6.48
-2520  MOROCCO.PWRHYD001.2017 6.13
-2521  MOROCCO.PWRHYD001.2018 7.69
-2522  MOROCCO.PWRHYD001.2019 6.45
-2523  MOROCCO.PWRHYD001.2020 5.14
-2524  MOROCCO.PWRHYD001.2021 4.86
-2525  MOROCCO.PWRHYD001.2022 4.86
-2526  MOROCCO.PWRHYD001.2015 8.71
-****                       $172
-**** LINE   1692 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2527  MOROCCO.PWRHYD001.2016 6.48
-****                       $172
-**** LINE   1693 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2528  MOROCCO.PWRHYD001.2017 6.13
-****                       $172
-**** LINE   1694 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2529  MOROCCO.PWRHYD001.2018 7.69
-****                       $172
-**** LINE   1695 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2530  MOROCCO.PWRHYD001.2019 6.45
-****                       $172
-**** LINE   1696 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2531  MOROCCO.PWRHYD001.2020 5.14
-****                       $172
-**** LINE   1697 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2532  MOROCCO.PWRHYD001.2021 4.86
-****                       $172
-**** LINE   1698 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2533  MOROCCO.PWRHYD001.2022 4.86
-****                       $172
-**** LINE   1699 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2534  MOROCCO.PWRHYD001.2015 8.71
-****                       $172
-**** LINE   1700 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2535  MOROCCO.PWRHYD001.2016 6.48
-****                       $172
-**** LINE   1701 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2536  MOROCCO.PWRHYD001.2017 6.13
-****                       $172
-**** LINE   1702 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2537  MOROCCO.PWRHYD001.2018 7.69
-****                       $172
-**** LINE   1703 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2538  MOROCCO.PWRHYD001.2019 6.45
-****                       $172
-**** LINE   1704 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2539  MOROCCO.PWRHYD001.2020 5.14
-****                       $172
-**** LINE   1705 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2540  MOROCCO.PWRHYD001.2021 4.86
-****                       $172
-**** LINE   1706 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2541  MOROCCO.PWRHYD001.2022 4.86
-****                       $172
-**** LINE   1707 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-**** LINE     35 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 172  Element is redefined
-2542  MOROCCO.PWRWND001.(2015*2022) 0
-2543  MOROCCO.PWRWND002.(2015*2022) 0
-2544   
-2545   
-2546  /;
+2507  MOROCCO.PWRSOL001.(2015*2022) 0
+2508  MOROCCO.PWRCSP001.(2015*2022) 0
+2509  MOROCCO.PWRCSP002.(2015*2022) 0
+2510  MOROCCO.PWRHYD001.2015 8.71
+2511  MOROCCO.PWRHYD001.2016 6.48
+2512  MOROCCO.PWRHYD001.2017 6.13
+2513  MOROCCO.PWRHYD001.2018 7.69
+2514  MOROCCO.PWRHYD001.2019 6.45
+2515  MOROCCO.PWRHYD001.2020 5.14
+2516  MOROCCO.PWRHYD001.2021 4.86
+2517  MOROCCO.PWRHYD001.2022 4.86
+2518  MOROCCO.PWRWND001.(2015*2022) 0
+2519  MOROCCO.PWRWND002.(2015*2022) 0
+2520   
+2521   
+2522  /;
+2523   
+2524  Parameter TotalTechnologyModelPeriodActivityUpperLimit(r,t) /
+2525  MOROCCO.MINOIL 4.16092
+2526  MOROCCO.MINCOA 410.3931942
+2527  MOROCCO.MINNGS 50.95
+2528   
+2529  /;
+2530   
+2531   
+2532   
+2533  parameter ReserveMarginTagTechnology(r,t,y) /
+2534    MOROCCO.PWRBIO001.(2015*2050)  1
+2535    MOROCCO.PWRCOA001.(2015*2050)  1
+2536    MOROCCO.PWRGEO.(2015*2050)  1
+2537    MOROCCO.PWROHC001.(2015*2050)  1
+2538    MOROCCO.PWROHC002.(2015*2050)  1
+2539    MOROCCO.PWRNGS001.(2015*2050)  1
+2540    MOROCCO.PWRNGS002.(2015*2050)  1
+2541    MOROCCO.PWRHYD001.(2015*2050)  1
+2542    MOROCCO.PWRNUC.(2015*2050)  1
+2543    MOROCCO.BACKSTOP001.(2015*2050)  1
+2544    MOROCCO.PWRTRN.(2015*2050)  1
+2545    MOROCCO.PWRDIST.(2015*2050)  1
+2546    MOROCCO.BACKSTOP002.(2015*2050)  1
 2547   
-2548  Parameter TotalTechnologyModelPeriodActivityUpperLimit(r,t) /
-2549  MOROCCO.MINOIL 4.16092
-2550  MOROCCO.MINCOA 410.3931942
-2551  MOROCCO.MINNGS 50.95
-2552   
-2553  /;
+2548  /;
+2549  *FOR THE REST OF FUELS THIS VALUE SHOULD BE ZERO, AS IT DOES NOT APPLY
+2550  parameter ReserveMarginTagFuel(r,f,y) /
+2551    MOROCCO.INDELC.(2015*2050)  1
+2552    MOROCCO.RESELC.(2015*2050)  1
+2553    MOROCCO.COMELC.(2015*2050)  1
 2554   
-2555   
-2556   
-2557  parameter ReserveMarginTagTechnology(r,t,y) /
-2558    MOROCCO.PWRBIO001.(2015*2050)  1
-2559    MOROCCO.PWRCOA001.(2015*2050)  1
-2560    MOROCCO.PWRGEO.(2015*2050)  1
-2561    MOROCCO.PWROHC001.(2015*2050)  1
-2562    MOROCCO.PWROHC002.(2015*2050)  1
-2563    MOROCCO.PWRNGS001.(2015*2050)  1
-2564    MOROCCO.PWRNGS002.(2015*2050)  1
-2565    MOROCCO.PWRHYD001.(2015*2050)  1
-2566    MOROCCO.PWRNUC.(2015*2050)  1
-2567    MOROCCO.BACKSTOP001.(2015*2050)  1
-2568    MOROCCO.PWRTRN.(2015*2050)  1
-2569    MOROCCO.PWRDIST.(2015*2050)  1
-2570    MOROCCO.BACKSTOP002.(2015*2050)  1
-2571   
-2572  /;
-2573  *FOR THE REST OF FUELS THIS VALUE SHOULD BE ZERO, AS IT DOES NOT APPLY
-2574  parameter ReserveMarginTagFuel(r,f,y) /
-2575    MOROCCO.INDELC.(2015*2050)  1
-2576    MOROCCO.RESELC.(2015*2050)  1
-2577    MOROCCO.COMELC.(2015*2050)  1
-2578   
-2579  /;
-2580  *##15% RESERVE MARGIN ASSUMED BY DEFAULT
-2581  parameter ReserveMargin(r,y) /
-2582    MOROCCO.(2015*2050)  1.15
-2583  /;
+2555  /;
+2556  *##15% RESERVE MARGIN ASSUMED BY DEFAULT
+2557  parameter ReserveMargin(r,y) /
+2558    MOROCCO.(2015*2050)  1.15
+2559  /;
+2560   
+2561   
+2562  *## Parameters - RE Generation Target
+2563   
+2564  RETagTechnology(r,t,y) = 0;
+2565   
+2566  RETagFuel(r,f,y) = 0;
+2567   
+2568  REMinProductionTarget(r,y) = 0;
+2569  *### CAUTION: IT DEPENDS ON THE SCENARIO OF THE GREEN HYDROGEN ROADMAP PROPOSED BY THE MOROCCOAN GOVERNMENT.
+2570   
+2571  *Parameters - Emissions
+2572  *CAUTION: THESE WERE GIVEN AS PERCENTAGES IN UTOPIA.DATA, AND IN THIS CASE THEY HAVE UNITS kg/GJ
+2573  parameter EmissionActivityRatio(r,t,e,m,y) /
+2574    MOROCCO.IMPOIL.EMICO2.1.(2015*2050)  73.3
+2575    MOROCCO.MINOIL.EMICO2.1.(2015*2050)  73.3
+2576    MOROCCO.IMPBIO.EMICO2.1.(2015*2050)  100
+2577    MOROCCO.MINBIO.EMICO2.1.(2015*2050)  100
+2578    MOROCCO.IMPCOA.EMICO2.1.(2015*2050)  94.6
+2579    MOROCCO.MINCOA.EMICO2.1.(2015*2050)  94.6
+2580    MOROCCO.IMPLFO.EMICO2.1.(2015*2050)  69.3
+2581    MOROCCO.IMPHFO.EMICO2.1.(2015*2050)  77.4
+2582    MOROCCO.IMPNGS.EMICO2.1.(2015*2050)  56.1
+2583    MOROCCO.MINNGS.EMICO2.1.(2015*2050)  56.1
 2584   
 2585   
-2586  *## Parameters - RE Generation Target
+2586  /;
 2587   
-2588  RETagTechnology(r,t,y) = 0;
+2588  EmissionsPenalty(r,e,y) = 0;
 2589   
-2590  RETagFuel(r,f,y) = 0;
+2590  AnnualExogenousEmission(r,e,y) = 0;
 2591   
-2592  REMinProductionTarget(r,y) = 0;
-2593  *### CAUTION: IT DEPENDS ON THE SCENARIO OF THE GREEN HYDROGEN ROADMAP PROPOSED BY THE MOROCCOAN GOVERNMENT.
-2594   
-2595  *Parameters - Emissions
-2596  *CAUTION: THESE WERE GIVEN AS PERCENTAGES IN UTOPIA.DATA, AND IN THIS CASE THEY HAVE UNITS kg/GJ
-2597  parameter EmissionActivityRatio(r,t,e,m,y) /
-2598    MOROCCO.IMPOIL.EMICO2.1.(2015*2050)  73.3
-2599    MOROCCO.MINOIL.EMICO2.1.(2015*2050)  73.3
-2600    MOROCCO.IMPBIO.EMICO2.1.(2015*2050)  100
-2601    MOROCCO.MINBIO.EMICO2.1.(2015*2050)  100
-2602    MOROCCO.IMPCOA.EMICO2.1.(2015*2050)  94.6
-2603    MOROCCO.MINCOA.EMICO2.1.(2015*2050)  94.6
-2604    MOROCCO.IMPLFO.EMICO2.1.(2015*2050)  69.3
-2605    MOROCCO.IMPHFO.EMICO2.1.(2015*2050)  77.4
-2606    MOROCCO.IMPNGS.EMICO2.1.(2015*2050)  56.1
-2607    MOROCCO.MINNGS.EMICO2.1.(2015*2050)  56.1
-2608   
-2609   
-2610  /;
-2611   
-2612  EmissionsPenalty(r,e,y) = 0;
-2613   
-2614  AnnualExogenousEmission(r,e,y) = 0;
-2615   
-2616  AnnualEmissionLimit(r,e,y) = 9999;
-2617   
-2618  ModelPeriodExogenousEmission(r,e) = 0;
-2619   
-2620  ModelPeriodEmissionLimit(r,e) = 9999;
-2621   
-2622  * perform data computations when needed
+2592  AnnualEmissionLimit(r,e,y) = 9999;
+2593   
+2594  ModelPeriodExogenousEmission(r,e) = 0;
+2595   
+2596  ModelPeriodEmissionLimit(r,e) = 9999;
+2597   
+2598  * perform data computations when needed
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
-2624  ContinousDepreciation(r,t)$(OperationalLife(r,t) <> 0) = 1 - exp( 1 / ( - OperationalLife(r,t) + (0.01/2) * OperationalLife(r,t)**2) );
-2625  ContinousDepreciation(r,t)$(OperationalLife(r,t) = 0) = 1;
-2626  ContinousDepreciation(r,t)$(ContinousDepreciation(r,t) < 0) = 0;
-2627  ContinousDepreciation(r,t)$(ContinousDepreciation(r,t) > 1) = 1;
-2628   
-2629  *** define the renewable technology and fuel tags
-2630  RETagTechnology(r,t,y)$renewable_tech(t) = 1;
+2600  ContinousDepreciation(r,t)$(OperationalLife(r,t) <> 0) = 1 - exp( 1 / ( - OperationalLife(r,t) + (0.01/2) * OperationalLife(r,t)**2) );
+2601  ContinousDepreciation(r,t)$(OperationalLife(r,t) = 0) = 1;
+2602  ContinousDepreciation(r,t)$(ContinousDepreciation(r,t) < 0) = 0;
+2603  ContinousDepreciation(r,t)$(ContinousDepreciation(r,t) > 1) = 1;
+2604   
+2605  *** define the renewable technology and fuel tags
+2606  RETagTechnology(r,t,y)$renewable_tech(t) = 1;
 ****                                      $141
 **** LINE      7 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
 **** LINE     37 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -2743,7 +2615,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-2631  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
+2607  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
 ****                                $141
 **** LINE      8 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
 **** LINE     37 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -2752,520 +2624,520 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-2632  * define model equations
+2608  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:31:53 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
 
-2635  *
-2636  * OSeMOSYS 2011.07.07 conversion to GAMS by Ken Noble, Noble-Soft Systems - August 2012
-2637  * OSeMOSYS 2017.11.08 update by Thorsten Burandt, Konstantin Löffler and Karlo Hainsch, TU Berlin (Workgroup for Infrastructure Policy) - October 2017
-2638  *
-2639  * OSeMOSYS 2017.11.08
-2640  * Main changes to previous version OSeMOSYS_2016_08_01
-2641  * Bug fixed in:
-2642  * - Equation E1
-2643  * Open Source energy Modeling SYStem
-2644  *
-2645  * 2022.03.28 Fix EBa10_EnergyBalanceEachTS4, fix SI7_SalvageValueStorageAtEndOfPeriod2, fix SV2_SalvageValueAtEndOfPeriod2, add parentheses in conditional expressions where ambiguous, replace = with eq where appropriate, use card of set not already in used, improve storage constraints names, import comments from docs,  y Giacomo Marangoni
-2646   
-2647  * ============================================================================
-2648  *
-2649   
-2650   
-2651  *------------------------------------------------------------------------
-2652  * Objective function
-2653  *------------------------------------------------------------------------
+2611  *
+2612  * OSeMOSYS 2011.07.07 conversion to GAMS by Ken Noble, Noble-Soft Systems - August 2012
+2613  * OSeMOSYS 2017.11.08 update by Thorsten Burandt, Konstantin Löffler and Karlo Hainsch, TU Berlin (Workgroup for Infrastructure Policy) - October 2017
+2614  *
+2615  * OSeMOSYS 2017.11.08
+2616  * Main changes to previous version OSeMOSYS_2016_08_01
+2617  * Bug fixed in:
+2618  * - Equation E1
+2619  * Open Source energy Modeling SYStem
+2620  *
+2621  * 2022.03.28 Fix EBa10_EnergyBalanceEachTS4, fix SI7_SalvageValueStorageAtEndOfPeriod2, fix SV2_SalvageValueAtEndOfPeriod2, add parentheses in conditional expressions where ambiguous, replace = with eq where appropriate, use card of set not already in used, improve storage constraints names, import comments from docs,  y Giacomo Marangoni
+2622   
+2623  * ============================================================================
+2624  *
+2625   
+2626   
+2627  *------------------------------------------------------------------------
+2628  * Objective function
+2629  *------------------------------------------------------------------------
+2630   
+2631  * This equation represents the overall objective of the model. The default
+2632  * in OSeMOSYS is to minimise the total system cost, over the entire model
+2633  * period.
+2634  free variable z;
+2635  equation Objective;
+2636  Objective..
+2637      z =e= sum((r,y), TotalDiscountedCost(r,y));
+2638   
+2639   
+2640   
+2641  *------------------------------------------------------------------------
+2642  * Rate of demand
+2643  *------------------------------------------------------------------------
+2644   
+2645   
+2646  * The equation below is used to generate the term RateOfDemand, from the
+2647  * user-provided data for SpecifiedAnnualDemand and
+2648  * SpecifiedDemandProfile. The RateOfDemand is defined for each combination
+2649  * of commodity, TimeSlice and Year.
+2650  equation EQ_SpecifiedDemand1(REGION,TIMESLICE,FUEL,YEAR);
+2651  EQ_SpecifiedDemand1(r,l,f,y)$(SpecifiedAnnualDemand(r,f,y) gt 0)..
+2652      SpecifiedAnnualDemand(r,f,y)*SpecifiedDemandProfile(r,f,l,y) / YearSplit(l,y) =e= RateOfDemand(r,l,f,y);
+2653   
 2654   
-2655  * This equation represents the overall objective of the model. The default
-2656  * in OSeMOSYS is to minimise the total system cost, over the entire model
-2657  * period.
-2658  free variable z;
-2659  equation Objective;
-2660  Objective..
-2661      z =e= sum((r,y), TotalDiscountedCost(r,y));
-2662   
-2663   
-2664   
-2665  *------------------------------------------------------------------------
-2666  * Rate of demand
-2667  *------------------------------------------------------------------------
-2668   
+2655  *------------------------------------------------------------------------
+2656  * Capacity Adequacy A
+2657  *------------------------------------------------------------------------
+2658   
+2659  * Used to first calculate total capacity of each technology for each year
+2660  * based on existing capacity from before the model period
+2661  * (ResidualCapacity), AccumulatedNewCapacity during the modelling period,
+2662  * and NewCapacity installed in each year. It is then ensured that this
+2663  * Capacity is sufficient to meet the RateOfTotalActivity in each TimeSlice
+2664  * and Year. An additional constraint based on the size, or capacity, of
+2665  * each unit of a Technology is included
+2666  * (CapacityOfOneTechnologyUnit). This stipulates that the capacity of
+2667  * certain Technology can only be a multiple of the user-defined
+2668  * CapacityOfOneTechnologyUnit.
 2669   
-2670  * The equation below is used to generate the term RateOfDemand, from the
-2671  * user-provided data for SpecifiedAnnualDemand and
-2672  * SpecifiedDemandProfile. The RateOfDemand is defined for each combination
-2673  * of commodity, TimeSlice and Year.
-2674  equation EQ_SpecifiedDemand1(REGION,TIMESLICE,FUEL,YEAR);
-2675  EQ_SpecifiedDemand1(r,l,f,y)$(SpecifiedAnnualDemand(r,f,y) gt 0)..
-2676      SpecifiedAnnualDemand(r,f,y)*SpecifiedDemandProfile(r,f,l,y) / YearSplit(l,y) =e= RateOfDemand(r,l,f,y);
-2677   
+2670  * Calculates cumulative new capacity installed over the time horizon
+2671  equation CAa1_TotalNewCapacity(REGION,TECHNOLOGY,YEAR);
+2672  CAa1_TotalNewCapacity(r,t,y)..
+2673      AccumulatedNewCapacity(r,t,y) =e=
+2675      sum(yy$((y.val-yy.val < OperationalLife(r,t)) AND (y.val-yy.val >= 0)), NewCapacity(r,t,yy))
+2677      ;
 2678   
-2679  *------------------------------------------------------------------------
-2680  * Capacity Adequacy A
-2681  *------------------------------------------------------------------------
+2679  equation CAa2_TotalAnnualCapacity(REGION,TECHNOLOGY,YEAR);
+2680  CAa2_TotalAnnualCapacity(r,t,y)..
+2681      AccumulatedNewCapacity(r,t,y) + ResidualCapacity(r,t,y) =e= TotalCapacityAnnual(r,t,y);
 2682   
-2683  * Used to first calculate total capacity of each technology for each year
-2684  * based on existing capacity from before the model period
-2685  * (ResidualCapacity), AccumulatedNewCapacity during the modelling period,
-2686  * and NewCapacity installed in each year. It is then ensured that this
-2687  * Capacity is sufficient to meet the RateOfTotalActivity in each TimeSlice
-2688  * and Year. An additional constraint based on the size, or capacity, of
-2689  * each unit of a Technology is included
-2690  * (CapacityOfOneTechnologyUnit). This stipulates that the capacity of
-2691  * certain Technology can only be a multiple of the user-defined
-2692  * CapacityOfOneTechnologyUnit.
-2693   
-2694  * Calculates cumulative new capacity installed over the time horizon
-2695  equation CAa1_TotalNewCapacity(REGION,TECHNOLOGY,YEAR);
-2696  CAa1_TotalNewCapacity(r,t,y)..
-2697      AccumulatedNewCapacity(r,t,y) =e=
-2699      sum(yy$((y.val-yy.val < OperationalLife(r,t)) AND (y.val-yy.val >= 0)), NewCapacity(r,t,yy))
-2701      ;
+2683  equation CAa3_TotalActivityOfEachTechnology(YEAR,TECHNOLOGY,TIMESLICE,REGION);
+2684  CAa3_TotalActivityOfEachTechnology(y,t,l,r)..
+2685      sum(m, RateOfActivity(r,l,t,m,y)) =e= RateOfTotalActivity(r,l,t,y);
+2686   
+2687  equation CAa4_Constraint_Capacity(REGION,TIMESLICE,TECHNOLOGY,YEAR);
+2688  CAa4_Constraint_Capacity(r,l,t,y)..
+2689      RateOfTotalActivity(r,l,t,y) =l= TotalCapacityAnnual(r,t,y) * CapacityFactor(r,t,l,y) * CapacityToActivityUnit(r,t);
+2690   
+2691   
+2692  * NOTE: OSeMOSYS uses Mixed Integer Programming to solve models that
+2693  * define CapacityOfTechnologyUnit. Using this parameter is likely to
+2694  * increase the model computation time.
+2696  equation CAa5_TotalNewCapacity(REGION,TECHNOLOGY,YEAR);
+2697  CAa5_TotalNewCapacity(r,t,y)$(CapacityOfOneTechnologyUnit(r,t,y) <> 0)..
+2698      CapacityOfOneTechnologyUnit(r,t,y) * NumberOfNewTechnologyUnits(r,t,y) =e= NewCapacity(r,t,y);
+2700   
+2701   
 2702   
-2703  equation CAa2_TotalAnnualCapacity(REGION,TECHNOLOGY,YEAR);
-2704  CAa2_TotalAnnualCapacity(r,t,y)..
-2705      AccumulatedNewCapacity(r,t,y) + ResidualCapacity(r,t,y) =e= TotalCapacityAnnual(r,t,y);
+2703  *------------------------------------------------------------------------
+2704  * Capacity Adequacy B
+2705  *------------------------------------------------------------------------
 2706   
-2707  equation CAa3_TotalActivityOfEachTechnology(YEAR,TECHNOLOGY,TIMESLICE,REGION);
-2708  CAa3_TotalActivityOfEachTechnology(y,t,l,r)..
-2709      sum(m, RateOfActivity(r,l,t,m,y)) =e= RateOfTotalActivity(r,l,t,y);
-2710   
-2711  equation CAa4_Constraint_Capacity(REGION,TIMESLICE,TECHNOLOGY,YEAR);
-2712  CAa4_Constraint_Capacity(r,l,t,y)..
-2713      RateOfTotalActivity(r,l,t,y) =l= TotalCapacityAnnual(r,t,y) * CapacityFactor(r,t,l,y) * CapacityToActivityUnit(r,t);
+2707  * Ensures that adequate capacity of technologies is present to at least
+2708  * meet the average annual demand.
+2709   
+2710  equation CAb1_PlannedMaintenance(REGION,TECHNOLOGY,YEAR);
+2711  CAb1_PlannedMaintenance(r,t,y)..
+2712      sum(l, RateOfTotalActivity(r,l,t,y)*YearSplit(l,y)) =l= sum(l,TotalCapacityAnnual(r,t,y)*CapacityFactor(r,t,l,y)*YearSplit(l,y))*AvailabilityFactor(r,t,y)*CapacityToActivityUnit(r,t);
+2713   
 2714   
 2715   
-2716  * NOTE: OSeMOSYS uses Mixed Integer Programming to solve models that
-2717  * define CapacityOfTechnologyUnit. Using this parameter is likely to
-2718  * increase the model computation time.
-2720  equation CAa5_TotalNewCapacity(REGION,TECHNOLOGY,YEAR);
-2721  CAa5_TotalNewCapacity(r,t,y)$(CapacityOfOneTechnologyUnit(r,t,y) <> 0)..
-2722      CapacityOfOneTechnologyUnit(r,t,y) * NumberOfNewTechnologyUnits(r,t,y) =e= NewCapacity(r,t,y);
-2724   
+2716  *------------------------------------------------------------------------
+2717  * Energy Balance A
+2718  *------------------------------------------------------------------------
+2719   
+2720  * Ensures that demand for each commodity is met in each TimeSlice.
+2721   
+2722  equation EBa1_RateOfFuelProduction1(REGION,TIMESLICE,FUEL,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+2723  EBa1_RateOfFuelProduction1(r,l,f,t,m,y)$(OutputActivityRatio(r,t,f,m,y) <> 0)..
+2724      RateOfActivity(r,l,t,m,y)*OutputActivityRatio(r,t,f,m,y) =e= RateOfProductionByTechnologyByMode(r,l,t,m,f,y);
 2725   
-2726   
-2727  *------------------------------------------------------------------------
-2728  * Capacity Adequacy B
-2729  *------------------------------------------------------------------------
+2726  equation EBa2_RateOfFuelProduction2(REGION,TIMESLICE,FUEL,TECHNOLOGY,YEAR);
+2727  EBa2_RateOfFuelProduction2(r,l,f,t,y)..
+2728      sum(m$(OutputActivityRatio(r,t,f,m,y) <> 0), RateOfProductionByTechnologyByMode(r,l,t,m,f,y)) =e=
+2729          RateOfProductionByTechnology(r,l,t,f,y);
 2730   
-2731  * Ensures that adequate capacity of technologies is present to at least
-2732  * meet the average annual demand.
-2733   
-2734  equation CAb1_PlannedMaintenance(REGION,TECHNOLOGY,YEAR);
-2735  CAb1_PlannedMaintenance(r,t,y)..
-2736      sum(l, RateOfTotalActivity(r,l,t,y)*YearSplit(l,y)) =l= sum(l,TotalCapacityAnnual(r,t,y)*CapacityFactor(r,t,l,y)*YearSplit(l,y))*AvailabilityFactor(r,t,y)*CapacityToActivityUnit(r,t);
-2737   
-2738   
+2731  equation EBa3_RateOfFuelProduction3(REGION,TIMESLICE,FUEL,YEAR);
+2732  EBa3_RateOfFuelProduction3(r,l,f,y)..
+2733      sum(t, RateOfProductionByTechnology(r,l,t,f,y)) =e=
+2734          RateOfProduction(r,l,f,y);
+2735   
+2736  equation EBa4_RateOfFuelUse1(REGION,TIMESLICE,FUEL,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+2737  EBa4_RateOfFuelUse1(r,l,f,t,m,y)$(InputActivityRatio(r,t,f,m,y) <> 0)..
+2738      RateOfActivity(r,l,t,m,y)*InputActivityRatio(r,t,f,m,y) =e= RateOfUseByTechnologyByMode(r,l,t,m,f,y);
 2739   
-2740  *------------------------------------------------------------------------
-2741  * Energy Balance A
-2742  *------------------------------------------------------------------------
-2743   
-2744  * Ensures that demand for each commodity is met in each TimeSlice.
-2745   
-2746  equation EBa1_RateOfFuelProduction1(REGION,TIMESLICE,FUEL,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
-2747  EBa1_RateOfFuelProduction1(r,l,f,t,m,y)$(OutputActivityRatio(r,t,f,m,y) <> 0)..
-2748      RateOfActivity(r,l,t,m,y)*OutputActivityRatio(r,t,f,m,y) =e= RateOfProductionByTechnologyByMode(r,l,t,m,f,y);
-2749   
-2750  equation EBa2_RateOfFuelProduction2(REGION,TIMESLICE,FUEL,TECHNOLOGY,YEAR);
-2751  EBa2_RateOfFuelProduction2(r,l,f,t,y)..
-2752      sum(m$(OutputActivityRatio(r,t,f,m,y) <> 0), RateOfProductionByTechnologyByMode(r,l,t,m,f,y)) =e=
-2753          RateOfProductionByTechnology(r,l,t,f,y);
-2754   
-2755  equation EBa3_RateOfFuelProduction3(REGION,TIMESLICE,FUEL,YEAR);
-2756  EBa3_RateOfFuelProduction3(r,l,f,y)..
-2757      sum(t, RateOfProductionByTechnology(r,l,t,f,y)) =e=
-2758          RateOfProduction(r,l,f,y);
-2759   
-2760  equation EBa4_RateOfFuelUse1(REGION,TIMESLICE,FUEL,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
-2761  EBa4_RateOfFuelUse1(r,l,f,t,m,y)$(InputActivityRatio(r,t,f,m,y) <> 0)..
-2762      RateOfActivity(r,l,t,m,y)*InputActivityRatio(r,t,f,m,y) =e= RateOfUseByTechnologyByMode(r,l,t,m,f,y);
-2763   
-2764  equation EBa5_RateOfFuelUse2(REGION,TIMESLICE,FUEL,TECHNOLOGY,YEAR);
-2765  EBa5_RateOfFuelUse2(r,l,f,t,y)..
-2766      sum(m$(InputActivityRatio(r,t,f,m,y) <> 0), RateOfUseByTechnologyByMode(r,l,t,m,f,y)) =e=
-2767          RateOfUseByTechnology(r,l,t,f,y);
+2740  equation EBa5_RateOfFuelUse2(REGION,TIMESLICE,FUEL,TECHNOLOGY,YEAR);
+2741  EBa5_RateOfFuelUse2(r,l,f,t,y)..
+2742      sum(m$(InputActivityRatio(r,t,f,m,y) <> 0), RateOfUseByTechnologyByMode(r,l,t,m,f,y)) =e=
+2743          RateOfUseByTechnology(r,l,t,f,y);
+2744   
+2745  equation EBa6_RateOfFuelUse3(REGION,TIMESLICE,FUEL,YEAR);
+2746  EBa6_RateOfFuelUse3(r,l,f,y)..
+2747      sum(t, RateOfUseByTechnology(r,l,t,f,y)) =e= RateOfUse(r,l,f,y);
+2748   
+2749  equation EBa7_EnergyBalanceEachTS1(REGION,TIMESLICE,FUEL,YEAR);
+2750  EBa7_EnergyBalanceEachTS1(r,l,f,y)..
+2751      RateOfProduction(r,l,f,y)*YearSplit(l,y) =e= Production(r,l,f,y);
+2752   
+2753  equation EBa8_EnergyBalanceEachTS2(REGION,TIMESLICE,FUEL,YEAR);
+2754  EBa8_EnergyBalanceEachTS2(r,l,f,y)..
+2755      RateOfUse(r,l,f,y)*YearSplit(l,y) =e= Use(r,l,f,y);
+2756   
+2757  equation EBa9_EnergyBalanceEachTS3(REGION,TIMESLICE,FUEL,YEAR);
+2758  EBa9_EnergyBalanceEachTS3(r,l,f,y)..
+2759      RateOfDemand(r,l,f,y)*YearSplit(l,y) =e= Demand(r,l,f,y);
+2760   
+2761  equation EBa10_EnergyBalanceEachTS4(REGION,r,TIMESLICE,FUEL,YEAR);
+2762  EBa10_EnergyBalanceEachTS4(r,rr,l,f,y)..
+2763      Trade(r,rr,l,f,y) =e= -Trade(rr,r,l,f,y);
+2764   
+2765  equation EBa11_EnergyBalanceEachTS5(REGION,TIMESLICE,FUEL,YEAR);
+2766  EBa11_EnergyBalanceEachTS5(r,l,f,y)..
+2767      Production(r,l,f,y) =g= Demand(r,l,f,y) + Use(r,l,f,y) + sum(rr, (Trade(r,rr,l,f,y)*TradeRoute(r,rr,f,y)));
 2768   
-2769  equation EBa6_RateOfFuelUse3(REGION,TIMESLICE,FUEL,YEAR);
-2770  EBa6_RateOfFuelUse3(r,l,f,y)..
-2771      sum(t, RateOfUseByTechnology(r,l,t,f,y)) =e= RateOfUse(r,l,f,y);
-2772   
-2773  equation EBa7_EnergyBalanceEachTS1(REGION,TIMESLICE,FUEL,YEAR);
-2774  EBa7_EnergyBalanceEachTS1(r,l,f,y)..
-2775      RateOfProduction(r,l,f,y)*YearSplit(l,y) =e= Production(r,l,f,y);
-2776   
-2777  equation EBa8_EnergyBalanceEachTS2(REGION,TIMESLICE,FUEL,YEAR);
-2778  EBa8_EnergyBalanceEachTS2(r,l,f,y)..
-2779      RateOfUse(r,l,f,y)*YearSplit(l,y) =e= Use(r,l,f,y);
-2780   
-2781  equation EBa9_EnergyBalanceEachTS3(REGION,TIMESLICE,FUEL,YEAR);
-2782  EBa9_EnergyBalanceEachTS3(r,l,f,y)..
-2783      RateOfDemand(r,l,f,y)*YearSplit(l,y) =e= Demand(r,l,f,y);
-2784   
-2785  equation EBa10_EnergyBalanceEachTS4(REGION,r,TIMESLICE,FUEL,YEAR);
-2786  EBa10_EnergyBalanceEachTS4(r,rr,l,f,y)..
-2787      Trade(r,rr,l,f,y) =e= -Trade(rr,r,l,f,y);
-2788   
-2789  equation EBa11_EnergyBalanceEachTS5(REGION,TIMESLICE,FUEL,YEAR);
-2790  EBa11_EnergyBalanceEachTS5(r,l,f,y)..
-2791      Production(r,l,f,y) =g= Demand(r,l,f,y) + Use(r,l,f,y) + sum(rr, (Trade(r,rr,l,f,y)*TradeRoute(r,rr,f,y)));
+2769   
+2770  *------------------------------------------------------------------------
+2771  * Energy Balance B
+2772  *------------------------------------------------------------------------
+2773   
+2774  * Ensures that demand for each commodity is met in each Year.
+2775   
+2776  equation EBb1_EnergyBalanceEachYear1(REGION,FUEL,YEAR);
+2777  EBb1_EnergyBalanceEachYear1(r,f,y)..
+2778      sum(l, Production(r,l,f,y)) =e= ProductionAnnual(r,f,y);
+2779   
+2780  equation EBb2_EnergyBalanceEachYear2(REGION,FUEL,YEAR);
+2781  EBb2_EnergyBalanceEachYear2(r,f,y)..
+2782      sum(l, Use(r,l,f,y)) =e= UseAnnual(r,f,y);
+2783   
+2784  equation EBb3_EnergyBalanceEachYear3(REGION,r,FUEL,YEAR);
+2785  EBb3_EnergyBalanceEachYear3(r,rr,f,y)..
+2786      sum(l, Trade(r,rr,l,f,y)) =e= TradeAnnual(r,rr,f,y);
+2787   
+2788  equation EBb4_EnergyBalanceEachYear4(REGION,FUEL,YEAR);
+2789  EBb4_EnergyBalanceEachYear4(r,f,y)..
+2790      ProductionAnnual(r,f,y) =g= UseAnnual(r,f,y) + sum(rr, (TradeAnnual(r,rr,f,y) * TradeRoute(r,rr,f,y))) + AccumulatedAnnualDemand(r,f,y);
+2791   
 2792   
 2793   
 2794  *------------------------------------------------------------------------
-2795  * Energy Balance B
+2795  * Accounting Technology Production/Use
 2796  *------------------------------------------------------------------------
 2797   
-2798  * Ensures that demand for each commodity is met in each Year.
-2799   
-2800  equation EBb1_EnergyBalanceEachYear1(REGION,FUEL,YEAR);
-2801  EBb1_EnergyBalanceEachYear1(r,f,y)..
-2802      sum(l, Production(r,l,f,y)) =e= ProductionAnnual(r,f,y);
-2803   
-2804  equation EBb2_EnergyBalanceEachYear2(REGION,FUEL,YEAR);
-2805  EBb2_EnergyBalanceEachYear2(r,f,y)..
-2806      sum(l, Use(r,l,f,y)) =e= UseAnnual(r,f,y);
-2807   
-2808  equation EBb3_EnergyBalanceEachYear3(REGION,r,FUEL,YEAR);
-2809  EBb3_EnergyBalanceEachYear3(r,rr,f,y)..
-2810      sum(l, Trade(r,rr,l,f,y)) =e= TradeAnnual(r,rr,f,y);
-2811   
-2812  equation EBb4_EnergyBalanceEachYear4(REGION,FUEL,YEAR);
-2813  EBb4_EnergyBalanceEachYear4(r,f,y)..
-2814      ProductionAnnual(r,f,y) =g= UseAnnual(r,f,y) + sum(rr, (TradeAnnual(r,rr,f,y) * TradeRoute(r,rr,f,y))) + AccumulatedAnnualDemand(r,f,y);
-2815   
-2816   
+2798  * Accounting equations used to generate specific intermediate variables:
+2799  * ProductionByTechnology, UseBytechnology,
+2800  * TotalAnnualTechnologyActivityByMode, and ModelPeriodCostByRegion.
+2801   
+2802  equation Acc1_FuelProductionByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+2803  Acc1_FuelProductionByTechnology(r,l,t,f,y)..
+2804      RateOfProductionByTechnology(r,l,t,f,y) * YearSplit(l,y) =e= ProductionByTechnology(r,l,t,f,y);
+2805   
+2806  equation Acc2_FuelUseByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
+2807  Acc2_FuelUseByTechnology(r,l,t,f,y)..
+2808      RateOfUseByTechnology(r,l,t,f,y) * YearSplit(l,y) =e= UseByTechnology(r,l,t,f,y);
+2809   
+2810  equation Acc3_AverageAnnualRateOfActivity(REGION,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
+2811  Acc3_AverageAnnualRateOfActivity(r,t,m,y)..
+2812      sum(l, RateOfActivity(r,l,t,m,y)*YearSplit(l,y)) =e= TotalAnnualTechnologyActivityByMode(r,t,m,y);
+2813   
+2814  equation Acc4_ModelPeriodCostByRegion(REGION);
+2815  Acc4_ModelPeriodCostByRegion(r)..
+2816      sum((y), TotalDiscountedCost(r,y)) =e= ModelPeriodCostByRegion(r);
 2817   
-2818  *------------------------------------------------------------------------
-2819  * Accounting Technology Production/Use
-2820  *------------------------------------------------------------------------
-2821   
-2822  * Accounting equations used to generate specific intermediate variables:
-2823  * ProductionByTechnology, UseBytechnology,
-2824  * TotalAnnualTechnologyActivityByMode, and ModelPeriodCostByRegion.
-2825   
-2826  equation Acc1_FuelProductionByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
-2827  Acc1_FuelProductionByTechnology(r,l,t,f,y)..
-2828      RateOfProductionByTechnology(r,l,t,f,y) * YearSplit(l,y) =e= ProductionByTechnology(r,l,t,f,y);
-2829   
-2830  equation Acc2_FuelUseByTechnology(REGION,TIMESLICE,TECHNOLOGY,FUEL,YEAR);
-2831  Acc2_FuelUseByTechnology(r,l,t,f,y)..
-2832      RateOfUseByTechnology(r,l,t,f,y) * YearSplit(l,y) =e= UseByTechnology(r,l,t,f,y);
-2833   
-2834  equation Acc3_AverageAnnualRateOfActivity(REGION,TECHNOLOGY,MODE_OF_OPERATION,YEAR);
-2835  Acc3_AverageAnnualRateOfActivity(r,t,m,y)..
-2836      sum(l, RateOfActivity(r,l,t,m,y)*YearSplit(l,y)) =e= TotalAnnualTechnologyActivityByMode(r,t,m,y);
-2837   
-2838  equation Acc4_ModelPeriodCostByRegion(REGION);
-2839  Acc4_ModelPeriodCostByRegion(r)..
-2840      sum((y), TotalDiscountedCost(r,y)) =e= ModelPeriodCostByRegion(r);
-2841   
+2818   
+2819   
+2820   
+2821  *------------------------------------------------------------------------
+2822  * Storage Equations
+2823  *------------------------------------------------------------------------
+2824   
+2826   
+2827   
+2828  *------------------------------------------------------------------------
+2829  * Capital costs
+2830  *------------------------------------------------------------------------
+2831   
+2832  * Calculates the total discounted capital cost expenditure for each
+2833  * technology in each year.
+2834   
+2835  equation CC1_UndiscountedCapitalInvestment(REGION,TECHNOLOGY,YEAR);
+2836  CC1_UndiscountedCapitalInvestment(r,t,y)..
+2837      CapitalCost(r,t,y) * NewCapacity(r,t,y) =e= CapitalInvestment(r,t,y);
+2838   
+2839  equation CC2_DiscountingCapitalInvestmenta(REGION,TECHNOLOGY,YEAR);
+2840  CC2_DiscountingCapitalInvestmenta(r,t,y)..
+2841      CapitalInvestment(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val))) =e= DiscountedCapitalInvestment(r,t,y);
 2842   
 2843   
 2844   
 2845  *------------------------------------------------------------------------
-2846  * Storage Equations
+2846  * Salvage value
 2847  *------------------------------------------------------------------------
 2848   
-2850   
-2851   
-2852  *------------------------------------------------------------------------
-2853  * Capital costs
-2854  *------------------------------------------------------------------------
-2855   
-2856  * Calculates the total discounted capital cost expenditure for each
-2857  * technology in each year.
-2858   
-2859  equation CC1_UndiscountedCapitalInvestment(REGION,TECHNOLOGY,YEAR);
-2860  CC1_UndiscountedCapitalInvestment(r,t,y)..
-2861      CapitalCost(r,t,y) * NewCapacity(r,t,y) =e= CapitalInvestment(r,t,y);
-2862   
-2863  equation CC2_DiscountingCapitalInvestmenta(REGION,TECHNOLOGY,YEAR);
-2864  CC2_DiscountingCapitalInvestmenta(r,t,y)..
-2865      CapitalInvestment(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val))) =e= DiscountedCapitalInvestment(r,t,y);
-2866   
-2867   
-2868   
-2869  *------------------------------------------------------------------------
-2870  * Salvage value
+2849  * Calculates the fraction of the initial capital cost that can be recouped
+2850  * at the end of a technologies operational life. The salvage value can be
+2851  * calculated using one of two depreciation methods: straight line and
+2852  * sinking fund.
+2853   
+2854  equation SV1_SalvageValueAtEndOfPeriod1(REGION,TECHNOLOGY,YEAR);
+2855  SV1_SalvageValueAtEndOfPeriod1(r,t,y)$((DepreciationMethod(r) eq 1) and (((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val)) and (DiscountRate(r) > 0)))..
+2856      SalvageValue(r,t,y) =e= CapitalCost(r,t,y)*NewCapacity(r,t,y)*(1-(((1+DiscountRate(r))**(smax(yy, yy.val) - y.val+1) -1) /((1+DiscountRate(r))**OperationalLife(r,t)-1)));
+2857   
+2858  equation SV2_SalvageValueAtEndOfPeriod2(REGION,TECHNOLOGY,YEAR);
+2859  SV2_SalvageValueAtEndOfPeriod2(r,t,y)$((((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val)) and (DiscountRate(r) eq 0)) or ((DepreciationMethod(r) eq 2) and ((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val))))..
+2860      SalvageValue(r,t,y) =e= CapitalCost(r,t,y)*NewCapacity(r,t,y)*(1-(smax(yy, yy.val)- y.val+1)/OperationalLife(r,t));
+2861   
+2862  equation SV3_SalvageValueAtEndOfPeriod3(REGION,TECHNOLOGY,YEAR);
+2863  SV3_SalvageValueAtEndOfPeriod3(r,t,y)$(y.val + OperationalLife(r,t)-1 <= smax(yy, yy.val))..
+2864      SalvageValue(r,t,y) =e= 0;
+2865   
+2866  equation SV4_SalvageValueDiscToStartYr(REGION,TECHNOLOGY,YEAR);
+2867  SV4_SalvageValueDiscToStartYr(r,t,y)..
+2868      DiscountedSalvageValue(r,t,y) =e= SalvageValue(r,t,y)/((1+DiscountRate(r))**(1+smax(yy, yy.val) - smin(yy, yy.val)));
+2869   
+2870   
 2871  *------------------------------------------------------------------------
-2872   
-2873  * Calculates the fraction of the initial capital cost that can be recouped
-2874  * at the end of a technologies operational life. The salvage value can be
-2875  * calculated using one of two depreciation methods: straight line and
-2876  * sinking fund.
+2872  * Operating costs
+2873  *------------------------------------------------------------------------
+2874   
+2875  * Calculates the total variable and fixed operating costs for each
+2876  * technology, in each year.
 2877   
-2878  equation SV1_SalvageValueAtEndOfPeriod1(REGION,TECHNOLOGY,YEAR);
-2879  SV1_SalvageValueAtEndOfPeriod1(r,t,y)$((DepreciationMethod(r) eq 1) and (((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val)) and (DiscountRate(r) > 0)))..
-2880      SalvageValue(r,t,y) =e= CapitalCost(r,t,y)*NewCapacity(r,t,y)*(1-(((1+DiscountRate(r))**(smax(yy, yy.val) - y.val+1) -1) /((1+DiscountRate(r))**OperationalLife(r,t)-1)));
-2881   
-2882  equation SV2_SalvageValueAtEndOfPeriod2(REGION,TECHNOLOGY,YEAR);
-2883  SV2_SalvageValueAtEndOfPeriod2(r,t,y)$((((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val)) and (DiscountRate(r) eq 0)) or ((DepreciationMethod(r) eq 2) and ((y.val + OperationalLife(r,t)-1) > smax(yy, yy.val))))..
-2884      SalvageValue(r,t,y) =e= CapitalCost(r,t,y)*NewCapacity(r,t,y)*(1-(smax(yy, yy.val)- y.val+1)/OperationalLife(r,t));
-2885   
-2886  equation SV3_SalvageValueAtEndOfPeriod3(REGION,TECHNOLOGY,YEAR);
-2887  SV3_SalvageValueAtEndOfPeriod3(r,t,y)$(y.val + OperationalLife(r,t)-1 <= smax(yy, yy.val))..
-2888      SalvageValue(r,t,y) =e= 0;
-2889   
-2890  equation SV4_SalvageValueDiscToStartYr(REGION,TECHNOLOGY,YEAR);
-2891  SV4_SalvageValueDiscToStartYr(r,t,y)..
-2892      DiscountedSalvageValue(r,t,y) =e= SalvageValue(r,t,y)/((1+DiscountRate(r))**(1+smax(yy, yy.val) - smin(yy, yy.val)));
-2893   
+2878  equation OC1_OperatingCostsVariable(REGION,TIMESLICE,TECHNOLOGY,YEAR);
+2879  OC1_OperatingCostsVariable(r,l,t,y)..
+2880      sum(m, (TotalAnnualTechnologyActivityByMode(r,t,m,y)*VariableCost(r,t,m,y))) =e=
+2881          AnnualVariableOperatingCost(r,t,y);
+2882   
+2883  equation OC2_OperatingCostsFixedAnnual(REGION,TECHNOLOGY,YEAR);
+2884  OC2_OperatingCostsFixedAnnual(r,t,y)..
+2885      TotalCapacityAnnual(r,t,y)*FixedCost(r,t,y) =e= AnnualFixedOperatingCost(r,t,y);
+2886   
+2887  equation OC3_OperatingCostsTotalAnnual(REGION,TECHNOLOGY,YEAR);
+2888  OC3_OperatingCostsTotalAnnual(r,t,y)..
+2889      AnnualFixedOperatingCost(r,t,y)+AnnualVariableOperatingCost(r,t,y) =e= OperatingCost(r,t,y);
+2890   
+2891  equation OC4_DiscountedOperatingCostsTotalAnnual(REGION,TECHNOLOGY,YEAR);
+2892  OC4_DiscountedOperatingCostsTotalAnnual(r,t,y)..
+2893      OperatingCost(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val)+0.5)) =e= DiscountedOperatingCost(r,t,y);
 2894   
-2895  *------------------------------------------------------------------------
-2896  * Operating costs
-2897  *------------------------------------------------------------------------
+2895  *
+2896  * ############### Total Discounted Costs #############
+2897  *
 2898   
-2899  * Calculates the total variable and fixed operating costs for each
-2900  * technology, in each year.
-2901   
-2902  equation OC1_OperatingCostsVariable(REGION,TIMESLICE,TECHNOLOGY,YEAR);
-2903  OC1_OperatingCostsVariable(r,l,t,y)..
-2904      sum(m, (TotalAnnualTechnologyActivityByMode(r,t,m,y)*VariableCost(r,t,m,y))) =e=
-2905          AnnualVariableOperatingCost(r,t,y);
-2906   
-2907  equation OC2_OperatingCostsFixedAnnual(REGION,TECHNOLOGY,YEAR);
-2908  OC2_OperatingCostsFixedAnnual(r,t,y)..
-2909      TotalCapacityAnnual(r,t,y)*FixedCost(r,t,y) =e= AnnualFixedOperatingCost(r,t,y);
-2910   
-2911  equation OC3_OperatingCostsTotalAnnual(REGION,TECHNOLOGY,YEAR);
-2912  OC3_OperatingCostsTotalAnnual(r,t,y)..
-2913      AnnualFixedOperatingCost(r,t,y)+AnnualVariableOperatingCost(r,t,y) =e= OperatingCost(r,t,y);
-2914   
-2915  equation OC4_DiscountedOperatingCostsTotalAnnual(REGION,TECHNOLOGY,YEAR);
-2916  OC4_DiscountedOperatingCostsTotalAnnual(r,t,y)..
-2917      OperatingCost(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val)+0.5)) =e= DiscountedOperatingCost(r,t,y);
-2918   
-2919  *
-2920  * ############### Total Discounted Costs #############
-2921  *
-2922   
-2923   
-2924  *------------------------------------------------------------------------
-2925  * Total discounted costs
-2926  *------------------------------------------------------------------------
-2927   
-2928  * Calculates the total discounted system cost over the entire model period
-2929  * to give the TotalDiscountedCost. This is the variable that is minimized
-2930  * in the model’s objective function.
-2931   
-2932  equation TDC1_TotalDiscountedCostByTechnology(REGION,TECHNOLOGY,YEAR);
-2933  TDC1_TotalDiscountedCostByTechnology(r,t,y)..
-2934      DiscountedOperatingCost(r,t,y)+DiscountedCapitalInvestment(r,t,y)+DiscountedTechnologyEmissionsPenalty(r,t,y)-DiscountedSalvageValue(r,t,y) =e= TotalDiscountedCostByTechnology(r,t,y);
+2899   
+2900  *------------------------------------------------------------------------
+2901  * Total discounted costs
+2902  *------------------------------------------------------------------------
+2903   
+2904  * Calculates the total discounted system cost over the entire model period
+2905  * to give the TotalDiscountedCost. This is the variable that is minimized
+2906  * in the model’s objective function.
+2907   
+2908  equation TDC1_TotalDiscountedCostByTechnology(REGION,TECHNOLOGY,YEAR);
+2909  TDC1_TotalDiscountedCostByTechnology(r,t,y)..
+2910      DiscountedOperatingCost(r,t,y)+DiscountedCapitalInvestment(r,t,y)+DiscountedTechnologyEmissionsPenalty(r,t,y)-DiscountedSalvageValue(r,t,y) =e= TotalDiscountedCostByTechnology(r,t,y);
+2911   
+2912  equation TDC2_TotalDiscountedCostByTechnology(REGION,YEAR);
+2913  TDC2_TotalDiscountedCostByTechnology(r,y)..
+2914      sum(t, TotalDiscountedCostByTechnology(r,t,y)) + sum(s,TotalDiscountedStorageCost(r,s,y)) =e= TotalDiscountedCost(r,y);
+2915   
+2916   
+2917   
+2918  *------------------------------------------------------------------------
+2919  * Total capacity constraints
+2920  *------------------------------------------------------------------------
+2921   
+2922  * Ensures that the total capacity of each technology in each year is
+2923  * greater than and less than the user-defined parameters
+2924  * TotalAnnualMinCapacityInvestment and TotalAnnualMaxCapacityInvestment
+2925  * respectively.
+2926   
+2927  equation TCC1_TotalAnnualMaxCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+2928  TCC1_TotalAnnualMaxCapacityConstraint(r,t,y)..
+2929      TotalCapacityAnnual(r,t,y) =l= TotalAnnualMaxCapacity(r,t,y);
+2930   
+2931  equation TCC2_TotalAnnualMinCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+2932  TCC2_TotalAnnualMinCapacityConstraint(r,t,y)$(TotalAnnualMinCapacity(r,t,y)>0)..
+2933      TotalCapacityAnnual(r,t,y) =g= TotalAnnualMinCapacity(r,t,y);
+2934   
 2935   
-2936  equation TDC2_TotalDiscountedCostByTechnology(REGION,YEAR);
-2937  TDC2_TotalDiscountedCostByTechnology(r,y)..
-2938      sum(t, TotalDiscountedCostByTechnology(r,t,y)) + sum(s,TotalDiscountedStorageCost(r,s,y)) =e= TotalDiscountedCost(r,y);
-2939   
+2936   
+2937  *------------------------------------------------------------------------
+2938  * New capacity constraints
+2939  *------------------------------------------------------------------------
 2940   
-2941   
-2942  *------------------------------------------------------------------------
-2943  * Total capacity constraints
-2944  *------------------------------------------------------------------------
+2941  * Ensures that the new capacity of each technology installed in each year
+2942  * is greater than and less than the user-defined parameters
+2943  * TotalAnnualMinCapacityInvestment and TotalAnnualMaxCapacityInvestment
+2944  * respectively.
 2945   
-2946  * Ensures that the total capacity of each technology in each year is
-2947  * greater than and less than the user-defined parameters
-2948  * TotalAnnualMinCapacityInvestment and TotalAnnualMaxCapacityInvestment
-2949  * respectively.
-2950   
-2951  equation TCC1_TotalAnnualMaxCapacityConstraint(REGION,TECHNOLOGY,YEAR);
-2952  TCC1_TotalAnnualMaxCapacityConstraint(r,t,y)..
-2953      TotalCapacityAnnual(r,t,y) =l= TotalAnnualMaxCapacity(r,t,y);
+2946  equation NCC1_TotalAnnualMaxNewCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+2947  NCC1_TotalAnnualMaxNewCapacityConstraint(r,t,y)..
+2948      NewCapacity(r,t,y) =l= TotalAnnualMaxCapacityInvestment(r,t,y);
+2949   
+2950  equation NCC2_TotalAnnualMinNewCapacityConstraint(REGION,TECHNOLOGY,YEAR);
+2951  NCC2_TotalAnnualMinNewCapacityConstraint(r,t,y)$(TotalAnnualMinCapacityInvestment(r,t,y) > 0)..
+2952      NewCapacity(r,t,y) =g= TotalAnnualMinCapacityInvestment(r,t,y);
+2953   
 2954   
-2955  equation TCC2_TotalAnnualMinCapacityConstraint(REGION,TECHNOLOGY,YEAR);
-2956  TCC2_TotalAnnualMinCapacityConstraint(r,t,y)$(TotalAnnualMinCapacity(r,t,y)>0)..
-2957      TotalCapacityAnnual(r,t,y) =g= TotalAnnualMinCapacity(r,t,y);
-2958   
+2955   
+2956  *------------------------------------------------------------------------
+2957  * Annual activity constraints
+2958  *------------------------------------------------------------------------
 2959   
-2960   
-2961  *------------------------------------------------------------------------
-2962  * New capacity constraints
-2963  *------------------------------------------------------------------------
+2960  * Ensures that the total activity of each technology over each year is
+2961  * greater than and less than the user-defined parameters
+2962  * TotalTechnologyAnnualActivityLowerLimit and
+2963  * TotalTechnologyAnnualActivityUpperLimit respectively.
 2964   
-2965  * Ensures that the new capacity of each technology installed in each year
-2966  * is greater than and less than the user-defined parameters
-2967  * TotalAnnualMinCapacityInvestment and TotalAnnualMaxCapacityInvestment
-2968  * respectively.
-2969   
-2970  equation NCC1_TotalAnnualMaxNewCapacityConstraint(REGION,TECHNOLOGY,YEAR);
-2971  NCC1_TotalAnnualMaxNewCapacityConstraint(r,t,y)..
-2972      NewCapacity(r,t,y) =l= TotalAnnualMaxCapacityInvestment(r,t,y);
-2973   
-2974  equation NCC2_TotalAnnualMinNewCapacityConstraint(REGION,TECHNOLOGY,YEAR);
-2975  NCC2_TotalAnnualMinNewCapacityConstraint(r,t,y)$(TotalAnnualMinCapacityInvestment(r,t,y) > 0)..
-2976      NewCapacity(r,t,y) =g= TotalAnnualMinCapacityInvestment(r,t,y);
+2965  equation AAC1_TotalAnnualTechnologyActivity(REGION,TECHNOLOGY,YEAR);
+2966  AAC1_TotalAnnualTechnologyActivity(r,t,y)..
+2967      sum(l, (RateOfTotalActivity(r,l,t,y)*YearSplit(l,y))) =e= TotalTechnologyAnnualActivity(r,t,y);
+2968   
+2969  equation AAC2_TotalAnnualTechnologyActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
+2970  AAC2_TotalAnnualTechnologyActivityUpperLimit(r,t,y)..
+2971      TotalTechnologyAnnualActivity(r,t,y) =l= TotalTechnologyAnnualActivityUpperLimit(r,t,y);
+2972   
+2973  equation AAC3_TotalAnnualTechnologyActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
+2974  AAC3_TotalAnnualTechnologyActivityLowerLimit(r,t,y)$(TotalTechnologyAnnualActivityLowerLimit(r,t,y) > 0)..
+2975      TotalTechnologyAnnualActivity(r,t,y) =g= TotalTechnologyAnnualActivityLowerLimit(r,t,y);
+2976   
 2977   
 2978   
-2979   
-2980  *------------------------------------------------------------------------
-2981  * Annual activity constraints
-2982  *------------------------------------------------------------------------
-2983   
-2984  * Ensures that the total activity of each technology over each year is
-2985  * greater than and less than the user-defined parameters
-2986  * TotalTechnologyAnnualActivityLowerLimit and
-2987  * TotalTechnologyAnnualActivityUpperLimit respectively.
-2988   
-2989  equation AAC1_TotalAnnualTechnologyActivity(REGION,TECHNOLOGY,YEAR);
-2990  AAC1_TotalAnnualTechnologyActivity(r,t,y)..
-2991      sum(l, (RateOfTotalActivity(r,l,t,y)*YearSplit(l,y))) =e= TotalTechnologyAnnualActivity(r,t,y);
-2992   
-2993  equation AAC2_TotalAnnualTechnologyActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
-2994  AAC2_TotalAnnualTechnologyActivityUpperLimit(r,t,y)..
-2995      TotalTechnologyAnnualActivity(r,t,y) =l= TotalTechnologyAnnualActivityUpperLimit(r,t,y);
-2996   
-2997  equation AAC3_TotalAnnualTechnologyActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
-2998  AAC3_TotalAnnualTechnologyActivityLowerLimit(r,t,y)$(TotalTechnologyAnnualActivityLowerLimit(r,t,y) > 0)..
-2999      TotalTechnologyAnnualActivity(r,t,y) =g= TotalTechnologyAnnualActivityLowerLimit(r,t,y);
+2979  *------------------------------------------------------------------------
+2980  * Total activity constraints
+2981  *------------------------------------------------------------------------
+2982   
+2983  * Ensures that the total activity of each technology over the entire model
+2984  * period is greater than and less than the user-defined parameters
+2985  * TotalTechnologyModelPeriodActivityLowerLimit and
+2986  * TotalTechnologyModelPeriodActivityUpperLimit respectively.
+2987   
+2988  equation TAC1_TotalModelHorizenTechnologyActivity(REGION,TECHNOLOGY);
+2989  TAC1_TotalModelHorizenTechnologyActivity(r,t)..
+2990      sum(y, TotalTechnologyAnnualActivity(r,t,y)) =e= TotalTechnologyModelPeriodActivity(r,t);
+2991   
+2992  equation TAC2_TotalModelHorizenTechnologyActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
+2993  TAC2_TotalModelHorizenTechnologyActivityUpperLimit(r,t,y)$(TotalTechnologyModelPeriodActivityUpperLimit(r,t) > 0)..
+2994      TotalTechnologyModelPeriodActivity(r,t) =l= TotalTechnologyModelPeriodActivityUpperLimit(r,t);
+2995   
+2996  equation TAC3_TotalModelHorizenTechnologyActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
+2997  TAC3_TotalModelHorizenTechnologyActivityLowerLimit(r,t,y)$(TotalTechnologyModelPeriodActivityLowerLimit(r,t) > 0)..
+2998      TotalTechnologyModelPeriodActivity(r,t) =g= TotalTechnologyModelPeriodActivityLowerLimit(r,t);
+2999   
 3000   
 3001   
-3002   
-3003  *------------------------------------------------------------------------
-3004  * Total activity constraints
-3005  *------------------------------------------------------------------------
-3006   
-3007  * Ensures that the total activity of each technology over the entire model
-3008  * period is greater than and less than the user-defined parameters
-3009  * TotalTechnologyModelPeriodActivityLowerLimit and
-3010  * TotalTechnologyModelPeriodActivityUpperLimit respectively.
-3011   
-3012  equation TAC1_TotalModelHorizenTechnologyActivity(REGION,TECHNOLOGY);
-3013  TAC1_TotalModelHorizenTechnologyActivity(r,t)..
-3014      sum(y, TotalTechnologyAnnualActivity(r,t,y)) =e= TotalTechnologyModelPeriodActivity(r,t);
-3015   
-3016  equation TAC2_TotalModelHorizenTechnologyActivityUpperLimit(REGION,TECHNOLOGY,YEAR);
-3017  TAC2_TotalModelHorizenTechnologyActivityUpperLimit(r,t,y)$(TotalTechnologyModelPeriodActivityUpperLimit(r,t) > 0)..
-3018      TotalTechnologyModelPeriodActivity(r,t) =l= TotalTechnologyModelPeriodActivityUpperLimit(r,t);
-3019   
-3020  equation TAC3_TotalModelHorizenTechnologyActivityLowerLimit(REGION,TECHNOLOGY,YEAR);
-3021  TAC3_TotalModelHorizenTechnologyActivityLowerLimit(r,t,y)$(TotalTechnologyModelPeriodActivityLowerLimit(r,t) > 0)..
-3022      TotalTechnologyModelPeriodActivity(r,t) =g= TotalTechnologyModelPeriodActivityLowerLimit(r,t);
-3023   
-3024   
-3025   
-3026  *------------------------------------------------------------------------
-3027  * Reserve margin constraints
-3028  *------------------------------------------------------------------------
-3029   
-3030  * Ensures that sufficient reserve capacity of specific technologies
-3031  * (ReserveMarginTagTechnology = 1) is installed such that the user-defined
-3032  * ReserveMargin is maintained.
-3033   
-3034  equation RM1_ReserveMargin_TechologiesIncluded_In_Activity_Units(REGION,TIMESLICE,YEAR);
-3035  RM1_ReserveMargin_TechologiesIncluded_In_Activity_Units(r,l,y)..
-3036      sum (t,TotalCapacityAnnual(r,t,y) * ReserveMarginTagTechnology(r,t,y) * CapacityToActivityUnit(r,t)) =e= TotalCapacityInReserveMargin(r,y);
-3037   
-3038  equation RM2_ReserveMargin_FuelsIncluded(REGION,TIMESLICE,YEAR);
-3039  RM2_ReserveMargin_FuelsIncluded(r,l,y)..
-3040      sum (f, RateOfProduction(r,l,f,y) * ReserveMarginTagFuel(r,f,y)) =e= DemandNeedingReserveMargin(r,l,y);
-3041   
-3042  equation RM3_ReserveMargin_Constraint(REGION,TIMESLICE,YEAR);
-3043  RM3_ReserveMargin_Constraint(r,l,y)..
-3044      DemandNeedingReserveMargin(r,l,y) * ReserveMargin(r,y) =l= TotalCapacityInReserveMargin(r,y);
-3045   
+3002  *------------------------------------------------------------------------
+3003  * Reserve margin constraints
+3004  *------------------------------------------------------------------------
+3005   
+3006  * Ensures that sufficient reserve capacity of specific technologies
+3007  * (ReserveMarginTagTechnology = 1) is installed such that the user-defined
+3008  * ReserveMargin is maintained.
+3009   
+3010  equation RM1_ReserveMargin_TechologiesIncluded_In_Activity_Units(REGION,TIMESLICE,YEAR);
+3011  RM1_ReserveMargin_TechologiesIncluded_In_Activity_Units(r,l,y)..
+3012      sum (t,TotalCapacityAnnual(r,t,y) * ReserveMarginTagTechnology(r,t,y) * CapacityToActivityUnit(r,t)) =e= TotalCapacityInReserveMargin(r,y);
+3013   
+3014  equation RM2_ReserveMargin_FuelsIncluded(REGION,TIMESLICE,YEAR);
+3015  RM2_ReserveMargin_FuelsIncluded(r,l,y)..
+3016      sum (f, RateOfProduction(r,l,f,y) * ReserveMarginTagFuel(r,f,y)) =e= DemandNeedingReserveMargin(r,l,y);
+3017   
+3018  equation RM3_ReserveMargin_Constraint(REGION,TIMESLICE,YEAR);
+3019  RM3_ReserveMargin_Constraint(r,l,y)..
+3020      DemandNeedingReserveMargin(r,l,y) * ReserveMargin(r,y) =l= TotalCapacityInReserveMargin(r,y);
+3021   
+3022   
+3023  *------------------------------------------------------------------------
+3024  * RE production target
+3025  *------------------------------------------------------------------------
+3026   
+3027  * Ensures that production from technologies tagged as renewable energy
+3028  * technologies (RETagTechnology = 1) is at least equal to the user-defined
+3029  * renewable energy (RE) target.
+3030   
+3031  equation RE1_FuelProductionByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
+3032  RE1_FuelProductionByTechnologyAnnual(r,t,f,y)..
+3033      sum(l, ProductionByTechnology(r,l,t,f,y)) =e= ProductionByTechnologyAnnual(r,t,f,y);
+3034   
+3035  equation RE2_TechIncluded(REGION,YEAR);
+3036  RE2_TechIncluded(r,y)..
+3037      sum((t,f), (ProductionByTechnologyAnnual(r,t,f,y)*RETagTechnology(r,t,y))) =e= TotalREProductionAnnual(r,y);
+3038   
+3039  equation RE3_FuelIncluded(REGION,YEAR);
+3040  RE3_FuelIncluded(r,y)..
+3041      sum((l,f), (RateOfProduction(r,l,f,y)*YearSplit(l,y)*RETagFuel(r,f,y))) =e= RETotalProductionOfTargetFuelAnnual(r,y);
+3042   
+3043  equation RE4_EnergyConstraint(REGION,YEAR);
+3044  RE4_EnergyConstraint(r,y)..
+3045      REMinProductionTarget(r,y)*RETotalProductionOfTargetFuelAnnual(r,y) =l= TotalREProductionAnnual(r,y);
 3046   
-3047  *------------------------------------------------------------------------
-3048  * RE production target
-3049  *------------------------------------------------------------------------
+3047  equation RE5_FuelUseByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
+3048  RE5_FuelUseByTechnologyAnnual(r,t,f,y)..
+3049      sum(l, (RateOfUseByTechnology(r,l,t,f,y)*YearSplit(l,y))) =e= UseByTechnologyAnnual(r,t,f,y);
 3050   
-3051  * Ensures that production from technologies tagged as renewable energy
-3052  * technologies (RETagTechnology = 1) is at least equal to the user-defined
-3053  * renewable energy (RE) target.
-3054   
-3055  equation RE1_FuelProductionByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
-3056  RE1_FuelProductionByTechnologyAnnual(r,t,f,y)..
-3057      sum(l, ProductionByTechnology(r,l,t,f,y)) =e= ProductionByTechnologyAnnual(r,t,f,y);
-3058   
-3059  equation RE2_TechIncluded(REGION,YEAR);
-3060  RE2_TechIncluded(r,y)..
-3061      sum((t,f), (ProductionByTechnologyAnnual(r,t,f,y)*RETagTechnology(r,t,y))) =e= TotalREProductionAnnual(r,y);
+3051   
+3052   
+3053  *------------------------------------------------------------------------
+3054  * Emissions accounting
+3055  *------------------------------------------------------------------------
+3056   
+3057  * Calculates the annual and model period emissions from each technology,
+3058  * for each type of emission. It also calculates the total associated
+3059  * emission penalties, if any. Finally, it ensures that emissions are
+3060  * maintained before stipulated limits that may be defined for each year
+3061  * and/or the entire model period.
 3062   
-3063  equation RE3_FuelIncluded(REGION,YEAR);
-3064  RE3_FuelIncluded(r,y)..
-3065      sum((l,f), (RateOfProduction(r,l,f,y)*YearSplit(l,y)*RETagFuel(r,f,y))) =e= RETotalProductionOfTargetFuelAnnual(r,y);
+3063  equation E1_AnnualEmissionProductionByMode(REGION,TECHNOLOGY,EMISSION,MODE_OF_OPERATION,YEAR);
+3064  E1_AnnualEmissionProductionByMode(r,t,e,m,y)..
+3065      EmissionActivityRatio(r,t,e,m,y)*TotalAnnualTechnologyActivityByMode(r,t,m,y) =e= AnnualTechnologyEmissionByMode(r,t,e,m,y);
 3066   
-3067  equation RE4_EnergyConstraint(REGION,YEAR);
-3068  RE4_EnergyConstraint(r,y)..
-3069      REMinProductionTarget(r,y)*RETotalProductionOfTargetFuelAnnual(r,y) =l= TotalREProductionAnnual(r,y);
+3067  equation E2_AnnualEmissionProduction(REGION,TECHNOLOGY,EMISSION,YEAR);
+3068  E2_AnnualEmissionProduction(r,t,e,y)..
+3069      sum(m, AnnualTechnologyEmissionByMode(r,t,e,m,y)) =e= AnnualTechnologyEmission(r,t,e,y);
 3070   
-3071  equation RE5_FuelUseByTechnologyAnnual(REGION,TECHNOLOGY,FUEL,YEAR);
-3072  RE5_FuelUseByTechnologyAnnual(r,t,f,y)..
-3073      sum(l, (RateOfUseByTechnology(r,l,t,f,y)*YearSplit(l,y))) =e= UseByTechnologyAnnual(r,t,f,y);
+3071  equation E3_EmissionsPenaltyByTechAndEmission(REGION,TECHNOLOGY,EMISSION,YEAR);
+3072  E3_EmissionsPenaltyByTechAndEmission(r,t,e,y)..
+3073      AnnualTechnologyEmission(r,t,e,y)*EmissionsPenalty(r,e,y) =e= AnnualTechnologyEmissionPenaltyByEmission(r,t,e,y);
 3074   
-3075   
-3076   
-3077  *------------------------------------------------------------------------
-3078  * Emissions accounting
-3079  *------------------------------------------------------------------------
-3080   
-3081  * Calculates the annual and model period emissions from each technology,
-3082  * for each type of emission. It also calculates the total associated
-3083  * emission penalties, if any. Finally, it ensures that emissions are
-3084  * maintained before stipulated limits that may be defined for each year
-3085  * and/or the entire model period.
+3075  equation E4_EmissionsPenaltyByTechnology(REGION,TECHNOLOGY,YEAR);
+3076  E4_EmissionsPenaltyByTechnology(r,t,y)..
+3077      sum(e, AnnualTechnologyEmissionPenaltyByEmission(r,t,e,y)) =e= AnnualTechnologyEmissionsPenalty(r,t,y);
+3078   
+3079  equation E5_DiscountedEmissionsPenaltyByTechnology(REGION,TECHNOLOGY,YEAR);
+3080  E5_DiscountedEmissionsPenaltyByTechnology(r,t,y)..
+3081      AnnualTechnologyEmissionsPenalty(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val)+0.5)) =e= DiscountedTechnologyEmissionsPenalty(r,t,y);
+3082   
+3083  equation E6_EmissionsAccounting1(REGION,EMISSION,YEAR);
+3084  E6_EmissionsAccounting1(r,e,y)..
+3085      sum(t, AnnualTechnologyEmission(r,t,e,y)) =e= AnnualEmissions(r,e,y);
 3086   
-3087  equation E1_AnnualEmissionProductionByMode(REGION,TECHNOLOGY,EMISSION,MODE_OF_OPERATION,YEAR);
-3088  E1_AnnualEmissionProductionByMode(r,t,e,m,y)..
-3089      EmissionActivityRatio(r,t,e,m,y)*TotalAnnualTechnologyActivityByMode(r,t,m,y) =e= AnnualTechnologyEmissionByMode(r,t,e,m,y);
+3087  equation E7_EmissionsAccounting2(EMISSION,REGION);
+3088  E7_EmissionsAccounting2(e,r)..
+3089      sum(y, AnnualEmissions(r,e,y)) =e= ModelPeriodEmissions(e,r)- ModelPeriodExogenousEmission(r,e);
 3090   
-3091  equation E2_AnnualEmissionProduction(REGION,TECHNOLOGY,EMISSION,YEAR);
-3092  E2_AnnualEmissionProduction(r,t,e,y)..
-3093      sum(m, AnnualTechnologyEmissionByMode(r,t,e,m,y)) =e= AnnualTechnologyEmission(r,t,e,y);
+3091  equation E8_AnnualEmissionsLimit(REGION,EMISSION,YEAR);
+3092  E8_AnnualEmissionsLimit(r,e,y)..
+3093      AnnualEmissions(r,e,y)+AnnualExogenousEmission(r,e,y) =l= AnnualEmissionLimit(r,e,y);
 3094   
-3095  equation E3_EmissionsPenaltyByTechAndEmission(REGION,TECHNOLOGY,EMISSION,YEAR);
-3096  E3_EmissionsPenaltyByTechAndEmission(r,t,e,y)..
-3097      AnnualTechnologyEmission(r,t,e,y)*EmissionsPenalty(r,e,y) =e= AnnualTechnologyEmissionPenaltyByEmission(r,t,e,y);
+3095  equation E9_ModelPeriodEmissionsLimit(EMISSION,REGION);
+3096  E9_ModelPeriodEmissionsLimit(e,r)..
+3097      ModelPeriodEmissions(e,r) =l= ModelPeriodEmissionLimit(r,e);
 3098   
-3099  equation E4_EmissionsPenaltyByTechnology(REGION,TECHNOLOGY,YEAR);
-3100  E4_EmissionsPenaltyByTechnology(r,t,y)..
-3101      sum(e, AnnualTechnologyEmissionPenaltyByEmission(r,t,e,y)) =e= AnnualTechnologyEmissionsPenalty(r,t,y);
-3102   
-3103  equation E5_DiscountedEmissionsPenaltyByTechnology(REGION,TECHNOLOGY,YEAR);
-3104  E5_DiscountedEmissionsPenaltyByTechnology(r,t,y)..
-3105      AnnualTechnologyEmissionsPenalty(r,t,y)/((1+DiscountRate(r))**(y.val-smin(yy, yy.val)+0.5)) =e= DiscountedTechnologyEmissionsPenalty(r,t,y);
-3106   
-3107  equation E6_EmissionsAccounting1(REGION,EMISSION,YEAR);
-3108  E6_EmissionsAccounting1(r,e,y)..
-3109      sum(t, AnnualTechnologyEmission(r,t,e,y)) =e= AnnualEmissions(r,e,y);
-3110   
-3111  equation E7_EmissionsAccounting2(EMISSION,REGION);
-3112  E7_EmissionsAccounting2(e,r)..
-3113      sum(y, AnnualEmissions(r,e,y)) =e= ModelPeriodEmissions(e,r)- ModelPeriodExogenousEmission(r,e);
-3114   
-3115  equation E8_AnnualEmissionsLimit(REGION,EMISSION,YEAR);
-3116  E8_AnnualEmissionsLimit(r,e,y)..
-3117      AnnualEmissions(r,e,y)+AnnualExogenousEmission(r,e,y) =l= AnnualEmissionLimit(r,e,y);
-3118   
-3119  equation E9_ModelPeriodEmissionsLimit(EMISSION,REGION);
-3120  E9_ModelPeriodEmissionsLimit(e,r)..
-3121      ModelPeriodEmissions(e,r) =l= ModelPeriodEmissionLimit(r,e);
-3122   
-3123   
-3124  * some model options
-3125  model osemosys /all/;
-3126  option limrow=0, limcol=0, solprint=on;
-3127  option mip = copt;
-3128  option lp = conopt;
-3129   
-3130  * first, solve the model without any constraints
-3132  solve osemosys minimizing z using mip;
+3099   
+3100  * some model options
+3101  model osemosys /all/;
+3102  option limrow=0, limcol=0, solprint=on;
+3103  option mip = copt;
+3104  option lp = conopt;
+3105   
+3106  * first, solve the model without any constraints
+3108  solve osemosys minimizing z using mip;
 ****                                       $257
 **** LINE     50 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
 **** 257  Solve statement not checked because of previous errors
-3134   
+3110   
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-3136  * OSEMOSYS_RES.GMS - create results in file SelResults.CSV
-3137  *
-3138  * OSEMOSYS 2011.07.07 conversion to GAMS by Ken Noble, Noble-Soft Systems - August 2012
-3139  * OSEMOSYS 2017.11.08 update by Thorsten Burandt, Konstantin L�ffler and Karlo Hainsch, TU Berlin (Workgroup for Infrastructure Policy) - October 2017
-3140  *
-3141  FILE ANT /SelResults.CSV/;
-3142  PUT ANT; ANT.ND=6; ANT.PW=400; ANT.PC=5;
-3143  * Total emissions (by region, emission)
-3144  loop((r,e),
-3145  put / "ModelPeriodEmissions",r.TL,e.TL,ModelPeriodEmissions.L(e,r);
+3112  * OSEMOSYS_RES.GMS - create results in file SelResults.CSV
+3113  *
+3114  * OSEMOSYS 2011.07.07 conversion to GAMS by Ken Noble, Noble-Soft Systems - August 2012
+3115  * OSEMOSYS 2017.11.08 update by Thorsten Burandt, Konstantin L�ffler and Karlo Hainsch, TU Berlin (Workgroup for Infrastructure Policy) - October 2017
+3116  *
+3117  FILE ANT /SelResults.CSV/;
+3118  PUT ANT; ANT.ND=6; ANT.PW=400; ANT.PC=5;
+3119  * Total emissions (by region, emission)
+3120  loop((r,e),
+3121  put / "ModelPeriodEmissions",r.TL,e.TL,ModelPeriodEmissions.L(e,r);
 ****                                                              $141
 **** LINE     10 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3274,11 +3146,11 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3146  );
-3147  put /;
-3148  * Total cost (by region)
-3149  loop(r,
-3150  put / "ModelPeriodCostByRegion",r.TL,ModelPeriodCostByRegion.L(r);
+3122  );
+3123  put /;
+3124  * Total cost (by region)
+3125  loop(r,
+3126  put / "ModelPeriodCostByRegion",r.TL,ModelPeriodCostByRegion.L(r);
 ****                                                               $141
 **** LINE     15 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3287,10 +3159,10 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3151  );
-3152  put /;
-3153  * Accumulated Annual Demand (by region, fuel, timeslice, year)
-3154  loop((r,f)$(sum(y, AccumulatedAnnualDemand(r,f,y)) > 0),
+3127  );
+3128  put /;
+3129  * Accumulated Annual Demand (by region, fuel, timeslice, year)
+3130  loop((r,f)$(sum(y, AccumulatedAnnualDemand(r,f,y)) > 0),
 ****                                           $141
 **** LINE     19 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3299,15 +3171,15 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3155  put / "AccumulatedAnnualDemand",r.TL,f.TL;
-3156  loop(y, put AccumulatedAnnualDemand(r,f,y));
-3157  );
-3158  put /;
-3159  * Demand by TimeSlice (by region, fuel, timeslice, year)
-3160  loop((r,f)$(sum(y, SpecifiedAnnualDemand(r,f,y)) > 0),
-3161  loop(l,
-3162  put / "DemandByTimeSlice",r.TL,f.TL,l.TL;
-3163  loop(y, put Demand.L(r,l,f,y));
+3131  put / "AccumulatedAnnualDemand",r.TL,f.TL;
+3132  loop(y, put AccumulatedAnnualDemand(r,f,y));
+3133  );
+3134  put /;
+3135  * Demand by TimeSlice (by region, fuel, timeslice, year)
+3136  loop((r,f)$(sum(y, SpecifiedAnnualDemand(r,f,y)) > 0),
+3137  loop(l,
+3138  put / "DemandByTimeSlice",r.TL,f.TL,l.TL;
+3139  loop(y, put Demand.L(r,l,f,y));
 ****                     $141
 **** LINE     28 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3316,13 +3188,13 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3164  );
-3165  );
-3166  put /;
-3167  * Fuel Production by TimeSlice (by region, fuel, timeslice, year)
-3168  loop((r,f,l),
-3169  put / "FuelProductionByTimeSlice",r.TL,f.TL,l.TL;
-3170  loop(y, put Production.L(r,l,f,y));
+3140  );
+3141  );
+3142  put /;
+3143  * Fuel Production by TimeSlice (by region, fuel, timeslice, year)
+3144  loop((r,f,l),
+3145  put / "FuelProductionByTimeSlice",r.TL,f.TL,l.TL;
+3146  loop(y, put Production.L(r,l,f,y));
 ****                         $141
 **** LINE     35 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3331,12 +3203,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3171  );
-3172  put /;
-3173  * Total Annual Capacity (by region, technology, year)
-3174  loop((r,t),
-3175  put / "TotalAnnualCapacity",r.TL,t.TL;
-3176  loop(y, put TotalCapacityAnnual.L(r,t,y));
+3147  );
+3148  put /;
+3149  * Total Annual Capacity (by region, technology, year)
+3150  loop((r,t),
+3151  put / "TotalAnnualCapacity",r.TL,t.TL;
+3152  loop(y, put TotalCapacityAnnual.L(r,t,y));
 ****                                  $141
 **** LINE     41 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3345,12 +3217,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3177  );
-3178  put /;
-3179  * New Annual Capacity (by region, technology, year)
-3180  loop((r,t),
-3181  put / "NewAnnualCapacity",r.TL,t.TL;
-3182  loop(y, put NewCapacity.L(r,t,y));
+3153  );
+3154  put /;
+3155  * New Annual Capacity (by region, technology, year)
+3156  loop((r,t),
+3157  put / "NewAnnualCapacity",r.TL,t.TL;
+3158  loop(y, put NewCapacity.L(r,t,y));
 ****                          $141
 **** LINE     47 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3359,12 +3231,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3183  );
-3184  put /;
-3185  * Annual Technology Production (by region, technology, fuel, year)
-3186  loop((r,t,f)$(sum((y,m), OutputActivityRatio(r,t,f,m,y)) > 0),
-3187  put / "AnnualProductionByTechnology",r.TL,t.TL,f.TL;
-3188  loop(y, put ProductionByTechnologyAnnual.L(r,t,f,y));
+3159  );
+3160  put /;
+3161  * Annual Technology Production (by region, technology, fuel, year)
+3162  loop((r,t,f)$(sum((y,m), OutputActivityRatio(r,t,f,m,y)) > 0),
+3163  put / "AnnualProductionByTechnology",r.TL,t.TL,f.TL;
+3164  loop(y, put ProductionByTechnologyAnnual.L(r,t,f,y));
 ****                                           $141
 **** LINE     53 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3373,12 +3245,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3189  );
-3190  put /;
-3191  * Annual Technology Use (by region, technology, fuel, year)
-3192  loop((r,t,f)$(sum((y,m), InputActivityRatio(r,t,f,m,y)) > 0),
-3193  put / "AnnualUseByTechnology",r.TL,t.TL,f.TL;
-3194  loop(y, put UseByTechnologyAnnual.L(r,t,f,y));
+3165  );
+3166  put /;
+3167  * Annual Technology Use (by region, technology, fuel, year)
+3168  loop((r,t,f)$(sum((y,m), InputActivityRatio(r,t,f,m,y)) > 0),
+3169  put / "AnnualUseByTechnology",r.TL,t.TL,f.TL;
+3170  loop(y, put UseByTechnologyAnnual.L(r,t,f,y));
 ****                                    $141
 **** LINE     59 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3387,13 +3259,13 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3195  );
-3196  put /;
-3197  * Technology Production in each TimeSlice (by region, technology, fuel, timeslice, year)
-3198  loop((r,t,f)$(sum((y,m), OutputActivityRatio(r,t,f,m,y)) > 0),
-3199  loop(l,
-3200  put / "ProductionByTechnologyByTimeSlice",r.TL,t.TL,f.TL,l.TL;
-3201  loop(y, put ProductionByTechnology.L(r,l,t,f,y));
+3171  );
+3172  put /;
+3173  * Technology Production in each TimeSlice (by region, technology, fuel, timeslice, year)
+3174  loop((r,t,f)$(sum((y,m), OutputActivityRatio(r,t,f,m,y)) > 0),
+3175  loop(l,
+3176  put / "ProductionByTechnologyByTimeSlice",r.TL,t.TL,f.TL,l.TL;
+3177  loop(y, put ProductionByTechnology.L(r,l,t,f,y));
 ****                                     $141
 **** LINE     66 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3402,14 +3274,14 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3202  );
-3203  );
-3204  put /;
-3205  * Technology Use in each TimeSlice (by region, technology, fuel, timeslice, year)
-3206  loop((r,t,f)$(sum((y,m), InputActivityRatio(r,t,f,m,y)) > 0),
-3207  loop(l,
-3208  put / "UseByTechnologyByTimeSlice",r.TL,t.TL,f.TL,l.TL;
-3209  loop(y, put UseByTechnology.L(r,l,t,f,y));
+3178  );
+3179  );
+3180  put /;
+3181  * Technology Use in each TimeSlice (by region, technology, fuel, timeslice, year)
+3182  loop((r,t,f)$(sum((y,m), InputActivityRatio(r,t,f,m,y)) > 0),
+3183  loop(l,
+3184  put / "UseByTechnologyByTimeSlice",r.TL,t.TL,f.TL,l.TL;
+3185  loop(y, put UseByTechnology.L(r,l,t,f,y));
 ****                              $141
 **** LINE     74 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3418,13 +3290,13 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3210  );
-3211  );
-3212  put /;
-3213  * Total Annual Emissions (by region, emission, year)
-3214  loop((r,e),
-3215  put / "AnnualEmissions",r.TL,e.TL;
-3216  loop(y, put AnnualEmissions.L(r,e,y));
+3186  );
+3187  );
+3188  put /;
+3189  * Total Annual Emissions (by region, emission, year)
+3190  loop((r,e),
+3191  put / "AnnualEmissions",r.TL,e.TL;
+3192  loop(y, put AnnualEmissions.L(r,e,y));
 ****                              $141
 **** LINE     81 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3433,12 +3305,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3217  );
-3218  put /;
-3219  * Annual Emissions (by region, technology, emission, year)
-3220  loop((r,t,e)$(sum((y,m), EmissionActivityRatio(r,t,e,m,y)) > 0),
-3221  put / "AnnualEmissionsByTechnology",r.TL,t.TL,e.TL;
-3222  loop(y, put AnnualTechnologyEmission.L(r,t,e,y));
+3193  );
+3194  put /;
+3195  * Annual Emissions (by region, technology, emission, year)
+3196  loop((r,t,e)$(sum((y,m), EmissionActivityRatio(r,t,e,m,y)) > 0),
+3197  put / "AnnualEmissionsByTechnology",r.TL,t.TL,e.TL;
+3198  loop(y, put AnnualTechnologyEmission.L(r,t,e,y));
 ****                                       $141
 **** LINE     87 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 **** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3447,58 +3319,58 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3223  );
-3224  put /;
-3225  PUTCLOSE ANT;
+3199  );
+3200  put /;
+3201  PUTCLOSE ANT;
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-3227  alias(f,ff);
-3228  set ftm_elec(f,t,m);
-3229  set t_feeding_demand_f_using_ff(t,f,ff,m);
-3230   
-3231  parameter rep_fen_tot(*,r,y) 'PJ/yr';
-3232  parameter rep_pes_tot(*,r,y) 'PJ/yr';
-3233  parameter rep_pes_share(*,r,f,y) '%';
-3234  parameter rep_elec_tot(*,r,y) 'PJ/yr';
-3235  parameter rep_elec_share(*,r,f,y) '%';
-3236  parameter rep_capacity_elec_tot(*,r,y) 'GW';
-3237  parameter rep_capacity_elec_share(*,r,t,y) '%';
-3238  parameter rep_investment_elec_tot(*,r,y) 'M$';
-3239  parameter rep_investment_elec_share(*,r,t,y) '%';
-3240  parameter rep_co2emiss_tot(*,r,y) 'GtonCO2';
-3241  parameter rep_co2emiss_by_fuel(*,r,f,y) 'GtonCO2';
-3242  parameter rep_sen_by_fen(*,r,ff,f,y) 'Amount of fuel ff used to feed f [PJ/yr]';
-3243  parameter rep_co2emiss_by_fen(*,r,f,y) 'GtonCO2';
-3244  parameter rep_co2emiss_share_fen(*,r,f,y) '%';
-3245  parameter rep_cost_wrt_base(*,r) '%';
-3246   
-3247   
-3248  variable cost_base(r);
-3249  cost_base.l(r) = 0;
-3251   
-3252  *------------------------------------------------------------------------
-3253  *    - total final energy [PJ/yr]
-3254  *------------------------------------------------------------------------
-3255   
-3256  * Final energy services are listed in the set f
-3257   
-3258  * Quantities demanded are contained in two demand parameters, one for
-3259  * annual and one for time-slice demand (but both referring to annual
-3260  * quantitites). The Demand variable refers only to time-slice demand.
-3261  rep_fen_tot('base',r,y) = sum(final_demand(f), AccumulatedAnnualDemand(r,f,y) + SpecifiedAnnualDemand(r,f,y));
+3203  alias(f,ff);
+3204  set ftm_elec(f,t,m);
+3205  set t_feeding_demand_f_using_ff(t,f,ff,m);
+3206   
+3207  parameter rep_fen_tot(*,r,y) 'PJ/yr';
+3208  parameter rep_pes_tot(*,r,y) 'PJ/yr';
+3209  parameter rep_pes_share(*,r,f,y) '%';
+3210  parameter rep_elec_tot(*,r,y) 'PJ/yr';
+3211  parameter rep_elec_share(*,r,f,y) '%';
+3212  parameter rep_capacity_elec_tot(*,r,y) 'GW';
+3213  parameter rep_capacity_elec_share(*,r,t,y) '%';
+3214  parameter rep_investment_elec_tot(*,r,y) 'M$';
+3215  parameter rep_investment_elec_share(*,r,t,y) '%';
+3216  parameter rep_co2emiss_tot(*,r,y) 'GtonCO2';
+3217  parameter rep_co2emiss_by_fuel(*,r,f,y) 'GtonCO2';
+3218  parameter rep_sen_by_fen(*,r,ff,f,y) 'Amount of fuel ff used to feed f [PJ/yr]';
+3219  parameter rep_co2emiss_by_fen(*,r,f,y) 'GtonCO2';
+3220  parameter rep_co2emiss_share_fen(*,r,f,y) '%';
+3221  parameter rep_cost_wrt_base(*,r) '%';
+3222   
+3223   
+3224  variable cost_base(r);
+3225  cost_base.l(r) = 0;
+3227   
+3228  *------------------------------------------------------------------------
+3229  *    - total final energy [PJ/yr]
+3230  *------------------------------------------------------------------------
+3231   
+3232  * Final energy services are listed in the set f
+3233   
+3234  * Quantities demanded are contained in two demand parameters, one for
+3235  * annual and one for time-slice demand (but both referring to annual
+3236  * quantitites). The Demand variable refers only to time-slice demand.
+3237  rep_fen_tot('base',r,y) = sum(final_demand(f), AccumulatedAnnualDemand(r,f,y) + SpecifiedAnnualDemand(r,f,y));
 ****                                           $352
 **** LINE     39 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
 **** 352  Set has not been initialized
-3262   
-3263  *------------------------------------------------------------------------
-3264  *    - total primary energy supply [PJ/yr]
-3265  *------------------------------------------------------------------------
-3266   
-3267  * You need to clarify what we mean by primary energy supply. In this case,
-3268  * we consider energy sources that can be used as fuels for transport,
-3269  * heating or to produce electricity, i.e. the primary_fuel set.
-3270   
-3271  rep_pes_tot('base',r,y) = sum(primary_fuel(f), ProductionAnnual.L(r,f,y));
+3238   
+3239  *------------------------------------------------------------------------
+3240  *    - total primary energy supply [PJ/yr]
+3241  *------------------------------------------------------------------------
+3242   
+3243  * You need to clarify what we mean by primary energy supply. In this case,
+3244  * we consider energy sources that can be used as fuels for transport,
+3245  * heating or to produce electricity, i.e. the primary_fuel set.
+3246   
+3247  rep_pes_tot('base',r,y) = sum(primary_fuel(f), ProductionAnnual.L(r,f,y));
 ****                                           $352                   $141
 **** LINE     49 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3508,12 +3380,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
 **** 352  Set has not been initialized
-3272   
-3273  *------------------------------------------------------------------------
-3274  *    - share of primary energy sources [%]
-3275  *------------------------------------------------------------------------
-3276   
-3277  rep_pes_share('base',r,f,y)$primary_fuel(f) = 100.*ProductionAnnual.L(r,f,y)/rep_pes_tot('base',r,y);
+3248   
+3249  *------------------------------------------------------------------------
+3250  *    - share of primary energy sources [%]
+3251  *------------------------------------------------------------------------
+3252   
+3253  rep_pes_share('base',r,f,y)$primary_fuel(f) = 100.*ProductionAnnual.L(r,f,y)/rep_pes_tot('base',r,y);
 ****                                         $141
 **** LINE     55 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3522,26 +3394,26 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3278   
-3279  *------------------------------------------------------------------------
-3280  *    - total electricity production [PJ/yr]
-3281  *------------------------------------------------------------------------
-3282   
-3283  * First, we identify the combinations of ("fuel","tech","mode") such that
-3284  * electricity is produced from "fuel" using "tech" operating according to
-3285  * "mode", where "fuel" is a primary energy source (i.e. for simplicity we
-3286  * assume not to be interested in electricity supplied from storage).
-3287  ftm_elec(f,t,m) = yes$(sum((r,y)$(primary_fuel(f) and InputActivityRatio(r,t,f,m,y) and OutputActivityRatio(r,t,'ELC',m,y)),1));
+3254   
+3255  *------------------------------------------------------------------------
+3256  *    - total electricity production [PJ/yr]
+3257  *------------------------------------------------------------------------
+3258   
+3259  * First, we identify the combinations of ("fuel","tech","mode") such that
+3260  * electricity is produced from "fuel" using "tech" operating according to
+3261  * "mode", where "fuel" is a primary energy source (i.e. for simplicity we
+3262  * assume not to be interested in electricity supplied from storage).
+3263  ftm_elec(f,t,m) = yes$(sum((r,y)$(primary_fuel(f) and InputActivityRatio(r,t,f,m,y) and OutputActivityRatio(r,t,'ELC',m,y)),1));
 ****                                                                                                                      $116,170
 **** LINE     65 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
 **** 116  Label is unknown
 **** 170  Domain violation for element
-3288   
-3289  * ProductionAnnual is only per fuel. We need a variable which is indexed
-3290  * by technology, e.g. RateOfProductionByTechnologyByMode.
-3291  rep_elec_tot('base',r,y) = sum((f,t,m,l)$ftm_elec(f,t,m),
-3292      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y));
+3264   
+3265  * ProductionAnnual is only per fuel. We need a variable which is indexed
+3266  * by technology, e.g. RateOfProductionByTechnologyByMode.
+3267  rep_elec_tot('base',r,y) = sum((f,t,m,l)$ftm_elec(f,t,m),
+3268      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y));
 ****                                         $141          $170
 **** LINE     70 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3551,51 +3423,39 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
 **** 170  Domain violation for element
-3293   
-3294   
-3295  *------------------------------------------------------------------------
-3296  *    - share of electricity production by primary energy source [%]
-3297  *------------------------------------------------------------------------
-3298   
-3299  rep_elec_share('base',r,f,y)$primary_fuel(f) = 100.*sum((t,m,l)$ftm_elec(f,t,m),
-3300      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y))/rep_elec_tot('base',r,y);
+3269   
+3270   
+3271  *------------------------------------------------------------------------
+3272  *    - share of electricity production by primary energy source [%]
+3273  *------------------------------------------------------------------------
+3274   
+3275  rep_elec_share('base',r,f,y)$primary_fuel(f) = 100.*sum((t,m,l)$ftm_elec(f,t,m),
+3276      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y))/rep_elec_tot('base',r,y);
 ****                                                       $170
 **** LINE     78 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
 **** 170  Domain violation for element
-3301   
-3302  *------------------------------------------------------------------------
-3303  *    - total capacity for electricity production [GW]
-3304  *------------------------------------------------------------------------
-3305   
-3306  * Having power_plants, it is just a matter of summing TotalCapacityAnnual over power_plants
-3307  rep_capacity_elec_tot('base',r,y) = sum(power_plants(t), TotalCapacityAnnual.l(r,t,y));
-****                                                     $352
-**** LINE     85 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-**** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 352  Set has not been initialized
-3308   
-3309   
-3310  *------------------------------------------------------------------------
-3311  *    - share of capacity for electricity production by technology
-3312  *------------------------------------------------------------------------
-3313   
-3314  rep_capacity_elec_share('base',r,t,y)$power_plants(t) = 100.*TotalCapacityAnnual.l(r,t,y)/rep_capacity_elec_tot('base',r,y);
-****                                                   $141
-**** LINE     92 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-**** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
-3315   
-3316  *------------------------------------------------------------------------
-3317  *    - total investments in capacity for electricity production [M$]
-3318  *------------------------------------------------------------------------
-3319   
-3320  * Like capacity, with the variable used for investment accounting.
-3321  rep_investment_elec_tot('base',r,y) = sum(t$power_plants(t), CapitalInvestment.l(r,t,y));
+3277   
+3278  *------------------------------------------------------------------------
+3279  *    - total capacity for electricity production [GW]
+3280  *------------------------------------------------------------------------
+3281   
+3282  * Having power_plants, it is just a matter of summing TotalCapacityAnnual over power_plants
+3283  rep_capacity_elec_tot('base',r,y) = sum(power_plants(t), TotalCapacityAnnual.l(r,t,y));
+3284   
+3285   
+3286  *------------------------------------------------------------------------
+3287  *    - share of capacity for electricity production by technology
+3288  *------------------------------------------------------------------------
+3289   
+3290  rep_capacity_elec_share('base',r,t,y)$power_plants(t) = 100.*TotalCapacityAnnual.l(r,t,y)/rep_capacity_elec_tot('base',r,y);
+3291   
+3292  *------------------------------------------------------------------------
+3293  *    - total investments in capacity for electricity production [M$]
+3294  *------------------------------------------------------------------------
+3295   
+3296  * Like capacity, with the variable used for investment accounting.
+3297  rep_investment_elec_tot('base',r,y) = sum(t$power_plants(t), CapitalInvestment.l(r,t,y));
 ****                                                                                 $141
 **** LINE     99 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
@@ -3604,76 +3464,76 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 ****         via a solve statement. Suppress with $onImplicitAssign.
 ****         A wild shot: You may have spurious commas in the explanatory
 ****         text of a declaration. Check symbol reference list.
-3322   
-3323   
-3324  *------------------------------------------------------------------------
-3325  *    - share of investments in capacity for electricity production per technology [%]
-3326  *------------------------------------------------------------------------
-3327   
-3328  * We condition also on rep_investmenpower_plants_tot to avoid division by 0 if no
-3329  * investments are done in certain years.
-3330  rep_investment_elec_share('base',r,t,y)$(power_plants(t) and rep_investment_elec_tot('base',r,y)) = 100.*CapitalInvestment.l(r,t,y)/rep_investment_elec_tot('base',r,y);
-3331   
-3332   
-3333  *------------------------------------------------------------------------
-3334  *    - total CO2 emissions [GtonCO2]
-3335  *------------------------------------------------------------------------
-3336   
-3337  rep_co2emiss_tot('base',r,y) = AnnualEmissions.l(r,'co2',y) + AnnualExogenousEmission(r,'co2',y);
+3298   
+3299   
+3300  *------------------------------------------------------------------------
+3301  *    - share of investments in capacity for electricity production per technology [%]
+3302  *------------------------------------------------------------------------
+3303   
+3304  * We condition also on rep_investmenpower_plants_tot to avoid division by 0 if no
+3305  * investments are done in certain years.
+3306  rep_investment_elec_share('base',r,t,y)$(power_plants(t) and rep_investment_elec_tot('base',r,y)) = 100.*CapitalInvestment.l(r,t,y)/rep_investment_elec_tot('base',r,y);
+3307   
+3308   
+3309  *------------------------------------------------------------------------
+3310  *    - total CO2 emissions [GtonCO2]
+3311  *------------------------------------------------------------------------
+3312   
+3313  rep_co2emiss_tot('base',r,y) = AnnualEmissions.l(r,'co2',y) + AnnualExogenousEmission(r,'co2',y);
 ****                                                         $116,170                             $170
 **** LINE    115 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
 **** 116  Label is unknown
 **** 170  Domain violation for element
-3338   
-3339  *------------------------------------------------------------------------
-3340  *    - share of CO2 emissions by final energy end use and primary energy [%]
-3341  *------------------------------------------------------------------------
-3342   
-3343  * The specific formulas to calculate such values depend on where emissions
-3344  * are accounted for. In the utopia dataset, emissions are accounted at the
-3345  * level of IMP* technologies (i.e. boxes representing import of primary
-3346  * fuels).
-3347   
-3348  rep_co2emiss_by_fuel('base',r,f,y) = sum((t,m)$(OutputActivityRatio(r,t,f,m,y) and EmissionActivityRatio(r,t,'co2',m,y)), EmissionActivityRatio(r,t,'co2',m,y)*ProductionByTechnologyAnnual.l(r,t,f,y));
+3314   
+3315  *------------------------------------------------------------------------
+3316  *    - share of CO2 emissions by final energy end use and primary energy [%]
+3317  *------------------------------------------------------------------------
+3318   
+3319  * The specific formulas to calculate such values depend on where emissions
+3320  * are accounted for. In the utopia dataset, emissions are accounted at the
+3321  * level of IMP* technologies (i.e. boxes representing import of primary
+3322  * fuels).
+3323   
+3324  rep_co2emiss_by_fuel('base',r,f,y) = sum((t,m)$(OutputActivityRatio(r,t,f,m,y) and EmissionActivityRatio(r,t,'co2',m,y)), EmissionActivityRatio(r,t,'co2',m,y)*ProductionByTechnologyAnnual.l(r,t,f,y));
 ****                                                                                                                   $170                                   $170
 **** LINE    126 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
 **** 170  Domain violation for element
-3349   
-3350  *------------------------------------------------------------------------
-3351  *   - cost wrt base case
-3352  *------------------------------------------------------------------------
+3325   
+3326  *------------------------------------------------------------------------
+3327  *   - cost wrt base case
+3328  *------------------------------------------------------------------------
+3329   
+3330  rep_cost_wrt_base('base',r) = 100*(ModelPeriodCostByRegion.l(r)/cost_base.l(r)-1);
+3331   
+3332   
+3333  execute_unload 'Results/report_base.gdx',
+3334  rep_fen_tot
+3335  rep_pes_tot
+3336  rep_pes_share
+3337  rep_elec_tot
+3338  rep_elec_share
+3339  rep_capacity_elec_tot
+3340  rep_capacity_elec_share
+3341  rep_investment_elec_share
+3342  rep_investment_elec_share
+3343  rep_co2emiss_tot
+3344  rep_co2emiss_by_fuel
+3345  rep_cost_wrt_base
+3346  ;
+3347  execute_unload 'Results/results_SCENbase_DATAMorocco.gdx';
+3348   
+3349  * some scenario flags
+3351   
 3353   
-3354  rep_cost_wrt_base('base',r) = 100*(ModelPeriodCostByRegion.l(r)/cost_base.l(r)-1);
 3355   
-3356   
-3357  execute_unload 'Results/report_base.gdx',
-3358  rep_fen_tot
-3359  rep_pes_tot
-3360  rep_pes_share
-3361  rep_elec_tot
-3362  rep_elec_share
-3363  rep_capacity_elec_tot
-3364  rep_capacity_elec_share
-3365  rep_investment_elec_share
-3366  rep_investment_elec_share
-3367  rep_co2emiss_tot
-3368  rep_co2emiss_by_fuel
-3369  rep_cost_wrt_base
-3370  ;
-3371  execute_unload 'Results/results_SCENbase_DATAMorocco.gdx';
-3372   
-3373  * some scenario flags
-3375   
-3377   
-3379   
-3381   
-3383   
-3384  * solve the model with the constraints
+3357   
+3359   
+3360  * solve the model with the constraints
 
-**** 58 ERROR(S)   0 WARNING(S)
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:31:53 Page 4
+**** 31 ERROR(S)   0 WARNING(S)
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -3683,13 +3543,13 @@ Include File Summary
      1        1 INPUT          0       0  C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
      2       33 INCLUDE        1      33  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
      3      834 INCLUDE        1      35  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-     4     2623 INCLUDE        1      37  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
-     5     2633 INCLUDE        1      39  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-     6     3135 INCLUDE        1      55  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-     7     3226 INCLUDE        1      56  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+     4     2599 INCLUDE        1      37  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+     5     2609 INCLUDE        1      39  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
+     6     3111 INCLUDE        1      55  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+     7     3202 INCLUDE        1      56  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 
 
-COMPILATION TIME     =        0.015 SECONDS      3 MB  46.2.0 ac4adda6 WEX-WEI
+COMPILATION TIME     =        0.015 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
 
 
 USER: Course License                                 S240213|0002AO-GEN
