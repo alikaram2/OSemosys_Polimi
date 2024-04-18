@@ -158,7 +158,6 @@ set renewable_fuel(FUEL) /HYD/;
 
 *#Characterize fuels 
 set primary_fuel(FUEL) /OIL, URN, HYD /;
-set secondary_carrier(FUEL) / DSL, GSL, ELC /;
 set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
 
