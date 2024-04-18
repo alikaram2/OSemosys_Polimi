@@ -769,7 +769,7 @@ CapacityFactor(r,'DEMRESHEOIL',l,y)=1;
 CapacityFactor(r,'DEMRESHEEL',l,y)=1;
 
 
-AvailabilityFactor(r,t,y) = 0;
+AvailabilityFactor(r,t,y) = 1;
 
 
 parameter OperationalLife(r,t) /
