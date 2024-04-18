@@ -3665,4 +3665,148 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3666   
 3667  *------------------------------------------------------------------------
 3668  *    - total CO2 emissions [GtonCO2]
-3669  *---------------
+3669  *------------------------------------------------------------------------
+3670   
+3671  rep_co2emiss_tot('base',r,y) = AnnualEmissions.l(r,'EMICO2',y) + AnnualExogenousEmission(r,'EMICO2',y);
+3672   
+3673  *------------------------------------------------------------------------
+3674  *    - share of CO2 emissions by final energy end use and primary energy [%]
+3675  *------------------------------------------------------------------------
+3676   
+3677  * The specific formulas to calculate such values depend on where emissions
+3678  * are accounted for. In the utopia dataset, emissions are accounted at the
+3679  * level of IMP* technologies (i.e. boxes representing import of primary
+3680  * fuels).
+3681   
+3682  rep_co2emiss_by_fuel('base',r,f,y) = sum((t,m)$(OutputActivityRatio(r,t,f,m,y) and EmissionActivityRatio(r,t,'EMICO2',m,y)), EmissionActivityRatio(r,t,'EMICO2',m,y)*ProductionByTechnologyAnnual.l(r,t,f,y));
+3683   
+3684  *------------------------------------------------------------------------
+3685  *   - cost wrt base case
+3686  *------------------------------------------------------------------------
+3687   
+3688  rep_cost_wrt_base('base',r) = 100*(ModelPeriodCostByRegion.l(r)/cost_base.l(r)-1);
+3689   
+3690   
+3691  execute_unload 'Results/report_base.gdx',
+3692  rep_fen_tot
+3693  rep_pes_tot
+3694  rep_pes_share
+3695  rep_elec_tot
+3696  rep_elec_share
+3697  rep_capacity_elec_tot
+3698  rep_capacity_elec_share
+3699  rep_investment_elec_share
+3700  rep_investment_elec_share
+3701  rep_co2emiss_tot
+3702  rep_co2emiss_by_fuel
+3703  rep_cost_wrt_base
+3704  ;
+3705  execute_unload 'Results/results_SCENbase_DATAMorocco.gdx';
+3706   
+3707  * some scenario flags
+3709   
+3711   
+3713   
+3715   
+3717   
+3718  * solve the model with the constraints
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 4
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Include File Summary
+
+
+   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
+
+     1        1 INPUT          0       0  C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
+     2       33 INCLUDE        1      33  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
+     3      834 INCLUDE        1      35  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
+     4     2957 INCLUDE        1      37  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+     5     2967 INCLUDE        1      39  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
+     6     3469 INCLUDE        1      55  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+     7     3560 INCLUDE        1      56  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+
+
+COMPILATION TIME     =        0.016 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 5
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Range Statistics    SOLVE osemosys Using MIP From line 3466
+
+
+RANGE STATISTICS (ABSOLUTE NON-ZERO FINITE VALUES)
+
+RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
+Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
+
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 6
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Model Statistics    SOLVE osemosys Using MIP From line 3466
+
+
+MODEL STATISTICS
+
+BLOCKS OF EQUATIONS          66     SINGLE EQUATIONS    2,653,215
+BLOCKS OF VARIABLES          51     SINGLE VARIABLES    2,645,470
+NON ZERO ELEMENTS     6,504,217
+
+
+GENERATION TIME      =        7.391 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 7
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+Solution Report     SOLVE osemosys Using MIP From line 3466
+
+
+               S O L V E      S U M M A R Y
+
+     MODEL   osemosys            OBJECTIVE  z
+     TYPE    MIP                 DIRECTION  MINIMIZE
+     SOLVER  COPT                FROM LINE  3466
+
+**** SOLVER STATUS     1 Normal Completion
+**** MODEL STATUS      19 Infeasible - No Solution
+**** OBJECTIVE VALUE               NA
+
+ RESOURCE USAGE, LIMIT         16.890 10000000000.000
+ ITERATION COUNT, LIMIT     21364    2147483647
+
+No solution returned
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 8
+G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
+E x e c u t i o n
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+
+**** PUT ERROR FOR FILE ANT AT LINE 3490: PUT LINE OVERFLOW - LOOK FOR **** ON PUTFILE, YOU CAN RESET .PW UP TO 32767
+
+**** Exec Error at line 3611: division by zero (0)
+**** Exec Error at line 3633: division by zero (0)
+**** Exec Error at line 3648: division by zero (0)
+**** Exec Error at line 3688: division by zero (0)
+**** Fallback name limit reached (20; see option "MaxGenericFiles")
+**** Last filename tried C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams20.gdx
+**** TERMINATED DUE TO A FILE OPEN ERROR IN NEXTNAME
+**** Fallback Limit reached
+**** PLEASE REPORT TO THE GAMS ADMINISTRATOR
+**** 
+**** GAMS Base Module 46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+**** 
+**** GAMS Development Corporation
+**** support@gams.com, www.gams.com
+**** 
