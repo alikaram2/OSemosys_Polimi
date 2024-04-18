@@ -2111,11 +2111,11 @@ parameter EmissionActivityRatio(r,t,e,m,y) /
 
 EmissionsPenalty(r,e,y) = 0;
 
- AnnualExogenousEmission(r,e,y) = 0;
+AnnualExogenousEmission(r,e,y) = 0;
 
- AnnualEmissionLimit(r,e,y) = 9999;
+AnnualEmissionLimit(r,e,y) = 9999;
 
- ModelPeriodExogenousEmission(r,e) = 0;
+ModelPeriodExogenousEmission(r,e) = 0;
 
- ModelPeriodEmissionLimit(r,e) = 9999;
+ModelPeriodEmissionLimit(r,e) = 9999;
 
