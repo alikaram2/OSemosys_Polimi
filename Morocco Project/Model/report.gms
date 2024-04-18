@@ -62,12 +62,12 @@ rep_pes_share('%scen%',r,f,y)$primary_fuel(f) = 100.*ProductionAnnual.L(r,f,y)/r
 * electricity is produced from "fuel" using "tech" operating according to
 * "mode", where "fuel" is a primary energy source (i.e. for simplicity we
 * assume not to be interested in electricity supplied from storage).
-ftm_elec(f,t,m) = yes$(sum((r,y)$(primary_fuel(f) and InputActivityRatio(r,t,f,m,y) and OutputActivityRatio(r,t,'ELC',m,y)),1));
+ftm_elec(f,t,m) = yes$(sum((r,y)$(primary_fuel(f) and InputActivityRatio(r,t,f,m,y) and OutputActivityRatio(r,t,'ELC001',m,y)),1));
 
 * ProductionAnnual is only per fuel. We need a variable which is indexed
 * by technology, e.g. RateOfProductionByTechnologyByMode.
 rep_elec_tot('%scen%',r,y) = sum((f,t,m,l)$ftm_elec(f,t,m),
-    RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y));
+    RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC001',y)*YearSplit(l,y));
 
 
 *------------------------------------------------------------------------	
@@ -75,7 +75,7 @@ rep_elec_tot('%scen%',r,y) = sum((f,t,m,l)$ftm_elec(f,t,m),
 *------------------------------------------------------------------------
 
 rep_elec_share('%scen%',r,f,y)$primary_fuel(f) = 100.*sum((t,m,l)$ftm_elec(f,t,m),
-    RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y))/rep_elec_tot('%scen%',r,y);
+    RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC001',y)*YearSplit(l,y))/rep_elec_tot('%scen%',r,y);
 
 *------------------------------------------------------------------------	
 *    - total capacity for electricity production [GW]       
@@ -112,7 +112,7 @@ rep_investment_elec_share('%scen%',r,t,y)$(power_plants(t) and rep_investment_el
 *    - total CO2 emissions [GtonCO2]       
 *------------------------------------------------------------------------
 
-rep_co2emiss_tot('%scen%',r,y) = AnnualEmissions.l(r,'co2',y) + AnnualExogenousEmission(r,'co2',y);
+rep_co2emiss_tot('%scen%',r,y) = AnnualEmissions.l(r,'EMICO2',y) + AnnualExogenousEmission(r,'EMICO2',y);
 
 *------------------------------------------------------------------------	
 *    - share of CO2 emissions by final energy end use and primary energy [%]       
@@ -123,7 +123,7 @@ rep_co2emiss_tot('%scen%',r,y) = AnnualEmissions.l(r,'co2',y) + AnnualExogenousE
 * level of IMP* technologies (i.e. boxes representing import of primary
 * fuels).
 
-rep_co2emiss_by_fuel('%scen%',r,f,y) = sum((t,m)$(OutputActivityRatio(r,t,f,m,y) and EmissionActivityRatio(r,t,'co2',m,y)), EmissionActivityRatio(r,t,'co2',m,y)*ProductionByTechnologyAnnual.l(r,t,f,y));
+rep_co2emiss_by_fuel('%scen%',r,f,y) = sum((t,m)$(OutputActivityRatio(r,t,f,m,y) and EmissionActivityRatio(r,t,'EMICO2',m,y)), EmissionActivityRatio(r,t,'EMICO2',m,y)*ProductionByTechnologyAnnual.l(r,t,f,y));
 
 *------------------------------------------------------------------------	
 *   - cost wrt base case

@@ -1,5 +1,5 @@
 
---- Job osemosys.gms Start 04/18/24 14:04:56 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/18/24 15:05:47 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -26,157 +26,84 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- osemosys.gms(33) 2 Mb
 --- . osemosys_dec.gms(799) 2 Mb
 --- osemosys.gms(35) 2 Mb
---- . Morocco_data.gms(161) 3 Mb 3 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1763) 3 Mb
---- osemosys.gms(37) 3 Mb
---- . compute_data.gms(8) 3 Mb
---- osemosys.gms(39) 3 Mb
---- . osemosys_equ.gms(657) 3 Mb
---- osemosys.gms(50) 3 Mb 4 Errors
-*** Error 257 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-    Solve statement not checked because of previous errors
---- osemosys.gms(55) 3 Mb
---- . osemosys_res.gms(10) 3 Mb 5 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(15) 3 Mb 6 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(19) 3 Mb 7 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(28) 3 Mb 8 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(35) 3 Mb 9 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(41) 3 Mb 10 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(47) 3 Mb 11 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(53) 3 Mb 12 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(59) 3 Mb 13 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(66) 3 Mb 14 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(74) 3 Mb 15 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(81) 3 Mb 16 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(87) 3 Mb 17 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(90) 3 Mb
---- osemosys.gms(56) 3 Mb
---- . report.gms(49) 3 Mb 18 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . report.gms(65) 3 Mb 19 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(70) 3 Mb 21 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(78) 3 Mb 22 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(99) 3 Mb 23 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . report.gms(115) 3 Mb 26 Errors
-*** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Label is unknown
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(126) 3 Mb 28 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(148) 3 Mb
---- osemosys.gms(88) 3 Mb 28 Errors
-*** Status: Compilation error(s)
---- Job osemosys.gms Stop 04/18/24 14:04:56 elapsed 0:00:00.015
+--- . Morocco_data.gms(1761) 4 Mb
+--- osemosys.gms(37) 4 Mb
+--- . compute_data.gms(8) 4 Mb
+--- osemosys.gms(39) 4 Mb
+--- . osemosys_equ.gms(657) 4 Mb
+--- osemosys.gms(55) 4 Mb
+--- . osemosys_res.gms(90) 4 Mb
+--- osemosys.gms(56) 4 Mb
+--- . report.gms(148) 4 Mb
+--- osemosys.gms(89) 4 Mb
+--- Starting execution: elapsed 0:00:00.022
+--- osemosys.gms(3102) 6 Mb
+--- Generating MIP model osemosys
+--- osemosys.gms(3106) 796 Mb
+---   2,653,215 rows  2,645,506 columns  6,482,122 non-zeroes
+--- Range statistics (absolute non-zero finite values)
+--- RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
+--- Bound     [min, max] : [        NA,        NA] - Zero values observed as well
+--- Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
+--- Executing COPT (Solvelink=2): elapsed 0:00:06.117
+
+COPT             46.2.0 ac4adda6 Mar 5, 2024           WEI x86 64bit/MS Window
+
+Passing GAMS variable and equation levels and marginals as LP starting point to COPT.
+
+Cardinal Optimizer v7.0.6. Build date Jan 16 2024
+Copyright Cardinal Operations 2023. All Rights Reserved
+
+Modified COPT parameters:
+TimeLimit                 1e+10
+AbsGap                    0
+LogToConsole              0
+ReqFarkasRay              1
+
+Model fingerprint: 7b3066bd
+
+Using Cardinal Optimizer v7.0.6 on Windows
+Hardware has 6 cores and 12 threads. Using instruction set X86_AVX512_E1 (14)
+Minimizing an LP problem
+
+The original problem has:
+    2653214 rows, 2645505 columns and 6482085 non-zero elements
+The folded problem has:
+    303134 rows, 314288 columns and 821578 non-zero elements
+The presolved problem has:
+    2018 rows, 3178 columns and 30488 non-zero elements
+
+Starting the simplex solver using up to 8 threads
+
+Method   Iteration           Objective  Primal.NInf   Dual.NInf        Time
+Dual             0    8.3380801561e+03          435           0       1.22s
+Dual            16    8.3858616329e+03          424           0       1.23s
+Computing dual Farkas to infeasible model
+
+Solving finished
+Status: Infeasible  Objective: -  Iterations: 17  Time: 6.21s
+--- Reading solution for model osemosys
+--- osemosys.gms(3106) 796 Mb  14 secs
+--- Executing after solve: elapsed 0:00:18.849
+--- osemosys.gms(3251) 796 Mb
+*** Error at line 3251: division by zero (0)
+--- osemosys.gms(3273) 796 Mb 1 Error
+*** Error at line 3273: division by zero (0)
+--- osemosys.gms(3288) 796 Mb 2 Errors
+*** Error at line 3288: division by zero (0)
+--- osemosys.gms(3328) 796 Mb 3 Errors
+*** Error at line 3328: division by zero (0)
+--- osemosys.gms(3331) 796 Mb 4 Errors
+*** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\report_base.gdx
+*** Msg: No such file or directory
+*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams1.gdx
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams1.gdx
+--- osemosys.gms(3345) 796 Mb
+*** GDXopenWrite failed C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\results_SCENbase_DATAMorocco.gdx
+*** Msg: No such file or directory
+*** New file name used is C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams2.gdx
+--- GDX File (execute_unload) C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\gams2.gdx
+--- Putfile ANT C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\SelResults.CSV
+--- osemosys.gms(3345) 796 Mb 4 Errors
+*** Status: Execution error(s)
+--- Job osemosys.gms Stop 04/18/24 15:06:06 elapsed 0:00:18.898

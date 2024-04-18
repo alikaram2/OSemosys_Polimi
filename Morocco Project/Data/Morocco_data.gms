@@ -108,7 +108,6 @@ Set     FUEL    /
         ELC001	'Electricity from power plants'
         ELC002	'Electricity after transmission'
         ELC003	'Electricity after distribution'
-        ELC004  'Electricity from Renewables'
         ELCEV	'Electricity for EVs'
         TRAMCY	'Motorcycle Transport Demand'
         TRACAR	'Car Transport Demand'
@@ -137,7 +136,7 @@ Set REGION              /   MOROCCO /;
 Set SEASON              /1, 2, 3, 4/;
 Set DAILYTIMEBRACKET    /1, 2/;
 Set DAYTYPE             /1/;
-*Set STORAGE             /GH, BATT/;
+Set STORAGE             /GH, BATT/;
 
 *# characterize technologies 
 set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002 /;
@@ -326,7 +325,7 @@ parameter SpecifiedDemandProfile(r,f,l,y) /
         MOROCCO.COMELC.WN.(2015*2050) 0.108
  /;
 *We cannot use the accumulated annual demand
-
+AccumulatedAnnualDemand(r,f,y) = 10;
 *Parameters - Performance
 
 CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
@@ -1029,7 +1028,7 @@ parameter InputActivityRatio(r,t,f,m,y) /
 
 /;
 parameter OutputActivityRatio(r,t,f,m,y) /
-        MOROCCO.IMPOIL.OIL.1.(2015*2050)                1
+        MOROCCO.IMPOIL.OIL.1.(2015*2050)           1
         MOROCCO.MINOIL.OIL.1.(2015*2050)	        1
         MOROCCO.IMPBIO.BIO.1.(2015*2050)	        1
         MOROCCO.MINBIO.BIO.1.(2015*2050)	        1
@@ -1693,7 +1692,7 @@ MOROCCO.MINNGS 50.95
 
 /;
 
-
+TotalTechnologyModelPeriodActivityLowerLimit(r,t) = 0;
 
 parameter ReserveMarginTagTechnology(r,t,y) /
   MOROCCO.PWRBIO001.(2015*2050)  1

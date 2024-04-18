@@ -70,7 +70,8 @@ $setglobal scen "ctax%ctax%"
 $endif.scen
 
 $ifthen.scen set emicap 
-AnnualEmissionLimit(r,'CO2',y)$(ord(y) ge 10) = %emicap%;
+AnnualEmissionLimit(r,'CO2',y)$(ord(y3
+ ge 10) = %emicap%;
 $setglobal scen "emicap%emicap%"
 $endif.scen
 

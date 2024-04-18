@@ -16,7 +16,8 @@
         }
     ],
     "options": [
-        ""
+        "",
+        "--mip=1 --data=Morocco"
     ],
     "path": ".",
     "pf": "",
