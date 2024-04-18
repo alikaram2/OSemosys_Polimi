@@ -1,5 +1,4 @@
-
---- Job osemosys.gms Start 04/17/24 22:28:01 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/18/24 13:24:16 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -13,7 +12,7 @@
     IDE 1
     LstTitleLeftAligned 1
     --mip 1
-    --data Morocco
+    --data baseenergysystem
 Licensee: Course License                                 S240213|0002AO-GEN
           Fondazione CMCC, Complesso Ecotekne                       DCE3258
           C:\Users\Ali Sawah\Documents\GAMS\gamslice.txt
@@ -25,144 +24,521 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- Starting compilation
 --- osemosys.gms(33) 2 Mb
 --- . osemosys_dec.gms(799) 2 Mb
---- osemosys.gms(35) 2 Mb
---- . Morocco_data.gms(143) 3 Mb 1 Error
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(164) 3 Mb 2 Errors
-*** Error 282 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
+--- osemosys.gms(35) 2 Mb 1 Error
+*** Error 282 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
     Unable to open include file
        Hint: Does the filename need to be quoted?
---- . Morocco_data.gms(379) 3 Mb 3 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    Domain violation for element
---- . Morocco_data.gms(1560) 3 Mb 4 Errors
-*** Error  36 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    '=' or '..' or ':=' or '$=' operator expected
-    rest of statement ignored
---- . Morocco_data.gms(1641) 3 Mb 5 Errors
-*** Error  36 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-    '=' or '..' or ':=' or '$=' operator expected
-    rest of statement ignored
---- . Morocco_data.gms(1789) 3 Mb
---- osemosys.gms(37) 3 Mb
---- . compute_data.gms(7) 3 Mb 6 Errors
+--- osemosys.gms(37) 2 Mb
+--- . compute_data.gms(1) 2 Mb 10 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . compute_data.gms(8) 3 Mb 7 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+--- . compute_data.gms(2) 2 Mb 14 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+--- . compute_data.gms(3) 2 Mb 18 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+--- . compute_data.gms(4) 2 Mb 22 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+--- . compute_data.gms(7) 2 Mb 27 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- osemosys.gms(39) 3 Mb
---- . osemosys_equ.gms(657) 3 Mb
---- osemosys.gms(50) 3 Mb 8 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+--- . compute_data.gms(8) 2 Mb 32 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
+    Set has not been initialized
+--- osemosys.gms(39) 2 Mb
+--- . osemosys_equ.gms(657) 2 Mb
+--- osemosys.gms(50) 2 Mb 33 Errors
 *** Error 257 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
     Solve statement not checked because of previous errors
---- osemosys.gms(55) 3 Mb
---- . osemosys_res.gms(10) 3 Mb 9 Errors
+--- osemosys.gms(55) 2 Mb
+--- . osemosys_res.gms(9) 2 Mb 35 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(10) 2 Mb 38 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(15) 3 Mb 10 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(14) 2 Mb 39 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(15) 2 Mb 41 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(19) 3 Mb 11 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(19) 2 Mb 48 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(28) 3 Mb 12 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(21) 2 Mb 52 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(25) 2 Mb 59 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(35) 3 Mb 13 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(26) 2 Mb 60 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(28) 2 Mb 66 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(41) 3 Mb 14 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(33) 2 Mb 69 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(35) 2 Mb 75 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(47) 3 Mb 15 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(39) 2 Mb 77 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(41) 2 Mb 82 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(53) 3 Mb 16 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(45) 2 Mb 84 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(47) 2 Mb 89 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(59) 3 Mb 17 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(51) 2 Mb 101 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(66) 3 Mb 18 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Remaining errors not printed for this line
+--- . osemosys_res.gms(53) 2 Mb 107 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(74) 3 Mb 19 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(57) 2 Mb 119 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(81) 3 Mb 20 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Remaining errors not printed for this line
+--- . osemosys_res.gms(59) 2 Mb 125 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(87) 3 Mb 21 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(63) 2 Mb 136 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Remaining errors not printed for this line
+--- . osemosys_res.gms(64) 2 Mb 137 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(66) 2 Mb 144 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . osemosys_res.gms(90) 3 Mb
---- osemosys.gms(56) 3 Mb
---- . report.gms(39) 3 Mb 22 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(71) 2 Mb 155 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Remaining errors not printed for this line
+--- . osemosys_res.gms(72) 2 Mb 156 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(74) 2 Mb 163 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(79) 2 Mb 165 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(81) 2 Mb 170 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(85) 2 Mb 182 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Remaining errors not printed for this line
+--- . osemosys_res.gms(87) 2 Mb 188 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
+    Set has not been initialized
+--- . osemosys_res.gms(90) 2 Mb
+--- osemosys.gms(56) 2 Mb
+--- . report.gms(23) 2 Mb 189 Errors
 *** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Set has not been initialized
---- . report.gms(49) 3 Mb 24 Errors
+--- . report.gms(39) 3 Mb 200 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(49) 3 Mb 208 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
 *** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
@@ -171,50 +547,288 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . report.gms(55) 3 Mb 25 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+--- . report.gms(55) 3 Mb 219 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . report.gms(65) 3 Mb 27 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(65) 3 Mb 237 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(69) 3 Mb 246 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+--- . report.gms(70) 3 Mb 257 Errors
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 353 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(77) 3 Mb 268 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(78) 3 Mb 279 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 353 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(85) 3 Mb 286 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+--- . report.gms(92) 3 Mb 297 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(99) 3 Mb 305 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Symbol declared but no values have been assigned. Check for missing
+       data definition, assignment, data loading or implicit assignment
+       via a solve statement. Suppress with $onImplicitAssign.
+       A wild shot: You may have spurious commas in the explanatory
+       text of a declaration. Check symbol reference list.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+--- . report.gms(108) 3 Mb 317 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(115) 3 Mb 328 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
 *** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Label is unknown
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(70) 3 Mb 29 Errors
+*** Error 353 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(78) 3 Mb 30 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(99) 3 Mb 31 Errors
-*** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Symbol declared but no values have been assigned. Check for missing
-       data definition, assignment, data loading or implicit assignment
-       via a solve statement. Suppress with $onImplicitAssign.
-       A wild shot: You may have spurious commas in the explanatory
-       text of a declaration. Check symbol reference list.
---- . report.gms(115) 3 Mb 34 Errors
-*** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Label is unknown
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
---- . report.gms(126) 3 Mb 36 Errors
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
-*** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Domain violation for element
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 353 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    The domain for this index position is unknown and the element
+       cannot be checked at this point. Missing data statement.
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(126) 3 Mb 353 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 300 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Remaining errors not printed for this line
+--- . report.gms(132) 3 Mb 356 Errors
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
+*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
+    Set has not been initialized
 --- . report.gms(148) 3 Mb
---- osemosys.gms(88) 3 Mb 36 Errors
+--- osemosys.gms(88) 3 Mb 356 Errors
 *** Status: Compilation error(s)
---- Job osemosys.gms Stop 04/17/24 22:28:01 elapsed 0:00:00.016
+--- Job osemosys.gms Stop 04/18/24 13:24:16 elapsed 0:00:00.031

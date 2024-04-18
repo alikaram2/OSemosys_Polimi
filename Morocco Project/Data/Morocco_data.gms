@@ -140,7 +140,7 @@ Set DAYTYPE             /1/;
 *Set STORAGE             /GH, BATT/;
 
 *# characterize technologies 
-set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002, PWPEMELECTRO /;
+*set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC002, PWRNGS001, PWRNGS002,  PWRSOL001, PWRCSP001, PWRHYD001, PWRHYD002, PWRHYD003, PWRWND001, PWRWND002, PWRNUC, PWROHC003,PWRSOL002, PWPEMELECTRO /;
 *set ##storage_plants(TECHNOLOGY) / PWRCSP002, PWRSOL002, PWRSOL001S, PWRWND001S /;
 *set fuel_transformation(TECHNOLOGY) / UPSREF001, UPSREF002 /;
 *set appliances(TECHNOLOGY) / RHE, RHO, RL1, TXD, TXE, TXG /;
@@ -166,14 +166,14 @@ set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC0
 *JUAN DIEGO
 
 parameter YearSplit(l,y)/
-  SPD.(2015*2050)  .125
-  SPN.(2015*2050)  .125
-  SD.(2015*2050)  .125
-  SN.(2015*2050)  .125
-  AD.(2015*2050)  .125
-  AN.(2015*2050)  .125
-  WD.(2015*2050)  .125
-  WN.(2015*2050)  .125
+  SPD.(2015*2050)   .125
+  SPN.(2015*2050)   .125
+  SD.(2015*2050)    .125
+  SN.(2015*2050)    .125
+  AD.(2015*2050)    .125
+  AN.(2015*2050)    .125
+  WD.(2015*2050)    .125
+  WN.(2015*2050)    .125
 /;
 
 DiscountRate(r) = 0.1;
@@ -330,7 +330,7 @@ parameter SpecifiedDemandProfile(r,f,l,y) /
 
 *Parameters - Performance
 
-CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
+*CapacityToActivityUnit(r,t)$power_plants(t) =31.356;
 
 CapacityToActivityUnit(r,t)$(CapacityToActivityUnit(r,t) = 0) = 1;
 
@@ -375,7 +375,6 @@ CapacityFactor(r,'PWROHC003',l,y)=0;
 CapacityFactor(r,'PWRSOL002',l,y)=1;
 CapacityFactor(r,'PWRTRNEXP',l,y)=1;
 CapacityFactor(r,'BACKSTOP002',l,y)=1;
-CapacityFactor(r,'BACKSTOP003',l,y)=1;
 CapacityFactor(r,'DEMTRAEVC',l,y)=1;
 CapacityFactor(r,'DEMTRAMCYELC',l,y)=1;
 CapacityFactor(r,'DEMTRACARELC',l,y)=1;
@@ -1556,7 +1555,7 @@ TotalAnnualMaxCapacity(r,t,y)$(TotalAnnualMaxCapacity(r,t,y) = 0) = 99999;
 
 TotalTechnologyAnnualActivityUpperLimit(r,t,y) = 99999;
 
-TotalTechnologyAnnualActivityUpperLimit(r,t,y) /
+parameter TotalTechnologyAnnualActivityUpperLimit(r,t,y) /
 MOROCCO.PWRTRNIMP.2015 18.5
 MOROCCO.PWRTRNIMP.2016 19
 MOROCCO.PWRTRNIMP.2017 21.8
@@ -1637,7 +1636,7 @@ MOROCCO.PWRWND002.(2015*2022) 0
 
 TotalTechnologyAnnualActivityLowerLimit(r,t,y) = 0;
 
-TotalTechnologyAnnualActivityLowerLimit(r,t,y) /
+Parameter TotalTechnologyAnnualActivityLowerLimit(r,t,y) /
 MOROCCO.PWRTRNIMP.2015 17.575
 MOROCCO.PWRTRNIMP.2016 18.05
 MOROCCO.PWRTRNIMP.2017 20.71
