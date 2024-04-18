@@ -152,17 +152,15 @@ set renewable_tech(TECHNOLOGY) /IMPBIO,MINBIO,MINSOL,MINWND,MINGEO,PWRBIO001,PWR
 set renewable_fuel(FUEL) /BIO, SOL, WND, HYD, GEO /; 
 
 set fuel_production(TECHNOLOGY);
-set fuel_production_fict(TECHNOLOGY) /RIV/;
+set fuel_production_fict(TECHNOLOGY) /dummy/;
 *#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
 
 *#Characterize fuels 
-set primary_fuel(FUEL) /OIL, URN, HYD /;
+set primary_fuel(FUEL) /OIL,BIO,COA,LFO,NGS,HFO,SOL,HYD,WND,URN,GEO/;
 set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
 
 **Parameters - Global
-*JUAN DIEGO
-
 parameter YearSplit(l,y)/
   SPD.(2015*2050)   .125
   SPN.(2015*2050)   .125
