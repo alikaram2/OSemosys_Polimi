@@ -157,8 +157,8 @@ set renewable_fuel(FUEL) /HYD/;
 *#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
 
 *#Characterize fuels 
-#set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
-*#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
+set primary_fuel(FUEL) /OIL, URN, HYD /;
+set secondary_carrier(FUEL) / DSL, GSL, ELC /;
 set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
 
 
