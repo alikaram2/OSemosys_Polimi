@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:57:24 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 14:01:08 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:57:24 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 14:01:08 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -995,9 +995,9 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
  991  *#set secondary_production(TECHNOLOGY) /COAL, NUCLEAR, HYDRO, STOR_HYDRO, DIESEL_GEN, SRE/;
  992   
  993  *#Characterize fuels
- 994  *#set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
+ 994  #set primary_fuel(FUEL) / HCO, OIL, URN, HYD /;
  995  *#set secondary_carrier(FUEL) / DSL, GSL, ELC /;
- 996  *set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
+ 996  set final_demand(FUEL) / TRAMCY, TRACAR, TRABUS, INDELC, INDHEH, INDHEL, RESELC, RESCKN, RESHEL, COMELC, COMHEL /;
  997   
  998   
  999  **Parameters - Global
@@ -2610,7 +2610,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 2607  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
 2608  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:57:24 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 14:01:08 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
@@ -3244,10 +3244,6 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3235  * annual and one for time-slice demand (but both referring to annual
 3236  * quantitites). The Demand variable refers only to time-slice demand.
 3237  rep_fen_tot('base',r,y) = sum(final_demand(f), AccumulatedAnnualDemand(r,f,y) + SpecifiedAnnualDemand(r,f,y));
-****                                           $352
-**** LINE     39 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-**** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 352  Set has not been initialized
 3238   
 3239  *------------------------------------------------------------------------
 3240  *    - total primary energy supply [PJ/yr]
@@ -3401,8 +3397,8 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3359   
 3360  * solve the model with the constraints
 
-**** 14 ERROR(S)   0 WARNING(S)
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:57:24 Page 4
+**** 13 ERROR(S)   0 WARNING(S)
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 14:01:08 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -3418,7 +3414,7 @@ Include File Summary
      7     3202 INCLUDE        1      56  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 
 
-COMPILATION TIME     =        0.015 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
+COMPILATION TIME     =        0.031 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
 
 
 USER: Course License                                 S240213|0002AO-GEN

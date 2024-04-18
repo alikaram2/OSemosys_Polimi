@@ -1,5 +1,5 @@
 
---- Job osemosys.gms Start 04/18/24 13:56:01 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
+--- Job osemosys.gms Start 04/18/24 14:00:36 46.2.0 ac4adda6 WEX-WEI x86 64bit/MS Windows
 --- Applying:
     C:\GAMS\46\gmsprmNT.txt
 --- GAMS Parameters defined
@@ -45,43 +45,40 @@ GAMS 46.2.0   Copyright (C) 1987-2024 GAMS Development. All rights reserved
 --- osemosys.gms(55) 4 Mb
 --- . osemosys_res.gms(90) 4 Mb
 --- osemosys.gms(56) 4 Mb
---- . report.gms(39) 4 Mb 3 Errors
+--- . report.gms(49) 4 Mb 3 Errors
 *** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Set has not been initialized
---- . report.gms(49) 4 Mb 4 Errors
-*** Error 352 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-    Set has not been initialized
---- . report.gms(55) 4 Mb 5 Errors
+--- . report.gms(55) 4 Mb 4 Errors
 *** Error 141 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Symbol declared but no values have been assigned. Check for missing
        data definition, assignment, data loading or implicit assignment
        via a solve statement. Suppress with $onImplicitAssign.
        A wild shot: You may have spurious commas in the explanatory
        text of a declaration. Check symbol reference list.
---- . report.gms(65) 4 Mb 7 Errors
+--- . report.gms(65) 4 Mb 6 Errors
 *** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Label is unknown
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(70) 4 Mb 8 Errors
+--- . report.gms(70) 4 Mb 7 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(78) 4 Mb 9 Errors
+--- . report.gms(78) 4 Mb 8 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(115) 4 Mb 12 Errors
+--- . report.gms(115) 4 Mb 11 Errors
 *** Error 116 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Label is unknown
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
---- . report.gms(126) 4 Mb 14 Errors
+--- . report.gms(126) 4 Mb 13 Errors
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
 *** Error 170 in C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
     Domain violation for element
 --- . report.gms(148) 4 Mb
---- osemosys.gms(88) 4 Mb 14 Errors
+--- osemosys.gms(88) 4 Mb 13 Errors
 *** Status: Compilation error(s)
---- Job osemosys.gms Stop 04/18/24 13:56:01 elapsed 0:00:00.017
+--- Job osemosys.gms Stop 04/18/24 14:00:36 elapsed 0:00:00.020
