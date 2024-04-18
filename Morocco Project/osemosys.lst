@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:56:01 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:56:01 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -987,8 +987,8 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
  983  *#set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
  984  *#set secondary_imports(TECHNOLOGY) / IMPDSL1, IMPGSL1 /;
  985   
- 986  *#set renewable_tech(TECHNOLOGY) /HYDRO/;
- 987  *#set renewable_fuel(FUEL) /HYD/;
+ 986  set renewable_tech(TECHNOLOGY) /PWRHYD001/;
+ 987  set renewable_fuel(FUEL) /HYD/;
  988   
  989  *#set fuel_production(TECHNOLOGY);
  990  *#set fuel_production_fict(TECHNOLOGY) /RIV/;
@@ -2607,26 +2607,10 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 2604   
 2605  *** define the renewable technology and fuel tags
 2606  RETagTechnology(r,t,y)$renewable_tech(t) = 1;
-****                                      $141
-**** LINE      7 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
-**** LINE     37 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 2607  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
-****                                $141
-**** LINE      8 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
-**** LINE     37 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 2608  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:56:01 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
@@ -3123,9 +3107,16 @@ Model equations
 3105   
 3106  * first, solve the model without any constraints
 3108  solve osemosys minimizing z using mip;
-****                                       $257
+****                                       $66,256
 **** LINE     50 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 257  Solve statement not checked because of previous errors
+****  66  The symbol shown has not been defined or assigned
+****         A wild shot: You may have spurious commas in the explanatory
+****         text of a declaration. Check symbol reference list.
+**** 256  Error(s) in analyzing solve statement.
+**** The following MIP errors were detected in model osemosys:
+****  66 equation EBb4_EnergyBalanceEachYear4.. symbol "AccumulatedAnnualDemand" has no values assigned
+****  66 equation TDC2_TotalDiscountedCostByTechnology.. symbol "STORAGE" has no values assigned
+****  66 equation TAC3_TotalModelHorizenTechnologyActivityLowerLimit.. symbol "TotalTechnologyModelPeriodActivityLowerLimit" has no values assigned
 3110   
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
 3112  * OSEMOSYS_RES.GMS - create results in file SelResults.CSV
@@ -3138,39 +3129,15 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3119  * Total emissions (by region, emission)
 3120  loop((r,e),
 3121  put / "ModelPeriodEmissions",r.TL,e.TL,ModelPeriodEmissions.L(e,r);
-****                                                              $141
-**** LINE     10 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3122  );
 3123  put /;
 3124  * Total cost (by region)
 3125  loop(r,
 3126  put / "ModelPeriodCostByRegion",r.TL,ModelPeriodCostByRegion.L(r);
-****                                                               $141
-**** LINE     15 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3127  );
 3128  put /;
 3129  * Accumulated Annual Demand (by region, fuel, timeslice, year)
 3130  loop((r,f)$(sum(y, AccumulatedAnnualDemand(r,f,y)) > 0),
-****                                           $141
-**** LINE     19 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3131  put / "AccumulatedAnnualDemand",r.TL,f.TL;
 3132  loop(y, put AccumulatedAnnualDemand(r,f,y));
 3133  );
@@ -3180,14 +3147,6 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3137  loop(l,
 3138  put / "DemandByTimeSlice",r.TL,f.TL,l.TL;
 3139  loop(y, put Demand.L(r,l,f,y));
-****                     $141
-**** LINE     28 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3140  );
 3141  );
 3142  put /;
@@ -3195,70 +3154,30 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3144  loop((r,f,l),
 3145  put / "FuelProductionByTimeSlice",r.TL,f.TL,l.TL;
 3146  loop(y, put Production.L(r,l,f,y));
-****                         $141
-**** LINE     35 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3147  );
 3148  put /;
 3149  * Total Annual Capacity (by region, technology, year)
 3150  loop((r,t),
 3151  put / "TotalAnnualCapacity",r.TL,t.TL;
 3152  loop(y, put TotalCapacityAnnual.L(r,t,y));
-****                                  $141
-**** LINE     41 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3153  );
 3154  put /;
 3155  * New Annual Capacity (by region, technology, year)
 3156  loop((r,t),
 3157  put / "NewAnnualCapacity",r.TL,t.TL;
 3158  loop(y, put NewCapacity.L(r,t,y));
-****                          $141
-**** LINE     47 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3159  );
 3160  put /;
 3161  * Annual Technology Production (by region, technology, fuel, year)
 3162  loop((r,t,f)$(sum((y,m), OutputActivityRatio(r,t,f,m,y)) > 0),
 3163  put / "AnnualProductionByTechnology",r.TL,t.TL,f.TL;
 3164  loop(y, put ProductionByTechnologyAnnual.L(r,t,f,y));
-****                                           $141
-**** LINE     53 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3165  );
 3166  put /;
 3167  * Annual Technology Use (by region, technology, fuel, year)
 3168  loop((r,t,f)$(sum((y,m), InputActivityRatio(r,t,f,m,y)) > 0),
 3169  put / "AnnualUseByTechnology",r.TL,t.TL,f.TL;
 3170  loop(y, put UseByTechnologyAnnual.L(r,t,f,y));
-****                                    $141
-**** LINE     59 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3171  );
 3172  put /;
 3173  * Technology Production in each TimeSlice (by region, technology, fuel, timeslice, year)
@@ -3266,14 +3185,6 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3175  loop(l,
 3176  put / "ProductionByTechnologyByTimeSlice",r.TL,t.TL,f.TL,l.TL;
 3177  loop(y, put ProductionByTechnology.L(r,l,t,f,y));
-****                                     $141
-**** LINE     66 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3178  );
 3179  );
 3180  put /;
@@ -3282,14 +3193,6 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3183  loop(l,
 3184  put / "UseByTechnologyByTimeSlice",r.TL,t.TL,f.TL,l.TL;
 3185  loop(y, put UseByTechnology.L(r,l,t,f,y));
-****                              $141
-**** LINE     74 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3186  );
 3187  );
 3188  put /;
@@ -3297,28 +3200,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3190  loop((r,e),
 3191  put / "AnnualEmissions",r.TL,e.TL;
 3192  loop(y, put AnnualEmissions.L(r,e,y));
-****                              $141
-**** LINE     81 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3193  );
 3194  put /;
 3195  * Annual Emissions (by region, technology, emission, year)
 3196  loop((r,t,e)$(sum((y,m), EmissionActivityRatio(r,t,e,m,y)) > 0),
 3197  put / "AnnualEmissionsByTechnology",r.TL,t.TL,e.TL;
 3198  loop(y, put AnnualTechnologyEmission.L(r,t,e,y));
-****                                       $141
-**** LINE     87 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-**** LINE     55 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3199  );
 3200  put /;
 3201  PUTCLOSE ANT;
@@ -3371,14 +3258,9 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3245  * heating or to produce electricity, i.e. the primary_fuel set.
 3246   
 3247  rep_pes_tot('base',r,y) = sum(primary_fuel(f), ProductionAnnual.L(r,f,y));
-****                                           $352                   $141
+****                                           $352
 **** LINE     49 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 **** 352  Set has not been initialized
 3248   
 3249  *------------------------------------------------------------------------
@@ -3414,14 +3296,9 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3266  * by technology, e.g. RateOfProductionByTechnologyByMode.
 3267  rep_elec_tot('base',r,y) = sum((f,t,m,l)$ftm_elec(f,t,m),
 3268      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC',y)*YearSplit(l,y));
-****                                         $141          $170
+****                                                       $170
 **** LINE     70 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
 **** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 **** 170  Domain violation for element
 3269   
 3270   
@@ -3456,14 +3333,6 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3295   
 3296  * Like capacity, with the variable used for investment accounting.
 3297  rep_investment_elec_tot('base',r,y) = sum(t$power_plants(t), CapitalInvestment.l(r,t,y));
-****                                                                                 $141
-**** LINE     99 INCLUDE     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-**** LINE     56 INPUT       C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-**** 141  Symbol declared but no values have been assigned. Check for missing
-****         data definition, assignment, data loading or implicit assignment
-****         via a solve statement. Suppress with $onImplicitAssign.
-****         A wild shot: You may have spurious commas in the explanatory
-****         text of a declaration. Check symbol reference list.
 3298   
 3299   
 3300  *------------------------------------------------------------------------
@@ -3532,8 +3401,8 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3359   
 3360  * solve the model with the constraints
 
-**** 31 ERROR(S)   0 WARNING(S)
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:48:31 Page 4
+**** 14 ERROR(S)   0 WARNING(S)
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 13:56:01 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 

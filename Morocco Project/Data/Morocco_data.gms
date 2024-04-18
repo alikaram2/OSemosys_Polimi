@@ -149,8 +149,8 @@ set power_plants(TECHNOLOGY) /  PWRBIO001, PWRCOA001, PWRGEO, PWROHC001, PWROHC0
 *#set primary_imports(TECHNOLOGY) / IMPHCO1, IMPOIL1, IMPURN1 /;
 *#set secondary_imports(TECHNOLOGY) / IMPDSL1, IMPGSL1 /;
 
-*#set renewable_tech(TECHNOLOGY) /HYDRO/; 
-*#set renewable_fuel(FUEL) /HYD/; 
+set renewable_tech(TECHNOLOGY) /PWRHYD001/; 
+set renewable_fuel(FUEL) /HYD/; 
 
 *#set fuel_production(TECHNOLOGY);
 *#set fuel_production_fict(TECHNOLOGY) /RIV/;
