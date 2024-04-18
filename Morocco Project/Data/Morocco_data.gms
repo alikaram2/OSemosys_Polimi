@@ -288,13 +288,8 @@ parameter SpecifiedAnnualDemand(r,f,y) /
         MOROCCO.RESELC.2048 257.044
         MOROCCO.RESELC.2049 264.632
         MOROCCO.RESELC.2050 272.219
-
+        MOROCCO.COMELC.(2015*2050) 0
 /;
-
-*COMMERCIAL (TRADE) ELECTRICITY IS ASSUMED TO BE NULL (?)
-*According to the IEA, Morocco is a net importer of electricity https://www.iea.org/countries/morocco/electricity
-*MOROCCO.COMELC.(2015*2050) 0
-
 
 parameter SpecifiedDemandProfile(r,f,l,y) /
         MOROCCO.INDELC.SPD.(2015*2050) 0.127
