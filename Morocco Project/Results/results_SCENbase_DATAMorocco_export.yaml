@@ -1,0 +1,53 @@
+- GDXReader:
+    file: C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\results_SCENbase_DATAMorocco.gdx
+    symbols: 
+      - name: RateOfProductionByTechnology
+      - name: ProductionAnnual
+      - name: CapitalInvestment
+      - name: OperatingCost
+      - name: AnnualEmissions
+- Projection:
+    name: RateOfProductionByTechnology(0,1,2,3,4)
+    newName: RateOfProductionByTechnology_proj_(0,1,2,3,4)
+    asParameter: true
+- Projection:
+    name: ProductionAnnual(0,1,2)
+    newName: ProductionAnnual_proj_(0,1,2)
+    asParameter: true
+- Projection:
+    name: CapitalInvestment(0,1,2)
+    newName: CapitalInvestment_proj_(0,1,2)
+    asParameter: true
+- Projection:
+    name: OperatingCost(0,1,2)
+    newName: OperatingCost_proj_(0,1,2)
+    asParameter: true
+- Projection:
+    name: AnnualEmissions(0,1,2)
+    newName: AnnualEmissions_proj_(0,1,2)
+    asParameter: true
+- ExcelWriter:
+    file: C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Results\results_SCENbase_DATAMorocco_export.xlsx
+    valueSubstitutions: {
+      EPS: EPS,
+      INF: INF,
+      -INF: -INF,
+      UNDEF: UNDEF,
+      NA: NA
+    }
+    symbols:
+      - name: RateOfProductionByTechnology_proj_
+        range: RateOfProductionByTechnology!A1
+        columnDimension: 1
+      - name: ProductionAnnual_proj_
+        range: ProductionAnnual!A1
+        columnDimension: 1
+      - name: CapitalInvestment_proj_
+        range: CapitalInvestment!A1
+        columnDimension: 1
+      - name: OperatingCost_proj_
+        range: OperatingCost!A1
+        columnDimension: 1
+      - name: AnnualEmissions_proj_
+        range: AnnualEmissions!A1
+        columnDimension: 1

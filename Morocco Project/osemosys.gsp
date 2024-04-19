@@ -34,6 +34,18 @@
         },
         {
             "codecMib": 106,
+            "file": "Results/report_base.gdx",
+            "name": "report_base.gdx",
+            "type": "gdx"
+        },
+        {
+            "codecMib": 106,
+            "file": "Results/results_SCENbase_DATAMorocco.gdx",
+            "name": "results_SCENbase_DATAMorocco.gdx",
+            "type": "gdx"
+        },
+        {
+            "codecMib": 106,
             "file": "gams11.gdx",
             "name": "gams11.gdx",
             "type": "gdx"
@@ -69,9 +81,9 @@
         "--mip=1 --data=Morocco3",
         "--mip=1 --data=Morocco.",
         "",
-        "--data=Morocco",
         "mip=1 --data=Morocco",
-        "--mip=1 --data=Morocco"
+        "--mip=1 --data=Morocco",
+        "--data=Morocco"
     ],
     "path": ".",
     "pf": "",
