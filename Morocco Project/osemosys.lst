@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -2948,13 +2948,13 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\D
 2945   
 2946  EmissionsPenalty(r,e,y) = 0;
 2947   
-2948   AnnualExogenousEmission(r,e,y) = 0;
+2948  AnnualExogenousEmission(r,e,y) = 0;
 2949   
-2950   AnnualEmissionLimit(r,e,y) = 9999;
+2950  AnnualEmissionLimit(r,e,y) = 9999;
 2951   
-2952   ModelPeriodExogenousEmission(r,e) = 0;
+2952  ModelPeriodExogenousEmission(r,e) = 0;
 2953   
-2954   ModelPeriodEmissionLimit(r,e) = 9999;
+2954  ModelPeriodEmissionLimit(r,e) = 9999;
 2955   
 2956  * perform data computations when needed
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
@@ -2968,7 +2968,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 2965  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
 2966  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
@@ -3617,12 +3617,12 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3618  * electricity is produced from "fuel" using "tech" operating according to
 3619  * "mode", where "fuel" is a primary energy source (i.e. for simplicity we
 3620  * assume not to be interested in electricity supplied from storage).
-3621  ftm_elec(f,t,m) = yes$(sum((r,y)$(primary_fuel(f) and InputActivityRatio(r,t,f,m,y) and OutputActivityRatio(r,t,'ELC001',m,y)),1));
+3621  ftm_elec(f,t,m) = yes$(sum((r,y)$(primary_fuel(f) and InputActivityRatio(r,t,f,m,y) and OutputActivityRatio(r,t,'ELC003',m,y)),1));
 3622   
 3623  * ProductionAnnual is only per fuel. We need a variable which is indexed
 3624  * by technology, e.g. RateOfProductionByTechnologyByMode.
 3625  rep_elec_tot('base',r,y) = sum((f,t,m,l)$ftm_elec(f,t,m),
-3626      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC001',y)*YearSplit(l,y));
+3626      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC003',y)*YearSplit(l,y));
 3627   
 3628   
 3629  *------------------------------------------------------------------------
@@ -3630,7 +3630,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3631  *------------------------------------------------------------------------
 3632   
 3633  rep_elec_share('base',r,f,y)$primary_fuel(f) = 100.*sum((t,m,l)$ftm_elec(f,t,m),
-3634      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC001',y)*YearSplit(l,y))/rep_elec_tot('base',r,y);
+3634      RateOfProductionByTechnologyByMode.l(r,l,t,m,'ELC003',y)*YearSplit(l,y))/rep_elec_tot('base',r,y);
 3635   
 3636  *------------------------------------------------------------------------
 3637  *    - total capacity for electricity production [GW]
@@ -3710,7 +3710,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3715   
 3717   
 3718  * solve the model with the constraints
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 4
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 4
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Include File Summary
 
@@ -3727,7 +3727,7 @@ Include File Summary
 
 
 COMPILATION TIME     =        0.016 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 5
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 5
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Range Statistics    SOLVE osemosys Using MIP From line 3466
 
@@ -3738,7 +3738,7 @@ RHS       [min, max] : [ 5.400E-03, 1.000E+05] - Zero values observed as well
 Bound     [min, max] : [        NA,        NA] - Zero values observed as well
 Matrix    [min, max] : [ 1.000E-05, 1.000E+09]
 
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 6
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 6
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model Statistics    SOLVE osemosys Using MIP From line 3466
 
@@ -3750,8 +3750,8 @@ BLOCKS OF VARIABLES          51     SINGLE VARIABLES    2,645,470
 NON ZERO ELEMENTS     6,504,217
 
 
-GENERATION TIME      =        7.391 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 7
+GENERATION TIME      =        6.375 SECONDS    797 MB  46.2.0 ac4adda6 WEX-WEI
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 7
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Solution Report     SOLVE osemosys Using MIP From line 3466
 
@@ -3766,11 +3766,11 @@ Solution Report     SOLVE osemosys Using MIP From line 3466
 **** MODEL STATUS      19 Infeasible - No Solution
 **** OBJECTIVE VALUE               NA
 
- RESOURCE USAGE, LIMIT         16.890 10000000000.000
+ RESOURCE USAGE, LIMIT         12.234 10000000000.000
  ITERATION COUNT, LIMIT     21364    2147483647
 
 No solution returned
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/18/24 22:32:19 Page 8
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 12:42:59 Page 8
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 E x e c u t i o n
 

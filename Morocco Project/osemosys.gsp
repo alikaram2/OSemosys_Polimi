@@ -28,6 +28,12 @@
         },
         {
             "codecMib": 106,
+            "file": "Model/osemosys_equ.gms",
+            "name": "osemosys_equ.gms",
+            "type": "gms"
+        },
+        {
+            "codecMib": 106,
             "file": "gams11.gdx",
             "name": "gams11.gdx",
             "type": "gdx"
@@ -60,10 +66,11 @@
     "options": [
         "--mip=1 --data=Morocco_data",
         "--mip=1 --data=baseenergysystem",
-        "",
         "--mip=1 --data=Morocco3",
-        "--data=Morocco",
         "--mip=1 --data=Morocco.",
+        "",
+        "--data=Morocco",
+        "mip=1 --data=Morocco",
         "--mip=1 --data=Morocco"
     ],
     "path": ".",
