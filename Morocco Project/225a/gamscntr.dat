@@ -1,0 +1,217 @@
+52
+1 157 0 0 462  0.00000000000000E+0000 0  0.00000000000000E+0000 0 1
+2655807 0 0 0 12272 2611774 8424 35609 0 0 0 0
+2645470 0 0 0 0 0 0 0
+6481820 0
+2645470 0 0 0 0 0 0 2645322 0 148
+0 0 0 0 0 0 0
+0 37 0
+0 0 20
+ 1.00000000000000E-0004  0.00000000000000E+0000 0
+0  0.00000000000000E+0000 0  0.00000000000000E+0000
+ 1.00000000000000E+0010 2147483647 0
+1 0
+ 0.00000000000000E+0000 0 0 0  1.00000000000000E+0000 0 0 0 0  1.00000000000000E-0005 0
+2645470 100
+0 0 0 0 0
+ 0.00000000000000E+0000  0.00000000000000E+0000  0.00000000000000E+0000  0.00000000000000E+0000  0.00000000000000E+0000
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\gamsmatr.dat
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\gamsinst.dat
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\conopt.opt
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\gamsstat.dat
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\gamssolu.dat
+
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\gamsdict.dat
+3
+14:28:21
+04/20/24
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\
+C:\GAMS\46\
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\
+32767 2147483647
+0 0 67 45401 45364 61652
+Course License                                 S240213|0002AO-GEN0
+Fondazione CMCC, Complesso Ecotekne                              0
+1146424801COCTDIGE                                               0
+0 1 1 0
+225a\gmsprmNT.dat
+15 49 5
+LP          11 5
+MIP         11 10
+RMIP        11 0
+NLP         5 0
+MCP         41 0
+MPEC        35 0
+RMPEC       35 0
+CNS         5 0
+DNLP        5 0
+RMINLP      5 0
+MINLP       15 0
+QCP         5 0
+MIQCP       44 0
+RMIQCP      5 0
+EMP         25 0
+ALPHAECP    11 5 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+gmsecpnt.cmd
+gmsecpnx.exe
+ANTIGONE    2011 5 1 0 0 0 1 0 0 0 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+BARON       1001 5 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0
+gmsba_nt.cmd
+gmsba_nx.exe
+CBC         2011 5 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+gmsgennt.cmd
+gmsgennx.exe
+CONOPT      1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd
+gmsgennx.exe
+CONOPT3     1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd
+gmsgennx.exe
+CONOPT4     1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd optconopt.def
+gmsgennx.exe
+CONVERT     103011 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+gmsgennt.cmd optconvert.def
+gmsgennx.exe
+CONVERTOLD  103011 5 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 0
+gmscv_nt.cmd
+gmscv_nx.exe
+COPT        1011 5 1 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+CPLEX       2011 5 1 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+DE          102011 5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+gmsgennt.cmd
+gmsgennx.exe
+DECISC      2011 5 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+gmsdecnt.cmd optdecis.def
+DECISM      2011 5 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+gmsdemnt.cmd optdecis.def
+DICOPT      1 5 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+gmsdi_nt.cmd
+gmsdi_nx.exe
+EXAMINER    103011 5 1 1 1 1 1 1 1 1 0 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+EXAMINER2   103011 5 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0
+gmsgennt.cmd optexaminer.def
+gmsgennx.exe
+GAMSCHK     103011 5 1 1 1 1 1 1 0 0 0 1 1 1 1 1 1 0
+gmsck_nt.cmd
+gmsck_nx.exe
+GLOMIQO     2011 5 1 0 0 0 1 0 0 0 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+GUROBI      11 5 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+GUSS        1001 5 1 1 1 1 1 1 0 0 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+HIGHS       11 5 1 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0
+gmsgennt.cmd
+gmsgennx.exe
+IPOPT       11 5 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd
+gmsgennx.exe
+IPOPTH      11 5 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd optipopt.def
+gmsgennx.exe
+JAMS        101011 5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+gmsja_nt.cmd
+gmsja_nx.exe
+KESTREL     103010 5 0 1 1 1 1 1 1 1 1 1 1 1 1 1 1 1
+gmske_nt.cmd
+KNITRO      103011 0 1 1 0 1 1 1 1 1 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+LINDO       1 5 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 1
+gmsgennt.cmd
+gmsgennx.exe
+LINDOGLOBAL 1 5 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+LOGMIP      101011 5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+gmsja_nt.cmd optjams.def
+gmsja_nx.exe
+MILES       103001 5 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+gmsmcent.cmd
+gmsmcenx.exe
+MINOS       1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd
+gmsgennx.exe
+MOSEK       11 5 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+MPSGE       100001 5 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+gmsgewnt.cmd
+gmsgewnx.exe
+NLPEC       103001 0 1 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0
+gmscvnnt.cmd
+gmscvnnx.exe
+ODHCPLEX    2011 5 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0
+gmsgennt.cmd
+gmsgennx.exe
+OSICPLEX    2011 5 1 1 1 1 0 0 0 0 0 0 0 0 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+OSIGUROBI   11 5 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+OSIMOSEK    11 5 1 1 1 1 1 0 0 0 0 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+OSIXPRESS   11 5 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+PATH        103001 5 1 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0
+gmsgennt.cmd
+gmsgennx.exe
+PATHNLP     11 5 1 1 0 1 1 0 0 0 0 1 1 0 1 0 1 0
+gmsptnnt.cmd
+gmsptnnx.exe
+QUADMINOS   1 0 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+gmsgennt.cmd optminos.def
+gmsgennx.exe
+SBB         11 5 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+gmssb_nt.cmd
+gmssb_nx.exe
+SCIP        2001 5 1 0 1 0 1 0 0 0 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+SHOT        1001 5 1 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0
+gmsgennt.cmd
+gmsgennx.exe
+SNOPT       1 0 1 1 0 1 1 0 0 0 1 1 1 0 1 0 1 0
+gmsgennt.cmd
+gmsgennx.exe
+SOPLEX      11 5 1 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0
+gmsgennt.cmd
+gmsgennx.exe
+XPRESS      11 5 1 1 1 1 1 0 0 0 1 1 1 1 1 1 1 0
+gmsgennt.cmd
+gmsgennx.exe
+234471400606060606                                               0
+DCE3258      g 7                               A Course          0
+License Admin: Massimo Tavoni, massimo.tavoni@polimi.it          0
+1 C:\Users\Ali Sawah\Documents\GAMS\gamslice.txt
+1 C:\GAMS\46\gmscmpnt.txt
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.dat
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0  1.00000000000000E+0000 0 0
+0 0 0
+0 0 0 1 0
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.dll
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\sbbinfo.dat
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\225a\gamscntr.dat
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\
+dat
+ 1.00000000000000E+0299
+
+
+C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
+ 6.48182000000000E+0006  0.00000000000000E+0000

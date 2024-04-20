@@ -1,4 +1,4 @@
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 14:16:22 Page 1
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/20/24 14:28:21 Page 1
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 C o m p i l a t i o n
 
@@ -31,7 +31,7 @@ C o m p i l a t i o n
   26  * --scen={base,ren_target,ctax,emicap,nocoal,cost_res} to run the model with different constraints
   27  * --data={baseenergysystem,utopia,renewables} to run the model with different data
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 14:16:22 Page 2
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/20/24 14:28:21 Page 2
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model declarations except equations
 
@@ -2834,7 +2834,7 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 2832  RETagFuel(r,f,y)$renewable_fuel(f) = 1;
 2833  * define model equations
 INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 14:16:22 Page 3
+GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/20/24 14:28:21 Page 3
 G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
 Model equations
 
@@ -3542,89 +3542,4 @@ INCLUDE    C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\M
 3542  * level of IMP* technologies (i.e. boxes representing import of primary
 3543  * fuels).
 3544   
-3545  rep_co2emiss_by_fuel('base',r,f,y) = sum((t,m)$(OutputActivityRatio(r,t,f,m,y) and EmissionActivityRatio(r,t,'EMICO2',m,y)), EmissionActivityRatio(r,t,'EMICO2',m,y)*ProductionByTechnologyAnnual.l(r,t,f,y));
-3546   
-3547  *------------------------------------------------------------------------
-3548  *   - cost wrt base case
-3549  *------------------------------------------------------------------------
-3550   
-3551  rep_cost_wrt_base('base',r) = 100*(ModelPeriodCostByRegion.l(r)/cost_base.l(r)-1);
-3552   
-3553   
-3554  execute_unload 'Results/report_base.gdx',
-3555  rep_fen_tot
-3556  rep_pes_tot
-3557  rep_pes_share
-3558  rep_elec_tot
-3559  rep_elec_share
-3560  rep_capacity_elec_tot
-3561  rep_capacity_elec_share
-3562  rep_investment_elec_share
-3563  rep_investment_elec_share
-3564  rep_co2emiss_tot
-3565  rep_co2emiss_by_fuel
-3566  rep_cost_wrt_base
-3567  ;
-3568  execute_unload 'Results/results_SCENbase_DATAMorocco.gdx';
-3569   
-3570  * some scenario flags
-3572   
-3574   
-3576   
-3578   
-3580   
-3581  * solve the model with the constraints
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 14:16:22 Page 4
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Include File Summary
-
-
-   SEQ   GLOBAL TYPE      PARENT   LOCAL  FILENAME
-
-     1        1 INPUT          0       0  C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-     2       33 INCLUDE        1      33  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_dec.gms
-     3      834 INCLUDE        1      35  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Data\Morocco_data.gms
-     4     2824 INCLUDE        1      37  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\compute_data.gms
-     5     2834 INCLUDE        1      39  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_equ.gms
-     6     3332 INCLUDE        1      55  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\osemosys_res.gms
-     7     3423 INCLUDE        1      56  .C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\Model\report.gms
-
-
-COMPILATION TIME     =        0.015 SECONDS      4 MB  46.2.0 ac4adda6 WEX-WEI
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 14:16:22 Page 5
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Model Analysis      SOLVE osemosys Using LP From line 3329
-
-
-**** Exec Error at line 3024: Execution halted: Triggered by pending CtrlC event
-GAMS 46.2.0  ac4adda6 Mar 5, 2024           WEX-WEI x86 64bit/MS Windows - 04/19/24 14:16:22 Page 6
-G e n e r a l   A l g e b r a i c   M o d e l i n g   S y s t e m
-Model Statistics    SOLVE osemosys Using LP From line 3329
-
-
-MODEL STATISTICS
-
-BLOCKS OF EQUATIONS          24     SINGLE EQUATIONS    1,830,853
-BLOCKS OF VARIABLES          22     SINGLE VARIABLES    1,850,977
-NON ZERO ELEMENTS     3,746,986
-
-
-GENERATION TIME      =        2.344 SECONDS    588 MB  46.2.0 ac4adda6 WEX-WEI
-
-**** SOLVE from line 3329 ABORTED, EXECERROR = 1
-
-
-EXECUTION TIME       =        2.610 SECONDS    588 MB  46.2.0 ac4adda6 WEX-WEI
-
-
-USER: Course License                                 S240213|0002AO-GEN
-      Fondazione CMCC, Complesso Ecotekne                       DCE3258
-      License for teaching and research at degree granting institutions
-
-
-**** FILE SUMMARY
-
-Input      C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms
-Output     C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.lst
-
-**** USER ERROR(S) ENCOUNTERED
+3545  rep_co2emiss_by_fuel('base',r,f,y) = sum((t,m)$(OutputActivi

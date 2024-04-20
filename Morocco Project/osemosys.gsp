@@ -73,6 +73,12 @@
             "file": "osemosys.lst",
             "name": "osemosys.lst",
             "type": "lst"
+        },
+        {
+            "codecMib": 106,
+            "file": "SelResults.CSV",
+            "name": "SelResults.CSV",
+            "type": ""
         }
     ],
     "options": [
@@ -83,6 +89,7 @@
         "",
         "mip=1 --data=Morocco",
         "--mip=1 --data=Morocco",
+        "--mip = 1 --data=Morocco",
         "--data=Morocco"
     ],
     "path": ".",

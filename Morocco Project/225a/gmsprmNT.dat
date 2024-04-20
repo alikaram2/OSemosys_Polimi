@@ -1,0 +1,11 @@
+Input="C:\Users\Ali Sawah\Documents\GitHub\OSemosys_Polimi\Morocco Project\osemosys.gms"
+PageSize=0
+ScrDir=225a
+SysDir=C:\GAMS\46
+ScriptNext=225a\gamsnext.cmd
+LogOption=3
+ErrMsg=1
+ErrorLog=99
+IDE=1
+LstTitleLeftAligned=1
+--data=Morocco
